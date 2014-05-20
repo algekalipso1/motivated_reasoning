@@ -51,6 +51,7 @@ function loadPost() {
 // necessary to generate random instances of the experiment.
 
 // random function
+// This is an inclusing uniform randomizer. random(a, a + x) gives you one integer from a to a + x, each with 1 / (x + 1) probability
 function random(a,b) {
     if (typeof b == "undefined") {
 	a = a || 2;
