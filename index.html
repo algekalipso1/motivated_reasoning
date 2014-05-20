@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  	<title>Ping Pong study</title>
+  	<title>Competition study</title>
   	<link rel="stylesheet" href="dragdealer.css" />
   <link rel="stylesheet" href="style.css" />
 	<script src="jquery-1.11.1.min.js"></script>
@@ -14,38 +14,15 @@
 
 <body>
 
-<!-- <div id="intro" style="margin: 20px;">
-	<h1>
-	<img src="images/stanford.png" alt="Stanford University"> <br>
-	History Challenge
-	</h1>
-	<h3 class="instructions_header" style="margin: 5px; font-size: 24px;">
-	Instructions <br> 
-	</h3>
-	<div class="instructions">
-		Thank you for participating in our experiment. In this experiment, we are investigating competition. <br>
-		You will answer several questions and play a quick game. We expect this will take about ten minutes. <br>
-	<br>
-	</div>
-<button type="button" onclick="loadInstructions()">Start</button> \
-<h4 class="legal_header" style="margin: 5px; font-size: 20px;">
-<br>
-Legal
-</h4>
-<div class="legal">
-		By answering the following questions, you are participating in a study being performed by
-        cognitive scientists in the Stanford Department of Psychology. If you have
-        questions about this research, please contact <b> MH Tessler at <a
-        href="mailto://mhtessler@stanford.edu">mhtessler@stanford.edu</a></b> or Noah
-        Goodman, at ngoodman@stanford.edu. You must be at least 18 years old to
-        participate. Your participation in this research is voluntary. You may
-        decline to answer any or all of the following questions. You may decline
-        further participation, at any time, without adverse consequences. Your
-        anonymity is assured; the researchers who have requested your
-        participation will not receive any personal information about you.
+<!-- progress bar-->
+<div class="progress">
+   <div class="bar-wrapper">
+       <div class="bar"></div>
+   </div>
+   <p><span id="trial-num">{{}}</span>
+    <span>/</span>
+    <span id="total-num">{{}}</span></p>
 </div>
-</div>
- -->
 
 <!-- First slide / legal-->
 <div id="intro" class="slide">
@@ -70,7 +47,7 @@ Legal
 
 
 
-<div id="long_instructions" style="visibility: hidden;">
+<div id="long_instructions" class="slide">
 	<p id='logo-text'>Instructions</p>
 	<div class="long_instructions_text" style="margin: 10px;">
 		<p class="block-text"> 
