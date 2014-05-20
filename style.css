@@ -57,22 +57,28 @@ body {
 
 .evidence_container {
 	width: 800px;
-	height: 450px;
 }
 
 .evidence {
   width: 800px;
-  height: 450px;
   font-size: 24px;
   float: center;
 }
 
-.history_evidence {
-  width: 600px;
+.history_question {
+  width: 300px;
   height: 200px;
   margin-top: 50px;
   float:left;
 }
+
+.history_answer {
+  width: 300px;
+  height: 200px;
+  margin-top: 50px;
+  float:left;
+}
+
 
 .history_evaluation {
   width: 200px;
@@ -84,17 +90,16 @@ body {
 .question_container {
 	width: 800px;
 	height:100px;
+  margin: 50px;
 }
 
 .question {
-	font-size: 24px;
 
 }
 
 .check_mark {
-  width:100px;
-  height:100px;
-  margin: 20px;
+  width:50px;
+  height:50px;
 }
 
 .team_img {

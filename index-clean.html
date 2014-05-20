@@ -18,7 +18,7 @@
 			function instructionsClick() {
 				$(".instructions_slide").css("display", "none");
 				$(".loading_slide").css("display", "block");
-				setTimeout(connectionLoad, 5000);
+				setTimeout(connectionLoad, 3000);
 				//$(".container").css("outline", "5px solid black");
 				//$(".evidence_slide").css("display", "block");
 			}
@@ -26,7 +26,7 @@
 			function connectionLoad() {
 				$(".loading_slide").css("display", "none");
 				$(".loading_slide2").css("display", "block");
-				setTimeout(conditionLoad, 5000);
+				setTimeout(conditionLoad, 3000);
 			}
 
 			function conditionLoad() {
@@ -36,19 +36,24 @@
 
 			function conditionClick() {
 				$(".condition_slide").css("display", "none");
-				slider1 = new Dragdealer('simple-slider1', {'x': 0.5});
 				$(".evidence_slide").css("display", "block");
 			}
 
 			function ev1Click() {
 				$(".evidence_slide").css("display", "none");
 				$(".eval_slide").css("display", "block");
+				slider1 = new Dragdealer('simple-slider1', {'x': 0.5});
+				slider2 = new Dragdealer('simple-slider2', {'x': 0.5});
+				slider3 = new Dragdealer('simple-slider3', {'x': 0.5});
 
 			}
 
 			function evalClick() {
 				$(".eval_slide").css("display", "none");
-				$(".manip_slide").css("display", "block");				
+				$(".manip_slide").css("display", "block");	
+				manip_slider1 = new Dragdealer('simple-slider4', {'x': 0.5});		
+				manip_slider2 = new Dragdealer('simple-slider5', {'x': 0.5});			
+	
 			}
 
 			function manipClick() {
@@ -56,6 +61,9 @@
 				$(".debrief_slide").css("display", "block");				
 			}
 
+			//To do:
+			//Fill in: history questions, post-questions, manipulation check questions, team questions
+			//Adjust: add click-through on history questions, post questions, manipulation questions; check that sliders were active before continuing
 		</script>
 	</head>
 	<body>
@@ -145,13 +153,23 @@
 			<div class="evidence_slide" style="display: none;">
 				<div class="evidence_container">
 					<center class="evidence" id="evidence1">
-						<div class="history_evidence"> 
-							<b> Question </b> <br> <br> <br> <br> <br>
-							<span id="evQ1" style="width: 400px;">History question here.</span>
+						<div class="history_question" style="width: 300px;"> 
+							<b> Question </b> 
+							<p id="evQ1">When General Douglas MacArthur declared, "I shall return," 
+								he intended to return to what place?</p>
+							<p id="evQ2">In the period after the American Revolution, what crop became so profitable 
+								in the South that slave owning became essential to Southern wealth?</p>
 						</div>
-						<div class="history_evaluation"> 
+						<div class="history_answer" style="width: 300px;"> 
+							<b> Answer </b> 
+							<p id="evQ1" >Philippines</p>
+							<p id="evQ2" >Cotton</p>
+						</div>
+						<div class="history_evaluation" style="width: 200px;"> 
 							<b> Evaluation </b> <br>
+							<img src="images/check_red.jpg" class="check_mark"> <br>
 							<img src="images/check_red.jpg" class="check_mark">
+
 						</div>
 					</center>
 				</div>
@@ -164,7 +182,7 @@
 
 			<div class="eval_slide" style="display: none;">
 				<center class="eval_container">
-					<div class="question_container">
+					<div class="question_container" id="question1">
 						<center class="strength_question">
 							<span class="question">Based on these results, how strong do you think player</span>
 							<img class="team_img" src="teams/mt.jpg">
@@ -178,6 +196,30 @@
 							</div>
 						</center>
 					</div>
+					<div class="question_container" id="question2">
+						<center class="strength_question">
+							<span class="question">Based on these results, how strong do you think the average player in this game is?</span>
+							<div id="simple-slider2" class="dragdealer", style="width: 500px; outline: black solid 2px; margin-top: 10px;">
+								<img src="images/button.jpg" class="handle" id="slider1" style="opacity: 0.4;" onclick='{$(this).css("opacity", "1.0");};'>
+    						</div>   
+    						<div style="width: 500px;"> 
+								<span style="width: 250px; float: left; text-align: left; margin-top: 5px;">Very weak </span>
+								<span style="width: 250px; float: right; text-align: right; margin-top: 5px;">Very strong </span>
+							</div>
+						</center>
+					</div>
+					<div class="question_container" id="question3">
+						<center class="strength_question">
+							<span class="question">Based on these results, how much of a role do you think luck plays in this game?</span> 
+							<div id="simple-slider3" class="dragdealer", style="width: 500px; outline: black solid 2px; margin-top: 10px;">
+								<img src="images/button.jpg" class="handle" id="slider1" style="opacity: 0.4;" onclick='{$(this).css("opacity", "1.0");};'>
+    						</div>   
+    						<div style="width: 500px;"> 
+								<span style="width: 250px; float: left; text-align: left; margin-top: 5px;">Very little </span>
+								<span style="width: 250px; float: right; text-align: right; margin-top: 5px;">A lot </span>
+							</div>
+						</center>
+					</div>
 				</center>
 				<center class="button_container">
 					<button type="button" class="continue_button" id="eval_button" onclick="evalClick()">Continue</button> 
@@ -186,7 +228,30 @@
 
 			<div class="manip_slide" style="display: none;">
 				<center class="manip_container">
-					Manipulation check (how motivated are you to win, etc.)
+					<div class="question_container" id="manip_question1">
+						<center class="strength_question">
+							<span class="question">How motivated are you to win this game?</span>
+							<div id="simple-slider4" class="dragdealer", style="width: 500px; outline: black solid 2px; margin-top: 10px;">
+								<img src="images/button.jpg" class="handle" id="slider1" style="opacity: 0.4;" onclick='{$(this).css("opacity", "1.0");};'>
+    						</div>   
+    						<div style="width: 500px;"> 
+								<span style="width: 250px; float: left; text-align: left; margin-top: 5px;">Not very motivated </span>
+								<span style="width: 250px; float: right; text-align: right; margin-top: 5px;">Very Motivated </span>
+							</div>
+						</center>
+					</div>
+					<div class="question_container" id="manip_question2">
+						<center class="strength_question">
+							<span class="question">How likely is it that you are about to play a real person?</span>
+							<div id="simple-slider5" class="dragdealer", style="width: 500px; outline: black solid 2px; margin-top: 10px;">
+								<img src="images/button.jpg" class="handle" id="slider1" style="opacity: 0.4;" onclick='{$(this).css("opacity", "1.0");};'>
+    						</div>   
+    						<div style="width: 500px;"> 
+								<span style="width: 250px; float: left; text-align: left; margin-top: 5px;">Not very likely</span>
+								<span style="width: 250px; float: right; text-align: right; margin-top: 5px;">Very likely </span>
+							</div>
+						</center>
+					</div>
 				</center>
 				<center class="button_container">
 					<button type="button" class="continue_button" id="manip_button" onclick="manipClick()">Continue</button> 
