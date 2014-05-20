@@ -3,6 +3,11 @@ var drag2;
 var drag1_check = false;
 var drag2_check = false;
 
+function showSlide(id) {
+  $(".slide").hide();
+  $("#"+id).show();
+}
+
 function loadInstructions() {
 	console.log("Start button pressed")
 	$("#intro").css("display", "none");
@@ -42,3 +47,5 @@ function loadPost() {
 		$("#post_questions").css("visibility", "visible");
 	}
 }
+
+showSlide("intro");
