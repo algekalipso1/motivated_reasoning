@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var drag1;
 var drag2;
 var drag1_check = false;
@@ -14,10 +13,10 @@ function loadInstructions() {
 	$("#intro").css("display", "none");
 	$("#long_instructions").css("visibility", "visible");
 }
-=======
 
 
 
+showSlide("intro");
 
 // ---------------- 3. CONTROL FLOW ------------------
 // This .js file determines the flow of the variable elements in the experiment as dictated 
@@ -88,4 +87,3 @@ function loadPost() {
 	}
 }
 
-showSlide("intro");
