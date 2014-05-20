@@ -7,15 +7,30 @@
   		<link rel="stylesheet" href="style.css"/>
 		<script src="jquery-1.11.1.min.js"></script>
 		<script src="dragdealer.js"></script>
-		<script src="experiment.js"></script>
+		<script>
+			function buttonTest() {
+				slider1 = new Dragdealer('simple-slider1', {'x': 0.5});
+			};
+		</script>
 	</head>
 	<body>
 		<div class="container">
 			<div class="evidence_container">
+				<center class="evidence" id="evidence1">
+					<div class="history_evidence"> 
+						<b> Question </b> <br> <br> <br> <br> <br>
+						<span id="evQ1" style="width: 400px;">History question here.</span>
+					</div>
+					<div class="history_evaluation"> 
+						<b> Evaluation </b> <br>
+						<img src="images/check_red.jpg" class="check_mark">
+					</div>
+				</center>
 			</div>
 			<div class="question_container">
 				<center class="strength_question">
 					<span class="question">Based on the above results, how strong do you think player</span>
+					<img class="team_img" src="teams/eb.jpg">
 					<span class="question">is?</span>
 					<div id="simple-slider1" class="dragdealer", style="width: 500px; outline: black solid 2px; margin-top: 10px;">
 						<img src="images/button.jpg" class="handle" id="slider1" style="opacity: 0.4;" onclick='{$(this).css("opacity", "1.0");};'>
