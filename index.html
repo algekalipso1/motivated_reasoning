@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  	<title>Ping Pong study</title>
+  	<title>History Bowl study</title>
   	<link rel="stylesheet" href="dragdealer.css" />
 	<script src="jquery-1.11.1.min.js"></script>
 	<script src="dragdealer.js"></script>
@@ -10,8 +10,6 @@
 	<script>
 		var drag1;
 		var drag2;
-		var drag1_check = false;
-		var drag2_check = false;
 
 		function loadInstructions() {
 			console.log("Start button pressed")
@@ -59,7 +57,7 @@
 <div id="intro" style="margin: 20px;">
 <h1>
 	<img src="images/stanford.png" alt="Stanford University"> <br>
-	Ping Pong Madness!!
+	History Bowl Trivia
 </h1>
 <h3 class="instructions_header" style="margin: 5px; font-size: 24px;">
 Instructions <br> 
@@ -109,9 +107,7 @@ Legal
 	<button type="button" onclick="loadEvidence('first')">Next</button> 
 </div>
 
-<div id="evidence1" style="visibility: hidden;">
-	<h3>Evidence</h3>
-	<br>
+<div id="evidence1" style="visibility: hidden; width: 800px; height: 600px; outline: solid 5px black;">
 	<center class="evidence_single">
 		<div style="width: 500px;">
 			<img src="images/laurel-small-g1.jpg">
@@ -129,7 +125,7 @@ Legal
 			<span style="width: 250px; float: right; text-align: right; margin-top: 5px;">Very strong </span>
 		</div>  
 	</center>
-	<button type="button" id="ev1button" style="margin-left: 5px;" onclick="loadEvidence('second')">Next</button> 
+	<button type="button" id="ev1button" style="margin-left: 5px;" onclick="loadEvidence('second')">Continue</button> 
 </div>
 
 <div id="evidence2" style="visibility: hidden;">
@@ -146,7 +142,7 @@ Legal
 	<center>
 		Based on the above results, how strong do you think Bob is?
 		<div id="simple-slider2" class="dragdealer", style="width: 500px; outline: black solid 2px; margin-top: 10px;">
-			<img src="images/button.jpg" class="handle" id="slider2" style="opacity: 0.4;", onclick='{$(this).css("opacity", "1.0"); drag1_check=true;};'>
+			<img src="images/button.jpg" class="handle" id="slider2" style="opacity: 0.4;", onclick='{$(this).css("opacity", "1.0");};'>
     	</div>   
     	<div style="width: 500px;"> 
 			<span style="width: 250px; float: left; text-align: left; margin-top: 5px;">Very weak </span>

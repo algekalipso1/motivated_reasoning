@@ -42,3 +42,8 @@ function loadPost() {
 		$("#post_questions").css("visibility", "visible");
 	}
 }
+
+function buttonTest() {
+	console.log("Button works!")
+	drag1 = new Dragdealer('simple-slider1', {'x': 0.5});
+}
