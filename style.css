@@ -12,7 +12,47 @@ body {
 .container {
 	width: 800px;
 	height: 600px;
-	outline: 5px solid black;
+}
+
+.intro_slide {
+  width: 800px;
+  height: 600px;
+}
+
+.intro_container {
+  width: 800px;
+}
+
+.instructions_slide {
+  width: 800px;
+  height: 600px;
+}
+
+.instructions_container {
+  width: 800px;
+}
+
+.loading_slide {
+  width: 800px;
+  height: 600px;
+}
+
+.loading_container {
+  width: 800px;
+}
+
+.condition_slide {
+  width: 800px;
+  height: 600px;
+}
+
+.condition_container {
+  width: 800px;
+}
+
+.evidence_slide {
+  width: 800px;
+  height: 600px;
 }
 
 .evidence_container {
@@ -63,7 +103,8 @@ body {
 }
 
 .button_container {
-
+  width: 800px;
+  height: 50px;
 }
 
 .continue_button {

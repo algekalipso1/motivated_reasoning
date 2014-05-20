@@ -2,48 +2,208 @@
 <html>
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  		<title>History Bowl study</title>
+  		<title>Competition study</title>
   		<link rel="stylesheet" href="dragdealer.css" />
   		<link rel="stylesheet" href="style.css"/>
 		<script src="jquery-1.11.1.min.js"></script>
 		<script src="dragdealer.js"></script>
 		<script>
-			function buttonTest() {
+
+
+			function introClick() {
+				$(".intro_slide").css("display", "none");
+				$(".instructions_slide").css("display", "block");
+			}
+
+			function instructionsClick() {
+				$(".instructions_slide").css("display", "none");
+				$(".loading_slide").css("display", "block");
+				setTimeout(connectionLoad, 5000);
+				//$(".container").css("outline", "5px solid black");
+				//$(".evidence_slide").css("display", "block");
+			}
+
+			function connectionLoad() {
+				$(".loading_slide").css("display", "none");
+				$(".loading_slide2").css("display", "block");
+				setTimeout(conditionLoad, 5000);
+			}
+
+			function conditionLoad() {
+				$(".loading_slide2").css("display", "none");
+				$(".condition_slide").css("display", "block");
+			}
+
+			function conditionClick() {
+				$(".condition_slide").css("display", "none");
 				slider1 = new Dragdealer('simple-slider1', {'x': 0.5});
-			};
+				$(".evidence_slide").css("display", "block");
+			}
+
+			function ev1Click() {
+				$(".evidence_slide").css("display", "none");
+				$(".eval_slide").css("display", "block");
+
+			}
+
+			function evalClick() {
+				$(".eval_slide").css("display", "none");
+				$(".manip_slide").css("display", "block");				
+			}
+
+			function manipClick() {
+				$(".manip_slide").css("display", "none");
+				$(".debrief_slide").css("display", "block");				
+			}
+
 		</script>
 	</head>
 	<body>
+
 		<div class="container">
-			<div class="evidence_container">
-				<center class="evidence" id="evidence1">
-					<div class="history_evidence"> 
-						<b> Question </b> <br> <br> <br> <br> <br>
-						<span id="evQ1" style="width: 400px;">History question here.</span>
-					</div>
-					<div class="history_evaluation"> 
-						<b> Evaluation </b> <br>
-						<img src="images/check_red.jpg" class="check_mark">
-					</div>
+
+
+			<div class="intro_slide">
+				<center class="intro_container">
+					<img src="images/stanford.png" alt="Stanford University">
+    				<p id='logo-text'>Stanford Computation and Cognition Lab</p>
+    				<p class="block-text">
+        				Thank you for participating in our experiment. In this experiment, we are interested in forms of competition. You will participate in a team game and answer some questions about the game. We expect this will take under ten minutes.</p>
+    				<p class="block-text" id="legal">
+    					Legal information: By answering the
+        				following questions, you are participating in a study being performed by
+        				cognitive scientists in the Stanford Department of Psychology. If you have
+        				questions about this research, please contact <b> M. H. Tessler at <a
+        				href="mailto://mhtessler@stanford.edu">mhtessler@stanford.edu</a></b> or Noah
+        				Goodman, at ngoodman@stanford.edu. You must be at least 18 years old to
+        				participate. Your participation in this research is voluntary. You may
+        				decline to answer any or all of the following questions. You may decline
+        				further participation, at any time, without adverse consequences. Your
+        				anonymity is assured; the researchers who have requested your
+        				participation will not receive any personal information about you.</p>
+				</center>
+				<center class="button_container">
+					<button type="button" class="continue_button" id="intro_button" onclick="introClick()">Continue</button> 
 				</center>
 			</div>
-			<div class="question_container">
-				<center class="strength_question">
-					<span class="question">Based on the above results, how strong do you think player</span>
-					<img class="team_img" src="teams/eb.jpg">
-					<span class="question">is?</span>
-					<div id="simple-slider1" class="dragdealer", style="width: 500px; outline: black solid 2px; margin-top: 10px;">
-						<img src="images/button.jpg" class="handle" id="slider1" style="opacity: 0.4;" onclick='{$(this).css("opacity", "1.0");};'>
-    				</div>   
-    				<div style="width: 500px;"> 
-					<span style="width: 250px; float: left; text-align: left; margin-top: 5px;">Very weak </span>
-					<span style="width: 250px; float: right; text-align: right; margin-top: 5px;">Very strong </span>
-		</div>
+
+
+			<div class="instructions_slide" style="display: none;">
+				<center class="instructions_container">
+					<p id='logo-text'>Instructions</p>
+					<div class="long_instructions_text" style="margin: 10px;">
+						<p class="block-text"> 
+							In this study, you will paired with a partner (either from Mechanical Turk, or from the social media site Facebook) and will compete against another team of Turkers / Facebook users in a game involving American history. Each team will have a <em>questioner</em> and an <em>answerer</em>. The <em>questioner</em> will select questions from a large pool, and the <em>answerer</em> will answer each question.  Each team will tackle 10 questions, and the team with the greater number of correct answers could earn up to 5 dollars, depending on the margin of difference between the two teams. 
+						</p>
+					</div>
+				</center>
+				<center class="button_container">
+					<button type="button" class="continue_button" id="instructions_button" onclick="instructionsClick()">Continue</button> 
 				</center>
 			</div>
-			<center class="button_container">
-				<button type="button" class="continue_button" id="ev1button" onclick="buttonTest()">Continue</button> 
-			</center>
+
+
+			<div class="loading_slide" style="display: none;">
+				<center class="loading_container">
+						<p> 
+							Connecting... 
+						</p>
+				</center>
+
+			</div>
+
+			<div class="loading_slide2" style="display: none;">
+				<center class="loading_container">
+						<p> 
+							Loading... 
+						</p>
+				</center>
+
+			</div>
+
+			<div class="condition_slide" style="display: none;">
+				<center class="condition_container">
+					<p id='logo-text'>Teams</p>
+					<div class="long_instructions_text" style="margin: 10px;">
+						<p class="block-text"> 
+							Your teams have been assigned.
+							In this round, you will be the questioner. 
+							To give you a sense of what kind of questions to ask, we're going to show some sample questions that were answered
+							by a current participant named MT, with an indication of whether the answer was correct.
+							<br>
+							Control: After that you will begin the game. You will not be playing with or against MT. <br>
+							Manipulation_team: After that you will begin the game. You will be playing with MT as your answerer. <br>
+							Manipulation_opponent: After that you will begin the game. You will be playing against a team with MT as the answerer.
+						</p>
+					</div>
+				</center>
+				<center class="button_container">
+					<button type="button" class="continue_button" id="instructions_button" onclick="conditionClick()">Continue</button> 
+				</center>
+			</div>
+
+			<div class="evidence_slide" style="display: none;">
+				<div class="evidence_container">
+					<center class="evidence" id="evidence1">
+						<div class="history_evidence"> 
+							<b> Question </b> <br> <br> <br> <br> <br>
+							<span id="evQ1" style="width: 400px;">History question here.</span>
+						</div>
+						<div class="history_evaluation"> 
+							<b> Evaluation </b> <br>
+							<img src="images/check_red.jpg" class="check_mark">
+						</div>
+					</center>
+				</div>
+
+				<center class="button_container">
+					<button type="button" class="continue_button" id="ev1button" onclick="ev1Click()">Continue</button> 
+				</center>
+			</div>
+
+
+			<div class="eval_slide" style="display: none;">
+				<center class="eval_container">
+					<div class="question_container">
+						<center class="strength_question">
+							<span class="question">Based on these results, how strong do you think player</span>
+							<img class="team_img" src="teams/mt.jpg">
+							<span class="question">is?</span>
+							<div id="simple-slider1" class="dragdealer", style="width: 500px; outline: black solid 2px; margin-top: 10px;">
+								<img src="images/button.jpg" class="handle" id="slider1" style="opacity: 0.4;" onclick='{$(this).css("opacity", "1.0");};'>
+    						</div>   
+    						<div style="width: 500px;"> 
+								<span style="width: 250px; float: left; text-align: left; margin-top: 5px;">Very weak </span>
+								<span style="width: 250px; float: right; text-align: right; margin-top: 5px;">Very strong </span>
+							</div>
+						</center>
+					</div>
+				</center>
+				<center class="button_container">
+					<button type="button" class="continue_button" id="eval_button" onclick="evalClick()">Continue</button> 
+				</center>
+			</div>
+
+			<div class="manip_slide" style="display: none;">
+				<center class="manip_container">
+					Manipulation check (how motivated are you to win, etc.)
+				</center>
+				<center class="button_container">
+					<button type="button" class="continue_button" id="manip_button" onclick="manipClick()">Continue</button> 
+				</center>
+
+			</div>
+
+			<div class="debrief_slide" style="display: none;">
+				<center class="debrief_container">
+					Debrief
+				</center>
+				<center class="button_container">
+					<button type="button" class="continue_button" id="debrief_button" onclick="debriefClick()">Exit</button> 
+				</center>
+
+			</div>
+
 		</div>
 	</body>
 </html>
