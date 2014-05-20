@@ -1,11 +1,17 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- You need to add this line so that IE renders fun CSS style stuff like unchosen:hover -->
 <html>
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<<<<<<< HEAD
   	<title>History Bowl study</title>
+=======
+  	<title>Competition study</title>
+>>>>>>> b99a8c53b1c3438894c7c77169662ede815b85f6
   	<link rel="stylesheet" href="dragdealer.css" />
+  <link rel="stylesheet" href="style.css" />
 	<script src="jquery-1.11.1.min.js"></script>
 	<script src="dragdealer.js"></script>
+<<<<<<< HEAD
 
 	<script>
 		var drag1;
@@ -67,42 +73,54 @@ Instructions <br>
 		You will answer several questions and play a quick game. We expect this will take about ten minutes. <br>
 <br>
 </div>
+=======
+	<script src="helper_functions.js"></script>
+	<script src="parameters.js"></script>
+	<script src="experiment.js"></script>
+</head>
 
-<button type="button" onclick="loadInstructions()">Start</button> 
+<body>
+>>>>>>> b99a8c53b1c3438894c7c77169662ede815b85f6
 
-<h4 class="legal_header" style="margin: 5px; font-size: 20px;">
-<br>
-Legal
-</h4>
-<div class="legal">
-		By answering the following questions, you are participating in a study being performed by
+<!-- progress bar-->
+<div class="progress">
+   <div class="bar-wrapper">
+       <div class="bar"></div>
+   </div>
+   <p><span id="trial-num">{{}}</span>
+    <span>/</span>
+    <span id="total-num">{{}}</span></p>
+</div>
+
+<!-- First slide / legal-->
+<div id="intro" class="slide">
+    <img src="images/stanford.png" alt="Stanford University">
+    <p id='logo-text'>Stanford Computation and Cognition Lab</p>
+    <p class="block-text">
+        Thank you for participating in our experiment. In this experiment, we are interested in forms of competition. You will participate in a team game and answer some questions about the game. We expect this will take under ten minutes.</p>
+	<button type="button" onclick="loadInstructions()">Start</button> 
+    <p class="block-text" id="legal">Legal information: By answering the
+        following questions, you are participating in a study being performed by
         cognitive scientists in the Stanford Department of Psychology. If you have
-        questions about this research, please contact <b> MH Tessler at <a
+        questions about this research, please contact <b> M. H. Tessler at <a
         href="mailto://mhtessler@stanford.edu">mhtessler@stanford.edu</a></b> or Noah
         Goodman, at ngoodman@stanford.edu. You must be at least 18 years old to
         participate. Your participation in this research is voluntary. You may
         decline to answer any or all of the following questions. You may decline
         further participation, at any time, without adverse consequences. Your
         anonymity is assured; the researchers who have requested your
-        participation will not receive any personal information about you.
-</div>
+        participation will not receive any personal information about you.</p>
 </div>
 
 
-<div id="long_instructions" style="visibility: hidden;">
-	<h3 class="instructions_header" style="margin: 5px; font-size: 24px;">
-		Instructions <br> 
-	</h3>
+
+
+<div id="long_instructions" class="slide">
+	<p id='logo-text'>Instructions</p>
 	<div class="long_instructions_text" style="margin: 10px;">
-		On the next page, you will be shown results from several matches of the online game Pong between randomly selected participants in this study. <br>
-		On the basis of these results, you will be asked to indicate how strong one of the participants is at the game, in other words, how good he or she is.
-		<br>
-		After that, you will be asked to answer some questions before playing several rounds of the game against another participant in the study. <br>
-		If you perform well in these matches, you will have the opportunity for a bonus. <br> <br>
-		For this round, you will be asked to make judgments about the skill level of Bob based on previous games against Sally; 
-		both Bob and Sally are participants in the study. <br>
-		Control: You will not be playing against Bob or Sally. <br>
-		Manipulation: When you play the game at the end, you will be playing against Bob. <br>
+		<p class="block-text"> 
+		In this study, you will paired with a partner (either from Mechanical Turk, or from the social media site Facebook) and will compete against another team of Turkers / Facebook users in a game involving American history. Each team will have a <em>questioner</em> and an <em>answerer</em>. The <em>questioner</em> will select questions from a large pool, and the <em>answerer</em> will answer each question.  Each team will tackle 10 questions, and the team with the greater number of correct answers could up to 5 dollars, depending on the margin of difference between the two teams. 
+		</p>
 	</div> 
 	<button type="button" onclick="loadEvidence('first')">Next</button> 
 </div>
@@ -198,6 +216,7 @@ Legal
 	<br>
 	<button type="button" onclick="loadPost()">Next</button>
 </div>
+    <script src="experiment.js"></script>
 
 </body>
 </html>

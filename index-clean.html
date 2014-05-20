@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  		<title>History Bowl study</title>
+  		<link rel="stylesheet" href="dragdealer.css" />
+  		<link rel="stylesheet" href="style.css"/>
+		<script src="jquery-1.11.1.min.js"></script>
+		<script src="dragdealer.js"></script>
+		<script src="experiment.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="evidence_container">
+			</div>
+			<div class="question_container">
+				<center class="strength_question">
+					<span class="question">Based on the above results, how strong do you think player</span>
+					<span class="question">is?</span>
+					<div id="simple-slider1" class="dragdealer", style="width: 500px; outline: black solid 2px; margin-top: 10px;">
+						<img src="images/button.jpg" class="handle" id="slider1" style="opacity: 0.4;" onclick='{$(this).css("opacity", "1.0");};'>
+    				</div>   
+    				<div style="width: 500px;"> 
+					<span style="width: 250px; float: left; text-align: left; margin-top: 5px;">Very weak </span>
+					<span style="width: 250px; float: right; text-align: right; margin-top: 5px;">Very strong </span>
+		</div>
+				</center>
+			</div>
+			<center class="button_container">
+				<button type="button" class="continue_button" id="ev1button" onclick="buttonTest()">Continue</button> 
+			</center>
+		</div>
+	</body>
+</html>
