@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  	<title>Ping Pong study</title>
+  	<link rel="stylesheet" href="dragdealer.css" />
+	<script src="jquery-1.11.1.min.js"></script>
+	<script src="dragdealer.js"></script>
+
+	<script>
+		var drag1;
+		var drag2;
+		var drag1_check = false;
+		var drag2_check = false;
+
+		function loadInstructions() {
+			console.log("Start button pressed")
+			$("#intro").css("display", "none");
+			$("#long_instructions").css("visibility", "visible");
+		}
+
+		function loadEvidence(timing) {
+			if (timing=='first') {
+				console.log("Next button pressed")
+				$("#long_instructions").css("display", "none");
+				$("#evidence1").css("visibility", "visible");
+				drag1 = new Dragdealer('simple-slider1', {'x': 0.5});
+			};
+			if (timing=='second') {
+				if ($("#slider1").css("opacity")==1.0) {
+					drag1.disable();
+					$("#ev1button").css("display", "none");
+					$("#evidence2").css("visibility", "visible");
+					drag2 = new Dragdealer('simple-slider2', {'x': 0.5});
+				} 
+
+			};
+
+
+		}
+
+		function loadGame() {
+			drag2.disable();
+			$("#evidence1, #evidence2").css("display", "none");
+			$("#game").css("visibility", "visible");
+		}
+
+		function loadPost() {
+			if ($("#slider2").css("opacity")==1.0) {
+				drag2.disable();
+				$("#evidence1, #evidence2").css("display", "none");
+				$("#post_questions").css("visibility", "visible");
+			}
+		}
+	</script>
+</head>
+
+<body>
+<div id="intro" style="margin: 20px;">
+<h1>
+	<img src="images/stanford.png" alt="Stanford University"> <br>
+	Ping Pong Madness!!
+</h1>
+<h3 class="instructions_header" style="margin: 5px; font-size: 24px;">
+Instructions <br> 
+</h3>
+<div class="instructions">
+		Thank you for participating in our experiment. In this experiment, we are interested in how people evaluate the skills of others. <br>
+		You will answer several questions and play a quick game. We expect this will take about ten minutes. <br>
+<br>
+</div>
+
+<button type="button" onclick="loadInstructions()">Start</button> 
+
+<h4 class="legal_header" style="margin: 5px; font-size: 20px;">
+<br>
+Legal
+</h4>
+<div class="legal">
+		By answering the following questions, you are participating in a study being performed by
+        cognitive scientists in the Stanford Department of Psychology. If you have
+        questions about this research, please contact <b> MH Tessler at <a
+        href="mailto://mhtessler@stanford.edu">mhtessler@stanford.edu</a></b> or Noah
+        Goodman, at ngoodman@stanford.edu. You must be at least 18 years old to
+        participate. Your participation in this research is voluntary. You may
+        decline to answer any or all of the following questions. You may decline
+        further participation, at any time, without adverse consequences. Your
+        anonymity is assured; the researchers who have requested your
+        participation will not receive any personal information about you.
+</div>
+</div>
+
+
+<div id="long_instructions" style="visibility: hidden;">
+	<h3 class="instructions_header" style="margin: 5px; font-size: 24px;">
+		Instructions <br> 
+	</h3>
+	<div class="long_instructions_text" style="margin: 10px;">
+		On the next page, you will be shown results from several matches of the online game Pong between randomly selected participants in this study. <br>
+		On the basis of these results, you will be asked to indicate how strong one of the participants is at the game, in other words, how good he or she is.
+		<br>
+		After that, you will be asked to answer some questions before playing several rounds of the game against another participant in the study. <br>
+		If you perform well in these matches, you will have the opportunity for a bonus. <br> <br>
+		For this round, you will be asked to make judgments about the skill level of Bob based on previous games against Sally; 
+		both Bob and Sally are participants in the study. <br>
+		Control: You will not be playing against Bob or Sally. <br>
+		Manipulation: When you play the game at the end, you will be playing against Bob. <br>
+	</div> 
+	<button type="button" onclick="loadEvidence('first')">Next</button> 
+</div>
+
+<div id="evidence1" style="visibility: hidden;">
+	<h3>Evidence</h3>
+	<br>
+	<center class="evidence_single">
+		<div style="width: 500px;">
+			<img src="images/laurel-small-g1.jpg">
+			<span style="font-size: 24px;"> Bob : Sally <br> </span>
+		</div>
+	</center>
+	<br>
+	<center>
+		Based on the above results, how strong do you think Bob is?
+		<div id="simple-slider1" class="dragdealer", style="width: 500px; outline: black solid 2px; margin-top: 10px;">
+			<img src="images/button.jpg" class="handle" id="slider1" style="opacity: 0.4;" onclick='{$(this).css("opacity", "1.0");};'>
+    	</div>   
+    	<div style="width: 500px;"> 
+			<span style="width: 250px; float: left; text-align: left; margin-top: 5px;">Very weak </span>
+			<span style="width: 250px; float: right; text-align: right; margin-top: 5px;">Very strong </span>
+		</div>  
+	</center>
+	<button type="button" id="ev1button" style="margin-left: 5px;" onclick="loadEvidence('second')">Next</button> 
+</div>
+
+<div id="evidence2" style="visibility: hidden;">
+	<center class="evidence_single">
+		<img src="images/laurel-small-g1.jpg">
+		<span style="font-size: 24px;"> Bob : Sally <br> </span>
+	</center>
+	<br>
+	<center class="evidence_single">
+		<img src="images/laurel-small-g2.jpg">
+		<span style="font-size: 24px;"> Sally : Bob <br> </span>
+	</center>
+	<br>
+	<center>
+		Based on the above results, how strong do you think Bob is?
+		<div id="simple-slider2" class="dragdealer", style="width: 500px; outline: black solid 2px; margin-top: 10px;">
+			<img src="images/button.jpg" class="handle" id="slider2" style="opacity: 0.4;", onclick='{$(this).css("opacity", "1.0"); drag1_check=true;};'>
+    	</div>   
+    	<div style="width: 500px;"> 
+			<span style="width: 250px; float: left; text-align: left; margin-top: 5px;">Very weak </span>
+			<span style="width: 250px; float: right; text-align: right; margin-top: 5px;">Very strong </span>
+		</div>  
+	</center>
+	<button type="button" style="margin-left: 5px;" onclick="loadPost()">Next</button> 
+</div>
+
+<div id="post_questions" style="visibility: hidden;">
+	<h3>Questions</h3>
+	<div> You've just completed part 1 of the study. <br>
+		Before continuing on to the game section, please take a moment to answer the questions below then click 'Submit' </div>
+	<div>
+		1. General optimism
+		2. How motivated were you
+		3. At end: What was this about? Please leave any feedback/comments
+	</div>
+	<form name="gender">
+        <br>
+        <span id="infoQ">Gender:</span>&nbsp;&nbsp;
+        <input type="radio" name="genderButton" value="M" /><span id="opt">Male</span>&nbsp;&nbsp;
+        <input type="radio" name="genderButton" value="F" /><span id="opt">Female</span>
+    </form>
+    <form name="age">
+        <span id="infoQ">Age range:</span>&nbsp;&nbsp;
+        <select name=ageRange id="ageRange">
+            <option value=17><span id="opt">Under 18</span></option>
+            <option value=25><span id="opt">18-25</span></option>
+            <option value=35><span id="opt">26-35</span></option>
+            <option value=45><span id="opt">36-45</span></option>
+            <option value=55><span id="opt">46-55</span></option>
+            <option value=65><span id="opt">56-65</span></option>
+            <option value=66><span id="opt">Above 66</span></option>
+        </select>
+    </form>
+    <form id="language">
+	  <p>Your native language*:<input type="text" name="lg"></input><br>(the language that
+	  was spoken at home when you were a child)</p>
+	  <br>
+    </form>
+
+    <button type="button" id="formsubmit">Submit</button>
+    <br>
+    <p>*required</p>
+</div>
+
+<div id="game" style="visibility: hidden;">
+	<h3>Game playing</h3>
+	<div> 
+		No game! Surprise! (Some text here explaining)
+	</div>
+	<br>
+	<button type="button" onclick="loadPost()">Next</button>
+</div>
+
+</body>
+</html>
