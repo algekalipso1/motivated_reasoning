@@ -1,7 +1,8 @@
-var drag1;
-var drag2;
-var drag1_check = false;
-var drag2_check = false;
+// ---------------- 3. EXPERIMENT FLOW ------------------
+// This .js file determines the flow of the variable elements in the experiment as dictated 
+// by the various calls from pragmods html.
+
+
 
 function showSlide(id) {
   $(".slide").hide();
@@ -18,9 +19,7 @@ function loadInstructions() {
 
 showSlide("intro");
 
-// ---------------- 3. CONTROL FLOW ------------------
-// This .js file determines the flow of the variable elements in the experiment as dictated 
-// by the various calls from pragmods html.
+
 
 /*
 Here the images used in the experiment are loaded in two arrays.
