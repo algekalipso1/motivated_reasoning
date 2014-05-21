@@ -1,7 +1,8 @@
-var drag1;
-var drag2;
-var drag1_check = false;
-var drag2_check = false;
+// ---------------- 3. EXPERIMENT FLOW ------------------
+// This .js file determines the flow of the variable elements in the experiment as dictated 
+// by the various calls from pragmods html.
+
+
 
 function showSlide(id) {
   $(".slide").hide();
@@ -16,39 +17,17 @@ function loadInstructions() {
 
 
 
-showSlide("intro");
+//showSlide("intro");
 
-// ---------------- 3. CONTROL FLOW ------------------
-// This .js file determines the flow of the variable elements in the experiment as dictated 
-// by the various calls from pragmods html.
+
 
 /*
 Here the images used in the experiment are loaded in two arrays.
 The first is base_image_pl, which stores the "underlying" or base images
 which will then be modified with props stored in the props_image_pl Array.
-
-NOTE: Unfortunately the number of variations for each type of object is hardoded.
-To make the code more usable it will be necessary to 
 */
 
-var base_image_pl = new Array();
-for (i=0; i<3; i++) {
-    base_image_pl[i] = new Image();
-    base_image_pl[i].src = "images2/" + base + "-base" + String(i+1) + ".png";
-}
 
-
-// By creating image object and setting source, the proloadwed images become accesible. In this case they are stored as elements of the Array.
-var props_image_pl = new Array() 
-for (i=0;i<props.length;i++) {
-    props_image_pl[i] = new Image();
-    props_image_pl[i].src = "images2/" + base + "-" + props[i] + ".png";
-}
-
-var number_to_name = new Array();
-number_to_name[0] = 'A';
-number_to_name[1] = 'B';
-number_to_name[2] = 'C';
 
 // The main experiment:
 //		The variable/object 'experiment' has two distinct but interrelated components:
@@ -58,19 +37,133 @@ number_to_name[2] = 'C';
 var experiment = {
 
     // These variables are the ones that will be sent to Turk at the end.
-    // The first batch, however, is set determined by the experiment conditions
-    // and therefore should not be affected by the decisions made by the experimental subject.
-	item: base,
-	target_property: props[target_prop],
-	logical_property: props[distractor_prop],
-	foil_property: props[foil_prop],
+    // First the experimental conditions are registered
+	competition_condition: disposition,
+	evidence_condition: evidence_level,
 
-	target_position: positions[target],    // -2
-	logical_position: positions[distractor],
 
-	target_frequency: target_frequencies[fam_cond],
-	familiarization_cond: fam_cond, // This is the index number of the familiarization conditions. For example, fam_cond == 0 means that the distractors, targets etc. are: [0, 1, 2, 2, 2, 2, 2, 2, 2]
+	// The following variables store the response given by the participant
+	DW_strength: -1,
+	strength_of_average_player: -1,
+	role_of_luck_in_game: -1,
+	motivation_to_win: -1,
+	expectation_of_playing: -1,
 
+
+
+	// Dynamically generated part. This has to be here so that the variables about the experimental conditions and
+	// people's answers are accessible when generating the code.
+	evidence_function: function() {
+		var info_about_partner = '';
+		if (evidence_level == 0) {
+			info_about_partner += '<div class="evidence_container">
+									<center class="evidence" id="evidence1">
+										<div class="history_question" style="width: 300px;"> 
+											<b> Question </b> 
+											<p id="evQ1">When General Douglas MacArthur declared, "I shall return," 
+												he intended to return to what place?</p>
+										</div>
+										<div class="history_answer" style="width: 300px;"> 
+											<b> Answer </b> 
+											<p id="evQ1" >Philippines</p>
+										</div>
+										<div class="history_evaluation" style="width: 200px;"> 
+											<b> Evaluation </b> <br>
+											<img src="images/check_red.jpg" class="check_mark"> <br>
+										</div>
+										<div class="history_question" style="width: 300px;"> 
+											<p id="evQ2">In the period after the American Revolution, what crop became so profitable 
+												in the South that slave owning became essential to Southern wealth?</p>
+										</div>
+										<div class="history_answer" style="width: 300px;"> 
+											<p id="evQ2" >Cotton</p>
+										</div>
+										<div class="history_evaluation" style="width: 200px;"> 
+											<b> Evaluation </b> <br>
+											<img src="images/check_red.jpg" class="check_mark"> <br>
+										</div>
+									</center>
+								</div>
+								<center class="button_container">
+									<button type="button" class="continue_button" id="ev1button" onclick="ev1Click()">Continue</button> 
+								</center>
+								<center class="button_container">
+									<button type="button" class="continue_button" id="ev1button" onclick="ev1Click()">Continue</button> 
+								</center>';
+		} else {
+			info_about_partner += '<div class="evidence_container">
+									<center class="evidence" id="evidence1">
+										<div class="history_question" style="width: 300px;"> 
+											<b> Question </b> 
+											<p id="evQ1">When General Douglas MacArthur declared, "I shall return," 
+												he intended to return to what place?</p>
+										</div>
+										<div class="history_answer" style="width: 300px;"> 
+											<b> Answer </b> 
+											<p id="evQ1" >Philippines</p>
+										</div>
+										<div class="history_evaluation" style="width: 200px;"> 
+											<b> Evaluation </b> <br>
+											<img src="images/check_red.jpg" class="check_mark"> <br>
+										</div>
+										<div class="history_question" style="width: 300px;"> 
+											<p id="evQ2">In the period after the American Revolution, what crop became so profitable 
+												in the South that slave owning became essential to Southern wealth?</p>
+										</div>
+										<div class="history_answer" style="width: 300px;"> 
+											<p id="evQ2" >Cotton</p>
+										</div>
+										<div class="history_evaluation" style="width: 200px;"> 
+											<b> Evaluation </b> <br>
+											<img src="images/check_red.jpg" class="check_mark"> <br>
+										</div>
+									</center>
+								</div>
+								<center class="button_container">
+									<button type="button" class="continue_button" id="ev1button" onclick="ev1Click()">Continue</button> 
+								</center>
+								<center class="button_container">
+									<button type="button" class="continue_button" id="ev1button" onclick="ev1Click()">Continue</button> 
+								</center>';
+		}
+
+
+	    $("#question_evidence_provided").html(info_about_partner);
+
+	},
+
+    check_finished: function() {
+    	var listOfNameRadios = ["namecheck1", "namecheck2", "namecheck3", "namecheck4"];
+    	personMet = getNameRadioValue(listOfNameRadios);
+		if (personMet == 0 ||
+		    document.getElementById('about').value.length < 1) {
+		    $("#checkMessage").html('<font color="red">' + 
+				       'Please make sure you have answered all the questions!' + 
+				       '</font>');
+		} else {
+		    if (personMet == 1) {
+				experiment.name_check_correct = "TRUE";
+		    }
+		    experiment.about = document.getElementById("about").value;
+		    experiment.comment = document.getElementById("comments").value;
+		    experiment.age = document.getElementById("age").value;
+		    experiment.gender = document.getElementById("gender").value;
+
+		    showSlide("finished");
+
+		    // HERE you can performe the needed boolean logic to properly account for the target_filler_sequence possibilities.
+		    // In other words, here you can check whether the choice is correct depending on the nature of the trial.
+
+		    if (experiment.choice == "target") {
+				experiment.choice_correct = "TRUE";
+		    } else {
+		    	experiment.choice_correct = "FALSE";
+		    }
+		    experiment.end();
+		}
+    },
+
+	// At the end this sends the info to Amazon (magically)
     end: function () {
     	showSlide("finished");
     	setTimeout(function () {

@@ -42,7 +42,56 @@ function loadPost() {
 
 
 
+function introClick() {
+	$(".intro_slide").css("display", "none");
+	$(".instructions_slide").css("display", "block");
+}
 
+function instructionsClick() {
+	$(".instructions_slide").css("display", "none");
+	$(".loading_slide").css("display", "block");
+	setTimeout(connectionLoad, 3000);
+	//$(".container").css("outline", "5px solid black");
+	//$(".evidence_slide").css("display", "block");
+}
+
+function connectionLoad() {
+	$(".loading_slide").css("display", "none");
+	$(".loading_slide2").css("display", "block");
+	setTimeout(conditionLoad, 3000);
+}
+
+function conditionLoad() {
+	$(".loading_slide2").css("display", "none");
+	$(".condition_slide").css("display", "block");
+}
+
+function conditionClick() {
+	$(".condition_slide").css("display", "none");
+	$(".evidence_slide").css("display", "block");
+}
+
+function ev1Click() {
+	$(".evidence_slide").css("display", "none");
+	$(".eval_slide").css("display", "block");
+	slider1 = new Dragdealer('simple-slider1', {'x': 0.5});
+	slider2 = new Dragdealer('simple-slider2', {'x': 0.5});
+	slider3 = new Dragdealer('simple-slider3', {'x': 0.5});
+
+}
+
+function evalClick() {
+	$(".eval_slide").css("display", "none");
+	$(".manip_slide").css("display", "block");	
+	manip_slider1 = new Dragdealer('simple-slider4', {'x': 0.5});		
+	manip_slider2 = new Dragdealer('simple-slider5', {'x': 0.5});			
+
+}
+
+function manipClick() {
+	$(".manip_slide").css("display", "none");
+	$(".debrief_slide").css("display", "block");				
+}
 
 
 

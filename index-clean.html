@@ -7,64 +7,18 @@
   		<link rel="stylesheet" href="style.css"/>
 		<script src="jquery-1.11.1.min.js"></script>
 		<script src="dragdealer.js"></script>
-		<script>
+		<script src="helper_functions.js"></script>
+		<script src="parameters.js"></script>
+		<script src="experiment.js"></script>
+		<script src="jquery.min.js"></script>
+		<!--mmturkey manages submitting data to Mechanical Turk. This defines a global object, turk, and attaches five properties to it, hitId, assignmentId, workerId, previewMode, and turkSubmitTo. It also provides a single method, submit(data), which you use to submit data to Turk. If no submission URL has been provided (because, e.g. you're testing your code outside of the Turk environment), submit displays what would have been submitted (without, obviously, any Turk-specific variables like workerId and assignmentId). -->
+		<script src="mmturkey.js"></script>
+		<script src="underscore-min.js"></script>
 
 
-			function introClick() {
-				$(".intro_slide").css("display", "none");
-				$(".instructions_slide").css("display", "block");
-			}
-
-			function instructionsClick() {
-				$(".instructions_slide").css("display", "none");
-				$(".loading_slide").css("display", "block");
-				setTimeout(connectionLoad, 3000);
-				//$(".container").css("outline", "5px solid black");
-				//$(".evidence_slide").css("display", "block");
-			}
-
-			function connectionLoad() {
-				$(".loading_slide").css("display", "none");
-				$(".loading_slide2").css("display", "block");
-				setTimeout(conditionLoad, 3000);
-			}
-
-			function conditionLoad() {
-				$(".loading_slide2").css("display", "none");
-				$(".condition_slide").css("display", "block");
-			}
-
-			function conditionClick() {
-				$(".condition_slide").css("display", "none");
-				$(".evidence_slide").css("display", "block");
-			}
-
-			function ev1Click() {
-				$(".evidence_slide").css("display", "none");
-				$(".eval_slide").css("display", "block");
-				slider1 = new Dragdealer('simple-slider1', {'x': 0.5});
-				slider2 = new Dragdealer('simple-slider2', {'x': 0.5});
-				slider3 = new Dragdealer('simple-slider3', {'x': 0.5});
-
-			}
-
-			function evalClick() {
-				$(".eval_slide").css("display", "none");
-				$(".manip_slide").css("display", "block");	
-				manip_slider1 = new Dragdealer('simple-slider4', {'x': 0.5});		
-				manip_slider2 = new Dragdealer('simple-slider5', {'x': 0.5});			
-	
-			}
-
-			function manipClick() {
-				$(".manip_slide").css("display", "none");
-				$(".debrief_slide").css("display", "block");				
-			}
-
-			//To do:
+			<!-- //To do:
 			//Fill in: history questions, post-questions, manipulation check questions, team questions
-			//Adjust: add click-through on history questions, post questions, manipulation questions; check that sliders were active before continuing
-		</script>
+			//Adjust: add click-through on history questions, post questions, manipulation questions; check that sliders were active before continuing -->
 	</head>
 	<body>
 
@@ -151,10 +105,19 @@
 					</div>
 				</center>
 				<center class="button_container">
-					<button type="button" class="continue_button" id="instructions_button" onclick="conditionClick()">Continue</button> 
+				<button type="button" class="continue_button" id="instructions_button" onclick="conditionClick(); experiment.evidence_function()">Continue</button> 
+				<!-- <button type="button" class="continue_button" id="instructions_button" onclick="experiment.evidence_function()">Continue</button> -->
+					
 				</center>
 			</div>
 
+			<!-- This should be dynamically implemented in javascipt so that the value of the variable
+			evidence_level  determines the number of facts (either 2 or 8) -->
+			
+			<div class="evidence_slide" style="display: none;">
+				<div id="question_evidence_provided">  </div> <!--dynamically built in javascript-->
+			</div> 
+			<!-- 
 			<div class="evidence_slide" style="display: none;">
 				<div class="evidence_container">
 					<center class="evidence" id="evidence1">
@@ -184,12 +147,11 @@
 						</div>
 					</center>
 				</div>
-
 				<center class="button_container">
 					<button type="button" class="continue_button" id="ev1button" onclick="ev1Click()">Continue</button> 
 				</center>
 			</div>
-
+			--> 
 
 			<div class="eval_slide" style="display: none;">
 				<center class="eval_container">
