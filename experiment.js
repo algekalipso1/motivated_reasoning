@@ -2,22 +2,12 @@
 // This .js file determines the flow of the variable elements in the experiment as dictated 
 // by the various calls from pragmods html.
 
-
-
-function showSlide(id) {
-  $(".slide").hide();
-  $("#"+id).show();
-}
-
 function loadInstructions() {
 	console.log("Start button pressed")
 	$("#intro").css("display", "none");
 	$("#long_instructions").css("visibility", "visible");
 }
 
-
-
-//showSlide("intro");
 
 
 
@@ -56,7 +46,7 @@ var experiment = {
 	evidence_function: function() {
 		var info_about_partner = '';
 		//testing
-		evidence_level=1;
+		evidence_level=0;
 		if (evidence_level == 0) {
 			info_about_partner += '<div class="evidence_container">'+
 									'<center class="evidence" id="evidence1">'+
@@ -131,39 +121,17 @@ var experiment = {
 	},
 
     check_finished: function() {
-    	var listOfNameRadios = ["namecheck1", "namecheck2", "namecheck3", "namecheck4"];
-    	personMet = getNameRadioValue(listOfNameRadios);
-		if (personMet == 0 ||
-		    document.getElementById('about').value.length < 1) {
-		    $("#checkMessage").html('<font color="red">' + 
-				       'Please make sure you have answered all the questions!' + 
-				       '</font>');
-		} else {
-		    if (personMet == 1) {
-				experiment.name_check_correct = "TRUE";
-		    }
-		    experiment.about = document.getElementById("about").value;
-		    experiment.comment = document.getElementById("comments").value;
-		    experiment.age = document.getElementById("age").value;
-		    experiment.gender = document.getElementById("gender").value;
-
-		    showSlide("finished");
-
-		    // HERE you can performe the needed boolean logic to properly account for the target_filler_sequence possibilities.
-		    // In other words, here you can check whether the choice is correct depending on the nature of the trial.
-
-		    if (experiment.choice == "target") {
-				experiment.choice_correct = "TRUE";
-		    } else {
-		    	experiment.choice_correct = "FALSE";
-		    }
-		    experiment.end();
-		}
+		experiment.DW_strength = 1;// document.getElementById("simple-slider1").value;
+		experiment.strength_of_average_player = 1;// document.getElementById("simple-slider2").value;
+		experiment.role_of_luck_in_game = 1;// document.getElementById("simple-slider3").value;
+		experiment.motivation_to_win = 1; // document.getElementById("simple-slider4").value;
+		experiment.expectation_of_playing = 1;// document.getElementById("simple-slider5").getValue;
+		//alert("expectations to play " + String(experiment.expectation_of_playing));
+		experiment.end();
     },
 
 	// At the end this sends the info to Amazon (magically)
     end: function () {
-    	showSlide("finished");
     	setTimeout(function () {
 		turk.submit(experiment);
         }, 500); 

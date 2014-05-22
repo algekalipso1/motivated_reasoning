@@ -198,17 +198,19 @@
 				</center>
 
 			</div>
-
 			<div class="debrief_slide" style="display: none;">
 				<center class="debrief_container">
 					Debrief
 				</center>
 				<center class="button_container">
-					<button type="button" class="continue_button" id="debrief_button" onclick="debriefClick()">Exit</button> 
+					<button type="button" class="continue_button" id="debrief_button" onclick="experiment.check_finished(); endSlideClick()">Exit</button> 
 				</center>
-
 			</div>
-
+			<div class="end_slide" style="display: none;">
+				<center class="end_container">
+					Thank you! You're finished.
+				</center>
+			</div>
 		</div>
 	</body>
 </html>
