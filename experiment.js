@@ -95,8 +95,8 @@ var experiment = {
 												 '<td class="task_answer" id="a5">candid</td>'+
 												 '<td class="task_evaluation" id="e5"><img src="images/check_green.png" class="check_mark"></td>'+
 											'</tr>'+
-											'<tr><td class="task_question" id="q6">loenms</td>'+
-												 '<td class="task_answer" id="a6">lemons</td>'+
+											'<tr><td class="task_question" id="q6">lnomsa</td>'+
+												 '<td class="task_answer" id="a6">salmon</td>'+
 												 '<td class="task_evaluation" id="e6"><img src="images/check_green.png" class="check_mark"></td>'+
 											'</tr>'+
 											'<tr><td class="task_question" id="q7">octivr</td>'+
