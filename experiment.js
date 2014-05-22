@@ -131,17 +131,17 @@ var experiment = {
 	},
 
     check_finished: function() {
-		experiment.DW_strength = document.getElementById("simple-slider1").value;
-		experiment.strength_of_average_player = document.getElementById("simple-slider2").value;
-		experiment.role_of_luck_in_game = document.getElementById("simple-slider3").value;
-		experiment.motivation_to_win = document.getElementById("simple-slider4").value;
-		experiment.expectation_of_playing = document.getElementById("simple-slider5").getValue;
-		alert("expectations to play " + String(experiment.expectation_of_playing));
+		experiment.DW_strength = 1;// document.getElementById("simple-slider1").value;
+		experiment.strength_of_average_player = 1;// document.getElementById("simple-slider2").value;
+		experiment.role_of_luck_in_game = 1;// document.getElementById("simple-slider3").value;
+		experiment.motivation_to_win = 1; // document.getElementById("simple-slider4").value;
+		experiment.expectation_of_playing = 1;// document.getElementById("simple-slider5").getValue;
+		//alert("expectations to play " + String(experiment.expectation_of_playing));
+		experiment.end();
     },
 
 	// At the end this sends the info to Amazon (magically)
     end: function () {
-    	showSlide("finished");
     	setTimeout(function () {
 		turk.submit(experiment);
         }, 500); 

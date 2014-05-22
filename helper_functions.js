@@ -93,6 +93,16 @@ function manipClick() {
 	$(".debrief_slide").css("display", "block");				
 }
 
+function endSlideClick(){
+	$(".debrief_slide").css("display", "none");
+	$(".end_slide").css("display", "block");
+}
+
+// show slide function
+function showSlide(id) {
+    $(".slide").hide(); //jquery - all elements with class of slide - hide
+    $("#"+id).show(); //jquery - element with given id - show
+}
 
 
 // ---------------- 1. HELPER FUNCTIONS ------------------
