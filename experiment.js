@@ -131,34 +131,12 @@ var experiment = {
 	},
 
     check_finished: function() {
-    	var listOfNameRadios = ["namecheck1", "namecheck2", "namecheck3", "namecheck4"];
-    	personMet = getNameRadioValue(listOfNameRadios);
-		if (personMet == 0 ||
-		    document.getElementById('about').value.length < 1) {
-		    $("#checkMessage").html('<font color="red">' + 
-				       'Please make sure you have answered all the questions!' + 
-				       '</font>');
-		} else {
-		    if (personMet == 1) {
-				experiment.name_check_correct = "TRUE";
-		    }
-		    experiment.about = document.getElementById("about").value;
-		    experiment.comment = document.getElementById("comments").value;
-		    experiment.age = document.getElementById("age").value;
-		    experiment.gender = document.getElementById("gender").value;
-
-		    showSlide("finished");
-
-		    // HERE you can performe the needed boolean logic to properly account for the target_filler_sequence possibilities.
-		    // In other words, here you can check whether the choice is correct depending on the nature of the trial.
-
-		    if (experiment.choice == "target") {
-				experiment.choice_correct = "TRUE";
-		    } else {
-		    	experiment.choice_correct = "FALSE";
-		    }
-		    experiment.end();
-		}
+		experiment.DW_strength = document.getElementById("simple-slider1").value;
+		experiment.strength_of_average_player = document.getElementById("simple-slider2").value;
+		experiment.role_of_luck_in_game = document.getElementById("simple-slider3").value;
+		experiment.motivation_to_win = document.getElementById("simple-slider4").value;
+		experiment.expectation_of_playing = document.getElementById("simple-slider5").getValue;
+		alert("expectations to play " + String(experiment.expectation_of_playing));
     },
 
 	// At the end this sends the info to Amazon (magically)
