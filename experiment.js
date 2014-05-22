@@ -2,22 +2,12 @@
 // This .js file determines the flow of the variable elements in the experiment as dictated 
 // by the various calls from pragmods html.
 
-
-
-function showSlide(id) {
-  $(".slide").hide();
-  $("#"+id).show();
-}
-
 function loadInstructions() {
 	console.log("Start button pressed")
 	$("#intro").css("display", "none");
 	$("#long_instructions").css("visibility", "visible");
 }
 
-
-
-//showSlide("intro");
 
 
 
@@ -56,7 +46,7 @@ var experiment = {
 	evidence_function: function() {
 		var info_about_partner = '';
 		//testing
-		evidence_level=1;
+		evidence_level=0;
 		if (evidence_level == 0) {
 			info_about_partner += '<div class="evidence_container">'+
 									'<center class="evidence" id="evidence1">'+
