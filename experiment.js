@@ -56,75 +56,75 @@ var experiment = {
 	evidence_function: function() {
 		var info_about_partner = '';
 		if (evidence_level == 0) {
-			info_about_partner += '<div class="evidence_container">
-									<center class="evidence" id="evidence1">
-										<div class="history_question" style="width: 300px;"> 
-											<b> Question </b> 
-											<p id="evQ1">When General Douglas MacArthur declared, "I shall return," 
-												he intended to return to what place?</p>
-										</div>
-										<div class="history_answer" style="width: 300px;"> 
-											<b> Answer </b> 
-											<p id="evQ1" >Philippines</p>
-										</div>
-										<div class="history_evaluation" style="width: 200px;"> 
-											<b> Evaluation </b> <br>
-											<img src="images/check_red.jpg" class="check_mark"> <br>
-										</div>
-										<div class="history_question" style="width: 300px;"> 
-											<p id="evQ2">In the period after the American Revolution, what crop became so profitable 
-												in the South that slave owning became essential to Southern wealth?</p>
-										</div>
-										<div class="history_answer" style="width: 300px;"> 
-											<p id="evQ2" >Cotton</p>
-										</div>
-										<div class="history_evaluation" style="width: 200px;"> 
-											<b> Evaluation </b> <br>
-											<img src="images/check_red.jpg" class="check_mark"> <br>
-										</div>
-									</center>
-								</div>
-								<center class="button_container">
-									<button type="button" class="continue_button" id="ev1button" onclick="ev1Click()">Continue</button> 
-								</center>
-								<center class="button_container">
-									<button type="button" class="continue_button" id="ev1button" onclick="ev1Click()">Continue</button> 
-								</center>';
+			info_about_partner += '<div class="evidence_container">'+
+									'<center class="evidence" id="evidence1">'+
+										'<div class="history_question" style="width: 300px;">'+ 
+											'<b> Question </b>'+ 
+											'<p id="evQ1">When General Douglas MacArthur declared, "I shall return,"'+ 
+												'he intended to return to what place?</p>'+
+										'</div>'+
+										'<div class="history_answer" style="width: 300px;">'+ 
+											'<b> Answer </b>'+ 
+											'<p id="evQ1" >Philippines</p>'+
+										'</div>'+
+										'<div class="history_evaluation" style="width: 200px;">'+ 
+											'<b> Evaluation </b> <br>'+
+											'<img src="images/check_red.jpg" class="check_mark"> <br>'+
+										'</div>'+
+										'<div class="history_question" style="width: 300px;">'+ 
+											'<p id="evQ2">In the period after the American Revolution, what crop became so profitable'+ 
+												'+in the South that slave owning became essential to Southern wealth?</p>'+
+										'</div>'+
+										'<div class="history_answer" style="width: 300px;">'+ 
+											'<p id="evQ2" >Cotton</p>'+
+										'</div>'+
+										'<div class="history_evaluation" style="width: 200px;">'+ 
+											'<b> Evaluation </b> <br>'+
+											'<img src="images/check_red.jpg" class="check_mark"> <br>'+
+										'</div>'+
+									'</center>'+
+								'</div>'+
+								'<center class="button_container">'+
+									'<button type="button" class="continue_button" id="ev1button" onclick="ev1Click()">Continue</button>'+ 
+								'</center>'+
+								'<center class="button_container">'+
+									'<button type="button" class="continue_button" id="ev1button" onclick="ev1Click()">Continue</button>'+ 
+								'</center>';
 		} else {
-			info_about_partner += '<div class="evidence_container">
-									<center class="evidence" id="evidence1">
-										<div class="history_question" style="width: 300px;"> 
-											<b> Question </b> 
-											<p id="evQ1">When General Douglas MacArthur declared, "I shall return," 
-												he intended to return to what place?</p>
-										</div>
-										<div class="history_answer" style="width: 300px;"> 
-											<b> Answer </b> 
-											<p id="evQ1" >Philippines</p>
-										</div>
-										<div class="history_evaluation" style="width: 200px;"> 
-											<b> Evaluation </b> <br>
-											<img src="images/check_red.jpg" class="check_mark"> <br>
-										</div>
-										<div class="history_question" style="width: 300px;"> 
-											<p id="evQ2">In the period after the American Revolution, what crop became so profitable 
-												in the South that slave owning became essential to Southern wealth?</p>
-										</div>
-										<div class="history_answer" style="width: 300px;"> 
-											<p id="evQ2" >Cotton</p>
-										</div>
-										<div class="history_evaluation" style="width: 200px;"> 
-											<b> Evaluation </b> <br>
-											<img src="images/check_red.jpg" class="check_mark"> <br>
-										</div>
-									</center>
-								</div>
-								<center class="button_container">
-									<button type="button" class="continue_button" id="ev1button" onclick="ev1Click()">Continue</button> 
-								</center>
-								<center class="button_container">
-									<button type="button" class="continue_button" id="ev1button" onclick="ev1Click()">Continue</button> 
-								</center>';
+			info_about_partner += '<div class="evidence_container">'+
+									'<center class="evidence" id="evidence1">'+
+										'<div class="history_question" style="width: 300px;">'+ 
+											'<b> Question </b>'+ 
+											'<p id="evQ1">When General Douglas MacArthur declared, "I shall return,"'+ 
+												'he intended to return to what place?</p>'+
+										'</div>'+
+										'<div class="history_answer" style="width: 300px;">'+ 
+											'<b> Answer </b>'+ 
+											'<p id="evQ1" >Philippines</p>'+
+										'</div>'+
+										'<div class="history_evaluation" style="width: 200px;">'+ 
+											'<b> Evaluation </b> <br>'+
+											'<img src="images/check_red.jpg" class="check_mark"> <br>'+
+										'</div>'+
+										'<div class="history_question" style="width: 300px;">'+ 
+											'<p id="evQ2">In the period after the American Revolution, what crop became so profitable'+ 
+												'+in the South that slave owning became essential to Southern wealth?</p>'+
+										'</div>'+
+										'<div class="history_answer" style="width: 300px;">'+ 
+											'<p id="evQ2" >Cotton</p>'+
+										'</div>'+
+										'<div class="history_evaluation" style="width: 200px;">'+ 
+											'<b> Evaluation </b> <br>'+
+											'<img src="images/check_red.jpg" class="check_mark"> <br>'+
+										'</div>'+
+									'</center>'+
+								'</div>'+
+								'<center class="button_container">'+
+									'<button type="button" class="continue_button" id="ev1button" onclick="ev1Click()">Continue</button>'+ 
+								'</center>'+
+								'<center class="button_container">'+
+									'<button type="button" class="continue_button" id="ev1button" onclick="ev1Click()">Continue</button>'+ 
+								'</center>';
 		}
 
 
