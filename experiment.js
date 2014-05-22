@@ -55,76 +55,74 @@ var experiment = {
 	// people's answers are accessible when generating the code.
 	evidence_function: function() {
 		var info_about_partner = '';
+		//testing
+		evidence_level=1;
 		if (evidence_level == 0) {
 			info_about_partner += '<div class="evidence_container">'+
 									'<center class="evidence" id="evidence1">'+
-										'<div class="history_question" style="width: 300px;">'+ 
-											'<b> Question </b>'+ 
-											'<p id="evQ1">When General Douglas MacArthur declared, "I shall return,"'+ 
-												'he intended to return to what place?</p>'+
-										'</div>'+
-										'<div class="history_answer" style="width: 300px;">'+ 
-											'<b> Answer </b>'+ 
-											'<p id="evQ1" >Philippines</p>'+
-										'</div>'+
-										'<div class="history_evaluation" style="width: 200px;">'+ 
-											'<b> Evaluation </b> <br>'+
-											'<img src="images/check_red.jpg" class="check_mark"> <br>'+
-										'</div>'+
-										'<div class="history_question" style="width: 300px;">'+ 
-											'<p id="evQ2">In the period after the American Revolution, what crop became so profitable'+ 
-												'+in the South that slave owning became essential to Southern wealth?</p>'+
-										'</div>'+
-										'<div class="history_answer" style="width: 300px;">'+ 
-											'<p id="evQ2" >Cotton</p>'+
-										'</div>'+
-										'<div class="history_evaluation" style="width: 200px;">'+ 
-											'<b> Evaluation </b> <br>'+
-											'<img src="images/check_red.jpg" class="check_mark"> <br>'+
-										'</div>'+
+										'<table class="evidence" style="width:  800px;">'+
+											'<tr><th class="task_question">Scrambled Word</th>'+
+											'<th class="task_answer">Answer</th>'+
+											'<th class="task_evaluation">Evaluation</th></tr>'+
+											'<tr><td class="task_question" id="q1">naanba</td>'+
+												 '<td class="task_answer" id="a1">banana</td>'+
+												 '<td class="task_evaluation" id="e1"><img src="images/check_green.png" class="check_mark"></td>'+
+											'</tr>'+
+											'<tr><td class="task_question" id="q2">simhc</td>'+
+												 '<td class="task_answer" id="a2">schism</td>'+
+												 '<td class="task_evaluation" id="e2"><img src="images/check_green.png" class="check_mark"></td>'+
+											'</tr>'+
+										'</table>'+
 									'</center>'+
-								'</div>'+
-								'<center class="button_container">'+
-									'<button type="button" class="continue_button" id="ev1button" onclick="ev1Click()">Continue</button>'+ 
-								'</center>'+
-								'<center class="button_container">'+
-									'<button type="button" class="continue_button" id="ev1button" onclick="ev1Click()">Continue</button>'+ 
-								'</center>';
+									'</div>'+
+									'<center class="button_container">'+
+										'<button type="button" class="continue_button" id="ev1button" onclick="ev1Click()">Continue</button>'+ 
+									'</center>';
 		} else {
 			info_about_partner += '<div class="evidence_container">'+
 									'<center class="evidence" id="evidence1">'+
-										'<div class="history_question" style="width: 300px;">'+ 
-											'<b> Question </b>'+ 
-											'<p id="evQ1">When General Douglas MacArthur declared, "I shall return,"'+ 
-												'he intended to return to what place?</p>'+
-										'</div>'+
-										'<div class="history_answer" style="width: 300px;">'+ 
-											'<b> Answer </b>'+ 
-											'<p id="evQ1" >Philippines</p>'+
-										'</div>'+
-										'<div class="history_evaluation" style="width: 200px;">'+ 
-											'<b> Evaluation </b> <br>'+
-											'<img src="images/check_red.jpg" class="check_mark"> <br>'+
-										'</div>'+
-										'<div class="history_question" style="width: 300px;">'+ 
-											'<p id="evQ2">In the period after the American Revolution, what crop became so profitable'+ 
-												'+in the South that slave owning became essential to Southern wealth?</p>'+
-										'</div>'+
-										'<div class="history_answer" style="width: 300px;">'+ 
-											'<p id="evQ2" >Cotton</p>'+
-										'</div>'+
-										'<div class="history_evaluation" style="width: 200px;">'+ 
-											'<b> Evaluation </b> <br>'+
-											'<img src="images/check_red.jpg" class="check_mark"> <br>'+
-										'</div>'+
+										'<table class="evidence" style="width:  800px;">'+
+											'<tr><th class="task_question">Scrambled Word</th>'+
+											'<th class="task_answer">Answer</th>'+
+											'<th class="task_evaluation">Evaluation</th></tr>'+
+											'<tr><td class="task_question" id="q1">naanba</td>'+
+												 '<td class="task_answer" id="a1">banana</td>'+
+												 '<td class="task_evaluation" id="e1"><img src="images/check_green.png" class="check_mark"></td>'+
+											'</tr>'+
+											'<tr><td class="task_question" id="q2">sismhc</td>'+
+												 '<td class="task_answer" id="a2">schism</td>'+
+												 '<td class="task_evaluation" id="e2"><img src="images/check_green.png" class="check_mark"></td>'+
+											'</tr>'+
+											'<tr><td class="task_question" id="q3">yptrho</td>'+
+												 '<td class="task_answer" id="a3">trophy</td>'+
+												 '<td class="task_evaluation" id="e3"><img src="images/check_green.png" class="check_mark"></td>'+
+											'</tr>'+
+											'<tr><td class="task_question" id="q4">ralopt</td>'+
+												 '<td class="task_answer" id="a4">portal</td>'+
+												 '<td class="task_evaluation" id="e4"><img src="images/check_green.png" class="check_mark"></td>'+
+											'</tr>'+
+											'<tr><td class="task_question" id="q5">nddaci</td>'+
+												 '<td class="task_answer" id="a5">candid</td>'+
+												 '<td class="task_evaluation" id="e5"><img src="images/check_green.png" class="check_mark"></td>'+
+											'</tr>'+
+											'<tr><td class="task_question" id="q6">loenms</td>'+
+												 '<td class="task_answer" id="a6">lemons</td>'+
+												 '<td class="task_evaluation" id="e6"><img src="images/check_green.png" class="check_mark"></td>'+
+											'</tr>'+
+											'<tr><td class="task_question" id="q7">octivr</td>'+
+												 '<td class="task_answer" id="a7">victor</td>'+
+												 '<td class="task_evaluation" id="e7"><img src="images/check_green.png" class="check_mark"></td>'+
+											'</tr>'+
+											'<tr><td class="task_question" id="q8">vereid</td>'+
+												 '<td class="task_answer" id="a8">derive</td>'+
+												 '<td class="task_evaluation" id="e8"><img src="images/check_green.png" class="check_mark"></td>'+
+											'</tr>'+
+										'</table>'+
 									'</center>'+
-								'</div>'+
-								'<center class="button_container">'+
-									'<button type="button" class="continue_button" id="ev1button" onclick="ev1Click()">Continue</button>'+ 
-								'</center>'+
-								'<center class="button_container">'+
-									'<button type="button" class="continue_button" id="ev1button" onclick="ev1Click()">Continue</button>'+ 
-								'</center>';
+									'</div>'+
+									'<center class="button_container">'+
+										'<button type="button" class="continue_button" id="ev1button" onclick="ev1Click()">Continue</button>'+ 
+									'</center>';
 		}
 
 
