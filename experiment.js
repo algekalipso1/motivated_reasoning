@@ -121,7 +121,8 @@ var experiment = {
 	},
 
     check_finished: function() {
-		experiment.DW_strength = 1;// document.getElementById("simple-slider1").value;
+		//experiment.DW_strength = 1;// document.getElementById("simple-slider1").value;
+		experiment.DW_strength = slider1.getValue()[0];
 		experiment.strength_of_average_player = 1;// document.getElementById("simple-slider2").value;
 		experiment.role_of_luck_in_game = 1;// document.getElementById("simple-slider3").value;
 		experiment.motivation_to_win = 1; // document.getElementById("simple-slider4").value;

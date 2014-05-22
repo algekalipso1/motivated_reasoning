@@ -1,3 +1,5 @@
+var slider1, slider2, slider3;
+
 function hide_and_seek(hide, show) {
     $("."+hide).css("display", "none");
     $("."+show).css("display", "block");
@@ -21,9 +23,10 @@ function conditionLoad() {
 
 function ev1Click() {
     hide_and_seek("evidence_slide", "eval_slide");
-	slider1 = new Dragdealer('simple-slider1', {'x': 0.5});
-	slider2 = new Dragdealer('simple-slider2', {'x': 0.5});
-	slider3 = new Dragdealer('simple-slider3', {'x': 0.5});
+	DW_strength_raw = new Dragdealer('simple-slider1', {'x': 0.5});
+	average_strength_raw = new Dragdealer('simple-slider2', {'x': 0.5});
+	luck_raw = new Dragdealer('simple-slider3', {'x': 0.5});
+    optimisim_raw = new Dragdealer('simple-slider4', {'x': 0.5});
 
 }
 
