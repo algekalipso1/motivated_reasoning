@@ -45,7 +45,8 @@
         				participation will not receive any personal information about you.</p>
 				</center>
 				<center class="button_container">
-					<button type="button" class="continue_button" id="intro_button" onclick="introClick()">Continue</button> 
+					<button type="button" class="continue_button" id="intro_button" onclick="hide_and_seek('intro_slide', 'instructions_slide')
+">Continue</button> 
 				</center>
 			</div>
 
@@ -105,7 +106,7 @@
 					</div>
 				</center>
 				<center class="button_container">
-				<button type="button" class="continue_button" id="instructions_button" onclick="conditionClick(); experiment.evidence_function()">Continue</button> 
+				<button type="button" class="continue_button" id="instructions_button" onclick="hide_and_seek('condition_slide', 'evidence_slide'); experiment.evidence_function()">Continue</button> 
 				<!-- <button type="button" class="continue_button" id="instructions_button" onclick="experiment.evidence_function()">Continue</button> -->
 					
 				</center>
@@ -117,41 +118,7 @@
 			<div class="evidence_slide" style="display: none;">
 				<div id="question_evidence_provided">  </div> <!--dynamically built in javascript-->
 			</div> 
-			<!-- 
-			<div class="evidence_slide" style="display: none;">
-				<div class="evidence_container">
-					<center class="evidence" id="evidence1">
-						<div class="history_question" style="width: 300px;"> 
-							<b> Question </b> 
-							<p id="evQ1">When General Douglas MacArthur declared, "I shall return," 
-								he intended to return to what place?</p>
-						</div>
-						<div class="history_answer" style="width: 300px;"> 
-							<b> Answer </b> 
-							<p id="evQ1" >Philippines</p>
-						</div>
-						<div class="history_evaluation" style="width: 200px;"> 
-							<b> Evaluation </b> <br>
-							<img src="images/check_red.jpg" class="check_mark"> <br>
-						</div>
-						<div class="history_question" style="width: 300px;"> 
-							<p id="evQ2">In the period after the American Revolution, what crop became so profitable 
-								in the South that slave owning became essential to Southern wealth?</p>
-						</div>
-						<div class="history_answer" style="width: 300px;"> 
-							<p id="evQ2" >Cotton</p>
-						</div>
-						<div class="history_evaluation" style="width: 200px;"> 
-							<b> Evaluation </b> <br>
-							<img src="images/check_red.jpg" class="check_mark"> <br>
-						</div>
-					</center>
-				</div>
-				<center class="button_container">
-					<button type="button" class="continue_button" id="ev1button" onclick="ev1Click()">Continue</button> 
-				</center>
-			</div>
-			--> 
+			
 
 			<div class="eval_slide" style="display: none;">
 				<center class="eval_container">
