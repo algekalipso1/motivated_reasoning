@@ -40,7 +40,10 @@ var experiment = {
 	motivation_to_win: -1,
 	expectation_of_playing: -1,
 
-
+	DW_check: -1,
+	familiarization_check: -1,
+	DW_accuracy_check: -1,
+	overall_check: -1,
 
 	// Dynamically generated part. This has to be here so that the variables about the experimental conditions and
 	// people's answers are accessible when generating the code.
