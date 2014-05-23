@@ -1,4 +1,4 @@
-var slider1, slider2, slider3;
+var DW_strength_raw, luck_raw, average_strength_raw, optimism_raw;
 
 function hide_and_seek(hide, show) {
     $("."+hide).css("display", "none");
@@ -24,16 +24,30 @@ function conditionLoad() {
 function ev1Click() {
     hide_and_seek("evidence_slide", "eval_slide");
 	DW_strength_raw = new Dragdealer('simple-slider1', {'x': 0.5});
-	average_strength_raw = new Dragdealer('simple-slider2', {'x': 0.5});
-	luck_raw = new Dragdealer('simple-slider3', {'x': 0.5});
-    optimisim_raw = new Dragdealer('simple-slider4', {'x': 0.5});
 
 }
 
 function evalClick() {
-    hide_and_seek("eval_slide", "manip_slide");	
-	manip_slider1 = new Dragdealer('simple-slider4', {'x': 0.5});		
-	manip_slider2 = new Dragdealer('simple-slider5', {'x': 0.5});			
+    console.log("evalClick called")
+    if ($("#question2").css("display") == "none") {
+        DW_strength_raw.disable();
+        $("#question2").css("display", "block");
+        luck_raw = new Dragdealer('simple-slider2', {'x': 0.5});
+    } else if ($("#question3").css("display") == "none") {
+        luck_raw.disable();
+        $("#question3").css("display", "block");
+        average_strength_raw = new Dragdealer('simple-slider3', {'x': 0.5});
+    } else if ($("#question4").css("display") == "none") {
+        average_strength_raw.disable();
+        $("#question4").css("display", "block");
+        optimism_raw = new Dragdealer('simple-slider4', {'x': 0.5});
+    } else {
+        optimism_raw.disable();
+        hide_and_seek("eval_slide", "manip_slide");
+    }
+    //	
+	//manip_slider1 = new Dragdealer('simple-slider5', {'x': 0.5});		
+	//manip_slider2 = new Dragdealer('simple-slider6', {'x': 0.5});			
 
 }
 
