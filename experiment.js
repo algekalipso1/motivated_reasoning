@@ -32,6 +32,8 @@ var experiment = {
 
 
 	// The following variables store the response given by the participant
+	initials_provided_by_participant: '',
+
 	DW_strength: -1,
 	strength_of_average_player: -1,
 	role_of_luck_in_game: -1,
@@ -144,6 +146,28 @@ var experiment = {
 	    $("#question_evidence_provided").html(info_about_partner);
 
 	},
+
+	initials_check: function() {
+		if (document.getElementById("initials_id").value == "") {
+			initialErrorMessage();
+		} else {
+			experiment.initials_provided_by_participant = document.getElementById("initials_id").value;
+			initialsClick();
+		}
+	},
+
+
+	last_slide_check: function() {
+		if (document.getElementById("DW_identity_id").value == "") {
+			DWErrorMessage();
+		} else {
+			manipClick();
+		}
+	},
+
+	
+
+
 
     check_finished: function() {
 		//experiment.DW_strength = DW_strength_raw.getValue()[0];

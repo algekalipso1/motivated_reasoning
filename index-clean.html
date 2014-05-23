@@ -88,11 +88,14 @@
 					<div class="long_instructions_text" style="margin: 10px;">
 						<p class="block-text"> 
 							Please enter your initials below. This is how you will be represented to other players on your team and your opponents' team</p>
-						<span id="initials">Initials: <input type="text" name="initials"><br></span>
+						<span id="initials">Initials: <input type="text" name="initials" id = "initials_id"><br></span>
 					</div>
 				</center>
 				<center class="button_container">
-					<button type="button" class="continue_button" id="instructions_button" onclick="initialsClick()">Continue</button> 
+					<button type="button" class="continue_button" id="instructions_button" onclick="experiment.initials_check()">Continue</button> 
+					<div class="error_message_visibility" style="display: none;">
+						<font color="red"> Please make sure that you answered the question.</font>
+					</div>
 				</center>
 			</div>
 
@@ -212,7 +215,7 @@
 					<div class="manipulation_question_container" id="manip_question1">
 						<center>
 							<span class="question">
-								<span id="DW_check">Who is DW? <input type="text" name="DW_identity"><br></span>
+								<span id="DW_check">Who is DW? <input type="text" name="DW_identity" id = "DW_identity_id"><br></span>
 							</span>
 							
 						</center>
@@ -247,9 +250,12 @@
 					</div>
 				</center>
 				<center class="button_container">
-					<button type="button" class="continue_button" id="manip_button" onclick="manipClick()">Continue</button> 
-				</center>
+					<button type="button" class="continue_button" id="manip_button" onclick="experiment.last_slide_check()">Continue</button> 
 
+				<div class="who_is_DW_unanswered" style="display: none;">
+					<font color="red"> Please make sure that you answered at least the first question.</font>
+				</div>
+				</center>
 			</div>
 			<div class="debrief_slide" style="display: none;">
 				<center class="debrief_container">

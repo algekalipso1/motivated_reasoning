@@ -105,6 +105,14 @@ function showSlide(id) {
     $("#"+id).show(); //jquery - element with given id - show
 }
 
+function initialErrorMessage() {
+    $(".error_message_visibility").css("display", "block");
+}
+
+function DWErrorMessage() {
+    $(".who_is_DW_unanswered").css("display", "block");
+}
+
 
 // ---------------- 1. HELPER FUNCTIONS ------------------
 // This .js file has al the alphanumeric functions
