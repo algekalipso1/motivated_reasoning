@@ -25,9 +25,9 @@ function conditionLoad() {
 function evClick(condition) {
     if (condition == 2) {
         if ($("#short_row1").css("display") == "none") {
-            $("#short_row1").css("display", "inherit");
+            $("#short_row1").css("display", "table-row");
         } else if ($("#short_row2").css("display") == "none") {
-            $("#short_row2").css("display", "inherit");
+            $("#short_row2").css("display", "table-row");
         } else {
             hide_and_seek("evidence_slide", "eval_slide");
             DW_strength_raw = new Dragdealer('simple-slider1', {'x': 0.5});
@@ -35,21 +35,21 @@ function evClick(condition) {
     };
     if (condition == 8) {
         if ($("#long_row1").css("display") == "none") {
-            $("#long_row1").css("display", "inherit");
+            $("#long_row1").css("display", "table-row");
         } else if ($("#long_row2").css("display") == "none") {
-            $("#long_row2").css("display", "inherit");
+            $("#long_row2").css("display", "table-row");
         } else if ($("#long_row3").css("display") == "none") {
-            $("#long_row3").css("display", "inherit");
+            $("#long_row3").css("display", "table-row");
         } else if ($("#long_row4").css("display") == "none") {
-            $("#long_row4").css("display", "inherit");
+            $("#long_row4").css("display", "table-row");
         } else if ($("#long_row5").css("display") == "none") {
-            $("#long_row5").css("display", "inherit");
+            $("#long_row5").css("display", "table-row");
         } else if ($("#long_row6").css("display") == "none") {
-            $("#long_row6").css("display", "inherit");
+            $("#long_row6").css("display", "table-row");
         } else if ($("#long_row7").css("display") == "none") {
-            $("#long_row7").css("display", "inherit");
+            $("#long_row7").css("display", "table-row");
         } else if ($("#long_row8").css("display") == "none") {
-            $("#long_row8").css("display", "inherit");
+            $("#long_row8").css("display", "table-row");
         } else {
             hide_and_seek("evidence_slide", "eval_slide");
             DW_strength_raw = new Dragdealer('simple-slider1', {'x': 0.5});

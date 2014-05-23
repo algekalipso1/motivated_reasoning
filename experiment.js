@@ -50,7 +50,7 @@ var experiment = {
 	evidence_function: function() {
 		var info_about_partner = '';
 		//testing
-		evidence_level=1;
+		evidence_level=0;
 		if (evidence_level == 1) {
 			info_about_partner += '<div class="evidence_container">'+
 									'<center class="evidence" id="evidence1">'+
