@@ -1,16 +1,17 @@
 var slider1, slider2, slider3, slider4, slider5, slider6;
 var DW_strength_raw, average_strength_raw, luck_raw,  optimism_raw, motivation_raw, expectation_raw;
 
+
+
 function hide_and_seek(hide, show) {
     $("."+hide).css("display", "none");
     $("."+show).css("display", "block");
 }
 
-
 function initialsClick() {
     hide_and_seek("initials_slide", "loading_slide");
     //for testing
-	setTimeout(connectionLoad, 1000);
+    setTimeout(connectionLoad, 1000);
     //for real runs
     //setTimeout(connectionLoad, 12000);
 
@@ -19,7 +20,7 @@ function initialsClick() {
 
 function connectionLoad() {
     hide_and_seek("loading_slide", "loading_slide2");
-	//for testing
+    //for testing
     setTimeout(conditionLoad, 1000);
     //for real runs
     //setTimeout(conditionLoad, 3000);
@@ -27,7 +28,7 @@ function connectionLoad() {
 
 function conditionLoad() {
     hide_and_seek("loading_slide2", "condition_slide");
-    //experiment.conditions_function();
+    experiment.instructions_function();
 }
 
 function evClick(condition) {
@@ -83,19 +84,19 @@ function evalClick() {
         optimism_raw.disable();
         hide_and_seek("eval_slide", "manip_slide");
     }
-    //	
-	//manip_slider1 = new Dragdealer('simple-slider5', {'x': 0.5});		
-	//manip_slider2 = new Dragdealer('simple-slider6', {'x': 0.5});			
+    //  
+    //manip_slider1 = new Dragdealer('simple-slider5', {'x': 0.5});     
+    //manip_slider2 = new Dragdealer('simple-slider6', {'x': 0.5});         
 
 }
 
 function manipClick() {
-    hide_and_seek("manip_slide", "debrief_slide");				
+    hide_and_seek("manip_slide", "debrief_slide");              
 }
 
 function endSlideClick(){
-	$(".debrief_slide").css("display", "none");
-	$(".end_slide").css("display", "block");
+    $(".debrief_slide").css("display", "none");
+    $(".end_slide").css("display", "block");
 }
 
 // show slide function
