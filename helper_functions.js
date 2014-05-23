@@ -1,5 +1,5 @@
-var slider1, slider2, slider3, slider4, slider5;
-var DW_strength_raw, luck_raw, average_strength_raw, optimism_raw;
+var slider1, slider2, slider3, slider4, slider5, slider6;
+var DW_strength_raw, average_strength_raw, luck_raw,  optimism_raw, motivation_raw, expectation_raw;
 
 function hide_and_seek(hide, show) {
     $("."+hide).css("display", "none");
@@ -148,13 +148,6 @@ function shuffle (a)
 	 x = o[--i], o[i] = o[j], o[j] = x);
     return o;
 }
-
-// show slide function
-function showSlide(id) {
-    $(".slide").hide(); //jquery - all elements with class of slide - hide
-    $("#"+id).show(); //jquery - element with given id - show
-}
-
 
 // create HTML for property matrix and base image
 // base = the kind of stimuli

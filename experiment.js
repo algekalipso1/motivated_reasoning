@@ -36,9 +36,14 @@ var experiment = {
 	DW_strength: -1,
 	strength_of_average_player: -1,
 	role_of_luck_in_game: -1,
+	likelihood_of_winning: -1,
+	motivation_to_win: -1,
 	expectation_of_playing: -1,
 
-
+	DW_check: -1,
+	familiarization_check: -1,
+	DW_accuracy_check: -1,
+	overall_check: -1,
 
 	// Dynamically generated part. This has to be here so that the variables about the experimental conditions and
 	// people's answers are accessible when generating the code.
@@ -120,6 +125,12 @@ var experiment = {
 	},
 
     check_finished: function() {
+		//experiment.DW_strength = DW_strength_raw.getValue()[0];
+		//experiment.role_of_luck_in_game = luck_raw.getValue()[0];
+		//experiment.strength_of_average_player = average_strength_raw.getValue()[0];
+		//experiment.likelihood_of_winning = optimism_raw.getValue()[0];
+		//experiment.motivation_to_win = 1; // document.getElementById("simple-slider4").value;
+		//experiment.expectation_of_playing = 1;// document.getElementById("simple-slider5").getValue;
     	//Post-questions
 		experiment.DW_strength = DW_strength_raw.getValue()[0];
 		experiment.strength_of_average_player = average_strength_raw.getValue()[0];
@@ -137,7 +148,7 @@ var experiment = {
 	// At the end this sends the info to Amazon (magically)
     end: function () {
     	setTimeout(function () {
-		turk.submit(experiment);
+			turk.submit(experiment);
         }, 500); 
     }
 }
