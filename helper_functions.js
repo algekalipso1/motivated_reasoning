@@ -1,3 +1,4 @@
+var slider1, slider2, slider3, slider4, slider5;
 var DW_strength_raw, luck_raw, average_strength_raw, optimism_raw;
 
 function hide_and_seek(hide, show) {
