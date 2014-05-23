@@ -28,7 +28,6 @@ function ev1Click() {
 }
 
 function evalClick() {
-    console.log("evalClick called")
     if ($("#question2").css("display") == "none") {
         DW_strength_raw.disable();
         $("#question2").css("display", "block");
