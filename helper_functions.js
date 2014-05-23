@@ -7,8 +7,8 @@ function hide_and_seek(hide, show) {
 }
 
 
-function instructionsClick() {
-    hide_and_seek("instructions_slide", "loading_slide");
+function initialsClick() {
+    hide_and_seek("initials_slide", "loading_slide");
 	setTimeout(connectionLoad, 3000);
 
 }

@@ -78,7 +78,21 @@
 					</div>
 				</center>
 				<center class="button_container">
-					<button type="button" class="continue_button" id="instructions_button" onclick="instructionsClick()">Continue</button> 
+					<button type="button" class="continue_button" id="instructions_button" onclick="hide_and_seek('instructions_slide', 'initials_slide');">Continue</button> 
+				</center>
+			</div>
+
+			<div class="initials_slide" style="display: none;">
+				<center class="initials_container">
+					<p id='logo-text'>Initials</p>
+					<div class="long_instructions_text" style="margin: 10px;">
+						<p class="block-text"> 
+							Please enter your initials below. This is how you will be represented to other players on your team and your opponents' team</p>
+						<span id="initials">Initials: <input type="text" name="initials"><br></span>
+					</div>
+				</center>
+				<center class="button_container">
+					<button type="button" class="continue_button" id="instructions_button" onclick="initialsClick()">Continue</button> 
 				</center>
 			</div>
 
