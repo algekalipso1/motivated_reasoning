@@ -139,39 +139,49 @@
 				<center class="eval_container">
 					<div class="question_container" id="question1">
 						<center class="strength_question">
-							<span class="question">Based on these results, how good do you think DW is good at this game?</span>
-							<img class="team_img" src="teams/mt.jpg">
-							<span class="question">is?</span>
+							<span class="question">Based on these results, how do you think DW's word knowledge is compared to other Turkers?</span>
 							<div id="simple-slider1" class="dragdealer", style="width: 500px; outline: black solid 2px; margin-top: 10px;">
 								<img src="images/button.jpg" class="handle" id="slider1" style="opacity: 0.4;" onclick='{$(this).css("opacity", "1.0");};'>
     						</div>   
     						<div style="width: 500px;"> 
-								<span style="width: 250px; float: left; text-align: left; margin-top: 5px;">Very weak </span>
-								<span style="width: 250px; float: right; text-align: right; margin-top: 5px;">Very strong </span>
+								<span style="width: 250px; float: left; text-align: left; margin-top: 5px;">The absolute worst</span>
+								<span style="width: 250px; float: right; text-align: right; margin-top: 5px;">The absolute best</span>
 							</div>
 						</center>
 					</div>
-					<div class="question_container" id="question2">
-						<center class="strength_question">
-							<span class="question">Based on these results, how strong do you think the average player in this game is?</span>
+					<div class="question_container" id="question2" style="display: none;">
+						<center class="luck_question">
+							<span class="question">Based on these results, how much do you think luck contributes to performance as unscrambler in this game?</span>
 							<div id="simple-slider2" class="dragdealer", style="width: 500px; outline: black solid 2px; margin-top: 10px;">
-								<img src="images/button.jpg" class="handle" id="slider1" style="opacity: 0.4;" onclick='{$(this).css("opacity", "1.0");};'>
+								<img src="images/button.jpg" class="handle" id="slider2" style="opacity: 0.4;" onclick='{$(this).css("opacity", "1.0");};'>
     						</div>   
     						<div style="width: 500px;"> 
-								<span style="width: 250px; float: left; text-align: left; margin-top: 5px;">Very weak </span>
-								<span style="width: 250px; float: right; text-align: right; margin-top: 5px;">Very strong </span>
+								<span style="width: 250px; float: left; text-align: left; margin-top: 5px;">Luck plays no role</span>
+								<span style="width: 250px; float: right; text-align: right; margin-top: 5px;">This game is entirely luck</span>
 							</div>
 						</center>
 					</div>
-					<div class="question_container" id="question3">
-						<center class="strength_question">
-							<span class="question">Based on these results, how much of a role do you think luck plays in this game?</span> 
+					<div class="question_container" id="question3" style="display: none;">
+						<center class="average_question">
+							<span class="question">Based on these results, how many words do you think the average Turker unscrambles correctly in this game?</span> 
 							<div id="simple-slider3" class="dragdealer", style="width: 500px; outline: black solid 2px; margin-top: 10px;">
-								<img src="images/button.jpg" class="handle" id="slider1" style="opacity: 0.4;" onclick='{$(this).css("opacity", "1.0");};'>
+								<img src="images/button.jpg" class="handle" id="slider3" style="opacity: 0.4;" onclick='{$(this).css("opacity", "1.0");};'>
     						</div>   
     						<div style="width: 500px;"> 
-								<span style="width: 250px; float: left; text-align: left; margin-top: 5px;">Very little </span>
-								<span style="width: 250px; float: right; text-align: right; margin-top: 5px;">A lot </span>
+								<span style="width: 250px; float: left; text-align: left; margin-top: 5px;">None</span>
+								<span style="width: 250px; float: right; text-align: right; margin-top: 5px;">All</span>
+							</div>
+						</center>
+					</div>
+					<div class="question_container" id="question4" style="display: none;">
+						<center class="optimism_question">
+							<span class="question">Based on these results, how likely do you think it is that you will win?</span> 
+							<div id="simple-slider4" class="dragdealer", style="width: 500px; outline: black solid 2px; margin-top: 10px;">
+								<img src="images/button.jpg" class="handle" id="slider4" style="opacity: 0.4;" onclick='{$(this).css("opacity", "1.0");};'>
+    						</div>   
+    						<div style="width: 500px;"> 
+								<span style="width: 250px; float: left; text-align: left; margin-top: 5px;">Not at all</span>
+								<span style="width: 250px; float: right; text-align: right; margin-top: 5px;">Extremely</span>
 							</div>
 						</center>
 					</div>
@@ -181,12 +191,15 @@
 				</center>
 			</div>
 
+
+
+
 			<div class="manip_slide" style="display: none;">
 				<center class="manip_container">
 					<div class="question_container" id="manip_question1">
 						<center class="strength_question">
 							<span class="question">How motivated are you to win this game?</span>
-							<div id="simple-slider4" class="dragdealer", style="width: 500px; outline: black solid 2px; margin-top: 10px;">
+							<div id="simple-slider5" class="dragdealer", style="width: 500px; outline: black solid 2px; margin-top: 10px;">
 								<img src="images/button.jpg" class="handle" id="slider1" style="opacity: 0.4;" onclick='{$(this).css("opacity", "1.0");};'>
     						</div>   
     						<div style="width: 500px;"> 
@@ -198,7 +211,7 @@
 					<div class="question_container" id="manip_question2">
 						<center class="strength_question">
 							<span class="question">How likely is it that you are about to play a real person?</span>
-							<div id="simple-slider5" class="dragdealer", style="width: 500px; outline: black solid 2px; margin-top: 10px;">
+							<div id="simple-slider6" class="dragdealer", style="width: 500px; outline: black solid 2px; margin-top: 10px;">
 								<img src="images/button.jpg" class="handle" id="slider1" style="opacity: 0.4;" onclick='{$(this).css("opacity", "1.0");};'>
     						</div>   
     						<div style="width: 500px;"> 
