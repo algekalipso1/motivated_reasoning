@@ -36,6 +36,7 @@ var experiment = {
 	DW_strength: -1,
 	strength_of_average_player: -1,
 	role_of_luck_in_game: -1,
+	likelihood_of_winning: -1,
 	motivation_to_win: -1,
 	expectation_of_playing: -1,
 
@@ -121,18 +122,19 @@ var experiment = {
 	},
 
     check_finished: function() {
-		experiment.DW_strength = slider1.getValue()[0];
-		experiment.strength_of_average_player = slider2.getValue()[0];
-		experiment.role_of_luck_in_game = slider3.getValue()[0];
-		experiment.motivation_to_win = slider4.getValue()[0];
-		experiment.expectation_of_playing = slider5.getValue()[0];
+		experiment.DW_strength = DW_strength_raw.getValue()[0];
+		experiment.role_of_luck_in_game = luck_raw.getValue()[0];
+		experiment.strength_of_average_player = average_strength_raw.getValue()[0];
+		experiment.likelihood_of_winning = optimism_raw.getValue()[0];
+		experiment.motivation_to_win = 1; // document.getElementById("simple-slider4").value;
+		experiment.expectation_of_playing = 1;// document.getElementById("simple-slider5").getValue;
 		experiment.end();
     },
 
 	// At the end this sends the info to Amazon (magically)
     end: function () {
     	setTimeout(function () {
-		turk.submit(experiment);
+			turk.submit(experiment);
         }, 500); 
     }
 }
