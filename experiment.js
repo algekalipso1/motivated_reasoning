@@ -2,15 +2,12 @@
 // This .js file determines the flow of the variable elements in the experiment as dictated 
 // by the various calls from pragmods html.
 
-function loadInstructions() {
-	console.log("Start button pressed")
-	$("#intro").css("display", "none");
-	$("#long_instructions").css("visibility", "visible");
-}
-
 
 var num_conditions = 3;
 var condition = random(0, num_conditions-1);
+
+
+
 
 /*
 Here the images used in the experiment are loaded in two arrays.
@@ -58,11 +55,11 @@ var experiment = {
 		};
 		if (condition==1) {
 			//team
-			condition_text += 'Then, you will play two rounds. The first round, your <b>word unscrambler</b> will be <b>DW</b>.';
+			condition_text += '<p>Then, you will play two rounds. The first round, your <b>word unscrambler</b> will be <b>DW</b>.</p>';
 		};
 		if (condition==2) {
 			//opponent
-			condition_text += 'Then, you will play two rounds. The first round, you will be playing against a team with <b>DW</b> as the <b>word unscrambler</b>.';
+			condition_text += '<p>Then, you will play two rounds. The first round, you will be playing against a team with <b>DW</b> as the <b>word unscrambler</b>.</p>';
 		};
 
 		$("#condition_text").html(condition_text);
@@ -184,5 +181,11 @@ function loadPost() {
 		$("#post_questions").css("visibility", "visible");
 	}
 }
+
+
+
+
+
+
 
 
