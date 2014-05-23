@@ -121,13 +121,11 @@ var experiment = {
 	},
 
     check_finished: function() {
-		//experiment.DW_strength = 1;// document.getElementById("simple-slider1").value;
 		experiment.DW_strength = slider1.getValue()[0];
-		experiment.strength_of_average_player = 1;// document.getElementById("simple-slider2").value;
-		experiment.role_of_luck_in_game = 1;// document.getElementById("simple-slider3").value;
-		experiment.motivation_to_win = 1; // document.getElementById("simple-slider4").value;
-		experiment.expectation_of_playing = 1;// document.getElementById("simple-slider5").getValue;
-		//alert("expectations to play " + String(experiment.expectation_of_playing));
+		experiment.strength_of_average_player = slider2.getValue()[0];
+		experiment.role_of_luck_in_game = slider3.getValue()[0];
+		experiment.motivation_to_win = slider4.getValue()[0];
+		experiment.expectation_of_playing = slider5.getValue()[0];
 		experiment.end();
     },
 

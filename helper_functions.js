@@ -1,4 +1,4 @@
-var slider1, slider2, slider3;
+var slider1, slider2, slider3, slider4, slider5;
 
 function hide_and_seek(hide, show) {
     $("."+hide).css("display", "none");

@@ -3,11 +3,11 @@ In order to comply with Jamil's IRB use this form.
 
 DESCRIPTION:  You are invited to participate in a research study on social decision-making.  You will be asked to complete a set of questions that will assess how you tend to make decisions in certain situations.  The research aims to expand our understanding of particular psychological processes that are involved in common social situations and associated behavior.  By completing the following survey, you are helping us advance this understanding.  You will be asked to read instructions and respond to the following questions.  You may be shown images or asked to imagine situations involve other people and then answer a series of questions. The Department of Defense (DoD) is providing support with this project.
 
-TIME INVOLVEMENT:  Your participation will take approximately 30 minutes.
+TIME INVOLVEMENT:  Your participation will take approximately 5 minutes.
 
 RISKS AND BENEFITS:  The risks associated with this study are minimal.  There is a chance that you may find some photos or questions unpleasant, but these are common stimuli psychologists use and we do not foresee any lasting discomfort.  The benefits which may reasonably be expected to result from this study are a greater understanding of social decision making.  We cannot and do not guarantee or promise that you will receive any benefits from this study.  Your decision whether or not to participate in this study will not affect your employment, medical care or grades in school.
 
-PAYMENTS:  You will receive approximately $1/half-hour as payment for your participation. 
+PAYMENTS:  You will receive between $0.25 and $1.25 as payment for your participation. 
 
 SUBJECT'S RIGHTS:  If you have read this form and have decided to participate in this project, please understand your participation is voluntary and you have the right to withdraw your consent or discontinue participation at any time without penalty or loss of benefits to which you are otherwise entitled.  The alternative is not to participate.  You have the right to refuse to answer particular questions.  Your individual privacy will be maintained in all published and written data resulting from the study. Federal or DoD representatives may review research records for the purpose of protecting human subjects.
 
@@ -22,3 +22,31 @@ Please print a copy of this page for your records.
 
 If you agree to participate in this research, please press the button below to continue.
 
+
+
+
+
+// M. Frank comments:
+
+FIRST present DW as partner or opponent. Do that before the Team slide. To familiarize with the game we are going to show you his results.
+
+Possibly: Ask them to click on the options to show the results of DW. 
+
+Make sure to add a graphic to the Teams slide to make it explicit that they are going to play WITH or AGAINST DW.
+
+Make sure to ask "Who did you play wirh/against"
+
+- "Based on these results, how good do you think DW is good at this game?   is?" 
+	-> 
+	"Based on these results, how good is [  ] at this game?"
+		scale from "Not good" to "Very good"
+
+- "How good is the average player?" - also not good to very good
+
+- debriefing question:
+	- not "How likely is it that you are about to play a real person?"
+	- drill down debrief
+	- successive pull down menus
+
+
+- Possibility of financial incentive ... if you beat DW you can get up to a dollar bonus
