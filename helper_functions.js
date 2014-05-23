@@ -1,6 +1,7 @@
 var slider1, slider2, slider3, slider4, slider5, slider6;
 var DW_strength_raw, average_strength_raw, luck_raw,  optimism_raw, motivation_raw, expectation_raw;
-
+var numTrials = 10; //Number of slides in the experiment
+var numComplete=1; //Number of slides completed (updates throughout)
 
 
 function hide_and_seek(hide, show) {
@@ -10,6 +11,8 @@ function hide_and_seek(hide, show) {
 
 function initialsClick() {
     hide_and_seek("initials_slide", "loading_slide");
+    numComplete = numComplete+1; 
+    $('#trial-num').html(numComplete);
     //for testing
     setTimeout(connectionLoad, 1000);
     //for real runs
@@ -20,6 +23,8 @@ function initialsClick() {
 
 function connectionLoad() {
     hide_and_seek("loading_slide", "loading_slide2");
+    numComplete = numComplete+1; 
+    $('#trial-num').html(numComplete);
     //for testing
     setTimeout(conditionLoad, 1000);
     //for real runs
@@ -28,10 +33,14 @@ function connectionLoad() {
 
 function conditionLoad() {
     hide_and_seek("loading_slide2", "condition_slide");
+    numComplete = numComplete+1; 
+    $('#trial-num').html(numComplete);
     experiment.instructions_function();
 }
 
 function evClick(condition) {
+
+
     if (condition == 2) {
         if ($("#short_row1").css("display") == "none") {
             $("#short_row1").css("display", "table-row");
@@ -39,6 +48,8 @@ function evClick(condition) {
             $("#short_row2").css("display", "table-row");
         } else {
             hide_and_seek("evidence_slide", "eval_slide");
+            numComplete = numComplete+1; 
+            $('#trial-num').html(numComplete);
             DW_strength_raw = new Dragdealer('simple-slider1', {'x': 0.5});
         }
     };
@@ -61,6 +72,8 @@ function evClick(condition) {
             $("#long_row8").css("display", "table-row");
         } else {
             hide_and_seek("evidence_slide", "eval_slide");
+            numComplete = numComplete+1; 
+            $('#trial-num').html(numComplete);
             DW_strength_raw = new Dragdealer('simple-slider1', {'x': 0.5});
         }
     };
@@ -68,6 +81,8 @@ function evClick(condition) {
 }
 
 function evalClick() {
+
+
     if ($("#question2").css("display") == "none") {
         DW_strength_raw.disable();
         $("#question2").css("display", "block");
@@ -82,15 +97,16 @@ function evalClick() {
         optimism_raw = new Dragdealer('simple-slider4', {'x': 0.5});
     } else {
         optimism_raw.disable();
+        numComplete = numComplete+1; 
+        $('#trial-num').html(numComplete);
         hide_and_seek("eval_slide", "manip_slide");
-    }
-    //  
-    //manip_slider1 = new Dragdealer('simple-slider5', {'x': 0.5});     
-    //manip_slider2 = new Dragdealer('simple-slider6', {'x': 0.5});         
+    }     
 
 }
 
 function manipClick() {
+    numComplete = numComplete+1; 
+    $('#trial-num').html(numComplete);
     hide_and_seek("manip_slide", "debrief_slide");              
 }
 

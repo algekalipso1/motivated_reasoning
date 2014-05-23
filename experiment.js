@@ -3,17 +3,11 @@
 // by the various calls from pragmods html.
 
 
-var num_conditions = 3;
-var condition = random(0, num_conditions-1);
+//var num_conditions = 3;
+//var condition = random(0, num_conditions-1);
 
 
 
-
-/*
-Here the images used in the experiment are loaded in two arrays.
-The first is base_image_pl, which stores the "underlying" or base images
-which will then be modified with props stored in the props_image_pl Array.
-*/
 
 
 
@@ -49,15 +43,15 @@ var experiment = {
 		//testing
 		//condition = 1
 
-		if (condition == 0) {
+		if (experiment.competition_condition == 0) {
 			//control
 			condition_text += '';
 		};
-		if (condition==1) {
+		if (experiment.competition_condition==1) {
 			//team
 			condition_text += '<p>Then, you will play two rounds. The first round, your <b>word unscrambler</b> will be <b>DW</b>.</p>';
 		};
-		if (condition==2) {
+		if (experiment.competition_condition==2) {
 			//opponent
 			condition_text += '<p>Then, you will play two rounds. The first round, you will be playing against a team with <b>DW</b> as the <b>word unscrambler</b>.</p>';
 		};
@@ -68,6 +62,9 @@ var experiment = {
 	// Dynamically generated part. This has to be here so that the variables about the experimental conditions and
 	// people's answers are accessible when generating the code.
 	evidence_function: function() {
+		numComplete = numComplete+1; 
+		$('#trial-num').html(numComplete);
+		
 		var info_about_partner = '';
 		//testing
 		evidence_level=0;

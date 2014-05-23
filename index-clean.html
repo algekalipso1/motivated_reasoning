@@ -23,6 +23,14 @@
 	<body>
 
 		<div class="container">
+			<div class="progress">
+   				<div class="bar-wrapper">
+       				<div class="bar"></div>
+   				</div>
+   			<p><span id="trial-num">1</span>
+    		<span>/</span>
+    		<span id="total-num">10</span></p>
+		</div>
 
 
 			<div class="intro_slide">
@@ -60,7 +68,7 @@
     					</p>
 				</center>
 				<center class="button_container">
-					<button type="button" class="continue_button" id="intro_button" onclick="hide_and_seek('intro_slide', 'instructions_slide')
+					<button type="button" class="continue_button" id="intro_button" onclick="hide_and_seek('intro_slide', 'instructions_slide'); numComplete = numComplete+1; $('#trial-num').html(numComplete); $('#total-num').html(numTrials);
 ">Continue</button> 
 				</center>
 			</div>
@@ -78,7 +86,7 @@
 					</div>
 				</center>
 				<center class="button_container">
-					<button type="button" class="continue_button" id="instructions_button" onclick="hide_and_seek('instructions_slide', 'initials_slide');">Continue</button> 
+					<button type="button" class="continue_button" id="instructions_button" onclick="hide_and_seek('instructions_slide', 'initials_slide'); numComplete = numComplete+1; $('#trial-num').html(numComplete);">Continue</button> 
 				</center>
 			</div>
 
@@ -251,6 +259,8 @@
 				</center>
 
 			</div>
+
+			
 			<div class="debrief_slide" style="display: none;">
 				<center class="debrief_container">
 					Debrief
