@@ -9,7 +9,8 @@ function loadInstructions() {
 }
 
 
-
+var num_conditions = 3;
+var condition = random(0, num_conditions-1);
 
 /*
 Here the images used in the experiment are loaded in two arrays.
@@ -25,6 +26,7 @@ which will then be modified with props stored in the props_image_pl Array.
 //		2) It hall all the functions that change the visual aspect of the experiment such as showing images, etc.
 
 var experiment = {
+
 
     // These variables are the ones that will be sent to Turk at the end.
     // First the experimental conditions are registered
@@ -48,19 +50,19 @@ var experiment = {
 	instructions_function: function() {
 		var condition_text = '';
 		//testing
-		condition = 1
+		//condition = 1
 
-		if (condition == 1) {
-			condition_text += 'Then, you will play two rounds. The first round, your answerer will be <b>DW</b>.'+
- 							'After that you will begin the game. You will not be playing with or against DW. <br>';
+		if (condition == 0) {
+			//control
+			condition_text += '';
+		};
+		if (condition==1) {
+			//team
+			condition_text += 'Then, you will play two rounds. The first round, your <b>word unscrambler</b> will be <b>DW</b>.';
 		};
 		if (condition==2) {
-			condition_text += 'Then, you will play two rounds. The first round, your answerer will be <b>DW</b>.'+ 
-							'After that you will begin the game. You will be playing with DW as your answerer. <br>';
-		};
-		if (condition==3) {
-			condition_text += 'Then, you will play two rounds. The first round, your answerer will be <b>DW</b>.'+
-							'After that you will begin the game. You will be playing against a team with DW as the answerer.';
+			//opponent
+			condition_text += 'Then, you will play two rounds. The first round, you will be playing against a team with <b>DW</b> as the <b>word unscrambler</b>.';
 		};
 
 		$("#condition_text").html(condition_text);
