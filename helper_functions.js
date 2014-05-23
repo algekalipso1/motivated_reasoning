@@ -9,17 +9,25 @@ function hide_and_seek(hide, show) {
 
 function initialsClick() {
     hide_and_seek("initials_slide", "loading_slide");
-	setTimeout(connectionLoad, 3000);
+    //for testing
+	setTimeout(connectionLoad, 1000);
+    //for real runs
+    //setTimeout(connectionLoad, 12000);
+
 
 }
 
 function connectionLoad() {
     hide_and_seek("loading_slide", "loading_slide2");
-	setTimeout(conditionLoad, 3000);
+	//for testing
+    setTimeout(conditionLoad, 1000);
+    //for real runs
+    //setTimeout(conditionLoad, 3000);
 }
 
 function conditionLoad() {
     hide_and_seek("loading_slide2", "condition_slide");
+    //experiment.conditions_function();
 }
 
 function evClick(condition) {

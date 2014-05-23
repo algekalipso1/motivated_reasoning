@@ -101,6 +101,8 @@
 				<center class="loading_container">
 						<p> 
 							Connecting... 
+							<br>
+							(this may take up to one minute)
 						</p>
 				</center>
 
@@ -126,16 +128,13 @@
 						<p class="block-text">
 							First, you will be familiarized with the game by seeing sample words submitted by a recent participant and unscrambled by that participant's partner -- <b>DW</b> -- with an indication of whether the partner unscrambled the word in time.</p>
 							<br>
-						<p class="block-text">
-							Then, you will play two rounds. The first round, your answerer will be <b>DW</b>.</p>
-<!-- 							Control: After that you will begin the game. You will not be playing with or against DW. <br>
-							Manipulation_team: After that you will begin the game. You will be playing with DW as your answerer. <br>
-							Manipulation_opponent: After that you will begin the game. You will be playing against a team with DW as the answerer. -->
+						<p class="block-text" id="condition_text">
+							[NEEDS CONDITIONS HERE. ADDED experiment.instructions_function BUT UNCLEAR HOW TO DO THIS DYNAMICALLY]
 						</p>
 					</div>
 				</center>
 				<center class="button_container">
-				<button type="button" class="continue_button" id="instructions_button" onclick="hide_and_seek('condition_slide', 'evidence_slide'); experiment.evidence_function()">Continue</button> 
+				<button type="button" class="continue_button" id="instructions_button" onclick="hide_and_seek('condition_slide', 'evidence_slide'); experiment.evidence_function();">Continue</button> 
 				<!-- <button type="button" class="continue_button" id="instructions_button" onclick="experiment.evidence_function()">Continue</button> -->
 					
 				</center>

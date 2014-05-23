@@ -45,12 +45,34 @@ var experiment = {
 	DW_accuracy_check: -1,
 	overall_check: -1,
 
+	instructions_function: function() {
+		var condition_text = '';
+		//testing
+		condition = 1
+
+		if (condition == 1) {
+			condition_text += 'Then, you will play two rounds. The first round, your answerer will be <b>DW</b>.'+
+ 							'After that you will begin the game. You will not be playing with or against DW. <br>';
+		};
+		if (condition==2) {
+			condition_text += 'Then, you will play two rounds. The first round, your answerer will be <b>DW</b>.'+ 
+							'After that you will begin the game. You will be playing with DW as your answerer. <br>';
+		};
+		if (condition==3) {
+			condition_text += 'Then, you will play two rounds. The first round, your answerer will be <b>DW</b>.'+
+							'After that you will begin the game. You will be playing against a team with DW as the answerer.';
+		};
+
+		$("#condition_text").html(condition_text);
+	},
+
 	// Dynamically generated part. This has to be here so that the variables about the experimental conditions and
 	// people's answers are accessible when generating the code.
 	evidence_function: function() {
 		var info_about_partner = '';
 		//testing
 		evidence_level=0;
+
 		if (evidence_level == 1) {
 			info_about_partner += '<div class="evidence_container">'+
 									'<center class="evidence" id="evidence1">'+
