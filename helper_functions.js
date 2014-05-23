@@ -22,9 +22,39 @@ function conditionLoad() {
     hide_and_seek("loading_slide2", "condition_slide");
 }
 
-function ev1Click() {
-    hide_and_seek("evidence_slide", "eval_slide");
-	DW_strength_raw = new Dragdealer('simple-slider1', {'x': 0.5});
+function evClick(condition) {
+    if (condition == 2) {
+        if ($("#short_row1").css("display") == "none") {
+            $("#short_row1").css("display", "inherit");
+        } else if ($("#short_row2").css("display") == "none") {
+            $("#short_row2").css("display", "inherit");
+        } else {
+            hide_and_seek("evidence_slide", "eval_slide");
+            DW_strength_raw = new Dragdealer('simple-slider1', {'x': 0.5});
+        }
+    };
+    if (condition == 8) {
+        if ($("#long_row1").css("display") == "none") {
+            $("#long_row1").css("display", "inherit");
+        } else if ($("#long_row2").css("display") == "none") {
+            $("#long_row2").css("display", "inherit");
+        } else if ($("#long_row3").css("display") == "none") {
+            $("#long_row3").css("display", "inherit");
+        } else if ($("#long_row4").css("display") == "none") {
+            $("#long_row4").css("display", "inherit");
+        } else if ($("#long_row5").css("display") == "none") {
+            $("#long_row5").css("display", "inherit");
+        } else if ($("#long_row6").css("display") == "none") {
+            $("#long_row6").css("display", "inherit");
+        } else if ($("#long_row7").css("display") == "none") {
+            $("#long_row7").css("display", "inherit");
+        } else if ($("#long_row8").css("display") == "none") {
+            $("#long_row8").css("display", "inherit");
+        } else {
+            hide_and_seek("evidence_slide", "eval_slide");
+            DW_strength_raw = new Dragdealer('simple-slider1', {'x': 0.5});
+        }
+    };
 
 }
 

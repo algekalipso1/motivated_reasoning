@@ -64,6 +64,10 @@ body {
   float: center;
 }
 
+.row {
+  width: 800px;
+}
+
 .task_question {
   width: 300px;
   margin-top: 20px;
