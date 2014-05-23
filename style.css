@@ -83,10 +83,15 @@ body {
   text-align: center;
 }
 
-.question_container {
+.slider_question_container {
 	width: 800px;
-	height:100px;
-  margin: 50px;
+  height:100px;
+  margin: 20px;
+}
+
+.manipulation_question_container {
+  width: 800px;
+  margin: 20px;
 }
 
 .question {

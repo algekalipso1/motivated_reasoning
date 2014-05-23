@@ -36,8 +36,11 @@ var experiment = {
 	DW_strength: -1,
 	strength_of_average_player: -1,
 	role_of_luck_in_game: -1,
+<<<<<<< HEAD
 	likelihood_of_winning: -1,
 	motivation_to_win: -1,
+=======
+>>>>>>> ccde7ba5beac3b4adfa3951efcb799e59337c706
 	expectation_of_playing: -1,
 
 
@@ -122,12 +125,23 @@ var experiment = {
 	},
 
     check_finished: function() {
+		//experiment.DW_strength = DW_strength_raw.getValue()[0];
+		//experiment.role_of_luck_in_game = luck_raw.getValue()[0];
+		//experiment.strength_of_average_player = average_strength_raw.getValue()[0];
+		//experiment.likelihood_of_winning = optimism_raw.getValue()[0];
+		//experiment.motivation_to_win = 1; // document.getElementById("simple-slider4").value;
+		//experiment.expectation_of_playing = 1;// document.getElementById("simple-slider5").getValue;
+    	//Post-questions
 		experiment.DW_strength = DW_strength_raw.getValue()[0];
-		experiment.role_of_luck_in_game = luck_raw.getValue()[0];
 		experiment.strength_of_average_player = average_strength_raw.getValue()[0];
-		experiment.likelihood_of_winning = optimism_raw.getValue()[0];
-		experiment.motivation_to_win = 1; // document.getElementById("simple-slider4").value;
-		experiment.expectation_of_playing = 1;// document.getElementById("simple-slider5").getValue;
+		experiment.role_of_luck_in_game = luck_raw.getValue()[0];
+		experiment.expectation_of_playing = optimism_raw.getValue()[0];
+		//Manipulation questions
+		experiment.DW_check = $("input[name='DW_identity']").val();
+		experiment.familiarization_check = $("#familiarization_check").val();
+		experiment.DW_accuracy_check = $("#accuracy_check").val();
+		experiment.overall_check = $("#overall_check").val();
+
 		experiment.end();
     },
 

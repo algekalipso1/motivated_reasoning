@@ -78,7 +78,21 @@
 					</div>
 				</center>
 				<center class="button_container">
-					<button type="button" class="continue_button" id="instructions_button" onclick="instructionsClick()">Continue</button> 
+					<button type="button" class="continue_button" id="instructions_button" onclick="hide_and_seek('instructions_slide', 'initials_slide');">Continue</button> 
+				</center>
+			</div>
+
+			<div class="initials_slide" style="display: none;">
+				<center class="initials_container">
+					<p id='logo-text'>Initials</p>
+					<div class="long_instructions_text" style="margin: 10px;">
+						<p class="block-text"> 
+							Please enter your initials below. This is how you will be represented to other players on your team and your opponents' team</p>
+						<span id="initials">Initials: <input type="text" name="initials"><br></span>
+					</div>
+				</center>
+				<center class="button_container">
+					<button type="button" class="continue_button" id="instructions_button" onclick="initialsClick()">Continue</button> 
 				</center>
 			</div>
 
@@ -137,7 +151,7 @@
 
 			<div class="eval_slide" style="display: none;">
 				<center class="eval_container">
-					<div class="question_container" id="question1">
+					<div class="slider_question_container" id="question1">
 						<center class="strength_question">
 							<span class="question">Based on these results, how do you think DW's word knowledge is compared to other Turkers?</span>
 							<div id="simple-slider1" class="dragdealer", style="width: 500px; outline: black solid 2px; margin-top: 10px;">
@@ -149,7 +163,7 @@
 							</div>
 						</center>
 					</div>
-					<div class="question_container" id="question2" style="display: none;">
+					<div class="slider_question_container" id="question2" style="display: none;">
 						<center class="luck_question">
 							<span class="question">Based on these results, how much do you think luck contributes to performance as unscrambler in this game?</span>
 							<div id="simple-slider2" class="dragdealer", style="width: 500px; outline: black solid 2px; margin-top: 10px;">
@@ -161,7 +175,7 @@
 							</div>
 						</center>
 					</div>
-					<div class="question_container" id="question3" style="display: none;">
+					<div class="slider_question_container" id="question3" style="display: none;">
 						<center class="average_question">
 							<span class="question">Based on these results, how many words do you think the average Turker unscrambles correctly in this game?</span> 
 							<div id="simple-slider3" class="dragdealer", style="width: 500px; outline: black solid 2px; margin-top: 10px;">
@@ -173,7 +187,7 @@
 							</div>
 						</center>
 					</div>
-					<div class="question_container" id="question4" style="display: none;">
+					<div class="slider_question_container" id="question4" style="display: none;">
 						<center class="optimism_question">
 							<span class="question">Based on these results, how likely do you think it is that you will win?</span> 
 							<div id="simple-slider4" class="dragdealer", style="width: 500px; outline: black solid 2px; margin-top: 10px;">
@@ -196,28 +210,40 @@
 
 			<div class="manip_slide" style="display: none;">
 				<center class="manip_container">
-					<div class="question_container" id="manip_question1">
-						<center class="strength_question">
-							<span class="question">How motivated are you to win this game?</span>
-							<div id="simple-slider5" class="dragdealer", style="width: 500px; outline: black solid 2px; margin-top: 10px;">
-								<img src="images/button.jpg" class="handle" id="slider1" style="opacity: 0.4;" onclick='{$(this).css("opacity", "1.0");};'>
-    						</div>   
-    						<div style="width: 500px;"> 
-								<span style="width: 250px; float: left; text-align: left; margin-top: 5px;">Not very motivated </span>
-								<span style="width: 250px; float: right; text-align: right; margin-top: 5px;">Very Motivated </span>
-							</div>
+					<div class="manipulation_question_container" id="manip_question1">
+						<center>
+							<span class="question">
+								<span id="DW_check">Who is DW? <input type="text" name="DW_identity"><br></span>
+							</span>
+							
 						</center>
 					</div>
-					<div class="question_container" id="manip_question2">
-						<center class="strength_question">
-							<span class="question">How likely is it that you are about to play a real person?</span>
-							<div id="simple-slider6" class="dragdealer", style="width: 500px; outline: black solid 2px; margin-top: 10px;">
-								<img src="images/button.jpg" class="handle" id="slider1" style="opacity: 0.4;" onclick='{$(this).css("opacity", "1.0");};'>
-    						</div>   
-    						<div style="width: 500px;"> 
-								<span style="width: 250px; float: left; text-align: left; margin-top: 5px;">Not very likely</span>
-								<span style="width: 250px; float: right; text-align: right; margin-top: 5px;">Very likely </span>
-							</div>
+					<div class="manipulation_question_container" id="manip_question2">
+						<center>
+							<span class="question">How many unscrambled words were in the familiarization?</span>
+							<select id="familiarization_check">
+								<option value="0">0</option>
+								<option value="2">2</option>
+								<option value="8">8</option>
+								<option value="10">10</option>
+							</select>
+						</center>
+					</div>
+					<div class="manipulation_question_container" id="manip_question3">
+						<center>
+							<span class="question">How many scrambled words did DW correctly unscramble?</span>
+							<select id="accuracy_check">
+								<option value="0">0</option>
+								<option value="2">2</option>
+								<option value="8">8</option>
+								<option value="10">10</option>
+							</select>
+						</center>
+					</div>
+					<div class="manipulation_question_container" id="manip_question4">
+						<center>
+							<span class="question">Does anything about this experiment seem strange or has anything been unclear so far?</span>
+							<textarea rows="6" cols="50" id="overall_check"> </textarea>
 						</center>
 					</div>
 				</center>
