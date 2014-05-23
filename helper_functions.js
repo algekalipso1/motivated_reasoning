@@ -81,7 +81,9 @@ function evClick(condition) {
 }
 
 function evalClick() {
-
+    if ($("#slider1").css("opacity") != 1.0) {
+        //Make them click something
+    };
 
     if ($("#question2").css("display") == "none") {
         DW_strength_raw.disable();

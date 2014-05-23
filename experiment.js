@@ -64,10 +64,10 @@ var experiment = {
 	evidence_function: function() {
 		numComplete = numComplete+1; 
 		$('#trial-num').html(numComplete);
-		
+
 		var info_about_partner = '';
 		//testing
-		evidence_level=0;
+		//evidence_level=0;
 
 		if (evidence_level == 1) {
 			info_about_partner += '<div class="evidence_container">'+
