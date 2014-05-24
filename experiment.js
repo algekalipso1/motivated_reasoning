@@ -181,7 +181,7 @@ var experiment = {
 		experiment.role_of_luck_in_game = luck_raw.getValue()[0];
 		experiment.expectation_of_playing = optimism_raw.getValue()[0];
 		//Manipulation questions
-		experiment.DW_check = $("input[name='DW_identity']").val();
+		experiment.DW_check = $("#DW_identity_id").val();
 		experiment.familiarization_check = $("#familiarization_check").val();
 		experiment.DW_accuracy_check = $("#accuracy_check").val();
 		experiment.overall_check = $("#overall_check").val();
