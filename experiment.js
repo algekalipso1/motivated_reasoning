@@ -155,7 +155,9 @@ var experiment = {
 
 
 	last_slide_check: function() {
-		if (document.getElementById("DW_identity_id").value == "blank" || document.getElementById("familiarization_check").value == "blank" || document.getElementById("accuracy_check").value == "blank") {
+		if (document.getElementById("DW_identity_id").value == "blank" || 
+			document.getElementById("familiarization_check").value == "blank" || 
+			document.getElementById("accuracy_check").value == "blank") {
 			DWErrorMessage();
 		} else {
 			manipClick();
