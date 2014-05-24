@@ -109,6 +109,7 @@ function evalClick() {
 function manipClick() {
     numComplete = numComplete+1; 
     $('#trial-num').html(numComplete);
+    $('.progress-bar').css('width', (200.0 * (1+numComplete)/10) + 'px');
     hide_and_seek("manip_slide", "debrief_slide");              
 }
 
