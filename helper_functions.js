@@ -13,6 +13,7 @@ function initialsClick() {
     hide_and_seek("initials_slide", "loading_slide");
     numComplete = numComplete+1; 
     $('#trial-num').html(numComplete);
+    $('.progress-bar').css('width', (200.0 * (1+numComplete)/10) + 'px');
     //for testing
     setTimeout(connectionLoad, 1000);
     //for real runs
@@ -25,6 +26,7 @@ function connectionLoad() {
     hide_and_seek("loading_slide", "loading_slide2");
     numComplete = numComplete+1; 
     $('#trial-num').html(numComplete);
+    $('.progress-bar').css('width', (200.0 * (1+numComplete)/10) + 'px');
     //for testing
     setTimeout(conditionLoad, 1000);
     //for real runs
@@ -35,6 +37,7 @@ function conditionLoad() {
     hide_and_seek("loading_slide2", "condition_slide");
     numComplete = numComplete+1; 
     $('#trial-num').html(numComplete);
+    $('.progress-bar').css('width', (200.0 * (1+numComplete)/10) + 'px');
     experiment.instructions_function();
 }
 
@@ -50,6 +53,7 @@ function evClick(condition) {
             hide_and_seek("evidence_slide", "eval_slide");
             numComplete = numComplete+1; 
             $('#trial-num').html(numComplete);
+    		$('.progress-bar').css('width', (200.0 * (1+numComplete)/10) + 'px');
             DW_strength_raw = new Dragdealer('simple-slider1', {'x': 0.5});
         }
     };
@@ -74,6 +78,7 @@ function evClick(condition) {
             hide_and_seek("evidence_slide", "eval_slide");
             numComplete = numComplete+1; 
             $('#trial-num').html(numComplete);
+		    $('.progress-bar').css('width', (200.0 * (1+numComplete)/10) + 'px');
             DW_strength_raw = new Dragdealer('simple-slider1', {'x': 0.5});
         }
     };
@@ -101,6 +106,7 @@ function evalClick() {
         optimism_raw.disable();
         numComplete = numComplete+1; 
         $('#trial-num').html(numComplete);
+	    $('.progress-bar').css('width', (200.0 * (1+numComplete)/10) + 'px');
         hide_and_seek("eval_slide", "manip_slide");
     }     
 
