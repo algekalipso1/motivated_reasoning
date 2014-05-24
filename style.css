@@ -70,6 +70,29 @@ body {
   width: 800px;
 }
 
+.slider_left_text {
+  width: 185px; 
+  float: left; 
+  text-align: right; 
+  margin-top: 15px;
+  margin-right: 10px;
+}
+
+.slider_right_text {
+  width: 185px; 
+  float: left; 
+  text-align: left; 
+  margin-top: 15px; 
+  margin-left: 10px;
+}
+
+.slider {
+  width: 400px; 
+  float: left; 
+  margin-top: 10px;
+  outline: black solid 2px; 
+}
+
 .task_question {
   width: 300px;
   margin-top: 20px;
