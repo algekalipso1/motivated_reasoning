@@ -27,7 +27,7 @@
    				<div class="bar-wrapper">
        				<div class="bar"></div>
    				</div>
-   			<p><span id="trial-num">1</span>
+   			<p><span>Preliminaries: </span><span id="trial-num">1</span>
     		<span>/</span>
     		<span id="total-num">10</span></p>
 		</div>
@@ -79,9 +79,9 @@
 					<p id='logo-text'>Instructions</p>
 					<div class="long_instructions_text" style="margin: 10px;">
 						<p class="block-text"> 
-							In this study, you will paired with a live partner from Mechanical Turk and will compete against another team of Turkers and in a word game involving rearranging letters to form words.</p>
+							In this study, you will paired with a <b>live partner</b> from Mechanical Turk and will compete against another team of Turkers and in a word game involving rearranging letters to form words.</p>
 						<p class="block-text"> 
-					 Each team will have a <b>word selector</b> and a <b>word unscrambler</b>. The questioner will select a word from a list of 6-letter words and enter it into a word scrambler, then the answerer will have 20 seconds to figure out the original word.  Each team will repeat this process for ten words, and the team with the greater number of correct answers could earn up to 1 dollar, depending on the margin of difference between the two teams. 
+					 Each team will have a <b>word selector</b> and a <b>word unscrambler</b>. The word selector will select a word from a list of 6-letter words and enter it into a word scrambler, then the word unscrambler will have 20 seconds to figure out the original word.  Each team will repeat this process for ten words, and the team with the greater number of correct answers could earn up to 1 dollar, depending on the margin of difference between the two teams. 
 						</p>
 					</div>
 				</center>
@@ -95,8 +95,9 @@
 					<p id='logo-text'>Initials</p>
 					<div class="long_instructions_text" style="margin: 10px;">
 						<p class="block-text"> 
-							Please enter your initials below. This is how you will be represented to other players on your team and your opponents' team</p>
-						<span id="initials">Initials: <input type="text" name="initials" id = "initials_id"><br></span>
+							Please enter your initials below. This is how you will be shown to other players.</p>
+						<span id="initials">Initials: <input type="text" name="initials" id = "initials_id" maxlength="3"><br></span>
+
 					</div>
 				</center>
 				<center class="button_container">
@@ -223,7 +224,12 @@
 					<div class="manipulation_question_container" id="manip_question1">
 						<center>
 							<span class="question">
-								<span id="DW_check">Who is DW? <input type="text" name="DW_identity" id = "DW_identity_id"><br></span>
+								<span id="DW_check">Who is DW?</span>
+								<select id="DW_identity_id">
+									<option value="blank" selected></option>
+									<option value="partner">Partner</option>
+									<option value="opponent">Opponent</option>
+								</select>
 							</span>
 							
 						</center>
@@ -232,7 +238,8 @@
 						<center>
 							<span class="question">How many unscrambled words were in the familiarization?</span>
 							<select id="familiarization_check">
-								<option value="0">0</option>
+								<option value="blank" selected></option>
+								<option value="1">1</option>
 								<option value="2">2</option>
 								<option value="8">8</option>
 								<option value="10">10</option>
@@ -243,7 +250,8 @@
 						<center>
 							<span class="question">How many scrambled words did DW correctly unscramble?</span>
 							<select id="accuracy_check">
-								<option value="0">0</option>
+								<option value="blank" selected></option>
+								<option value="1">1</option>
 								<option value="2">2</option>
 								<option value="8">8</option>
 								<option value="10">10</option>
@@ -267,15 +275,16 @@
 			</div>
 
 			
-			<div class="debrief_slide" style="display: none;">
-				<center class="debrief_container">
-					Thanks for your participation. In this experiment we used an element of deception that was necessary to induce the psychological phenomenon called "motivated inference" and "outcome dependency." The IRB protocol we are using for this study requires us to explain to you that it was never intended for you to actually play a game against a real participant. In reality we did not connect you to anyone. <br> <br>
+			<center class="debrief_slide" style="display: none;">
+				<center class="block-text">
+					Thanks for your participation. In this experiment we are only interested in prospective ratings in competitive settings. We used an element of deception that was necessary to make the setting competitive. We did not connect you with another individual. The IRB protocol we are using for this study requires us to explain to you that it was never intended for you to actually play a game against a real participant. <br> <br>
+					Our study relies upon the assumption that you believed you were actually going to play the game. As such, we would really appreciate it if you DID NOT tell other participants about this aspect. The quality of the research depends upon this. <br> <br>
 					Given that you were told that winning the game would give you a bonus and the fact that there is no game to be played, we are instead randomly selecting 25% of the Turkers who completed this HIT. If you happen to be one of the lucky ones we will send you a GrantBonus via AWS's API. We hope to do this within a few days at the very latest. 
 				</center>
 				<center class="button_container">
 					<button type="button" class="continue_button" id="debrief_button" onclick="endSlideClick(); experiment.check_finished()">Exit</button> 
 				</center>
-			</div>
+			</center>
 			<div class="end_slide" style="display: none;">
 				<center class="end_container">
 					Thank you! You're finished.
