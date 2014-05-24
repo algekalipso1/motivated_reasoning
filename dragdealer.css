@@ -29,9 +29,3 @@
 .dragdealer .disabled {
   background: #898989;
 }
-
-.bar {
-  width:50%; 
-  background-image:images/stanford.png; 
-  height:45px;
-}

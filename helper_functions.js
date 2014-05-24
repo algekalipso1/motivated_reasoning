@@ -13,7 +13,7 @@ function initialsClick() {
     hide_and_seek("initials_slide", "loading_slide");
     numComplete = numComplete+1; 
     $('#trial-num').html(numComplete);
-    $('.progress-bar').css('width', (200.0 * (1+numComplete)/10) + 'px');
+    $('.progress').css('width', (200.0 * (1+numComplete)/10) + 'px');
     //for testing
     setTimeout(connectionLoad, 1000);
     //for real runs
@@ -26,7 +26,7 @@ function connectionLoad() {
     hide_and_seek("loading_slide", "loading_slide2");
     numComplete = numComplete+1; 
     $('#trial-num').html(numComplete);
-    $('.progress-bar').css('width', (200.0 * (1+numComplete)/10) + 'px');
+    $('.progress').css('width', (200.0 * (1+numComplete)/10) + 'px');
     //for testing
     setTimeout(conditionLoad, 1000);
     //for real runs
