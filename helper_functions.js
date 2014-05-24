@@ -80,28 +80,54 @@ function evClick(condition) {
 
 }
 
+function sliderErrorMessage() {
+    $(".slider_unanswered").css("display", "block");
+}
+
+function sliderErrorHide() {
+    $(".slider_unanswered").css("display", "none");
+}
+
 function evalClick() {
-    if ($("#slider1").css("opacity") != 1.0) {
-        //Make them click something
-    };
+
 
     if ($("#question2").css("display") == "none") {
-        DW_strength_raw.disable();
-        $("#question2").css("display", "block");
-        luck_raw = new Dragdealer('simple-slider2', {'x': 0.5});
+        if ($("#slider1").css("opacity") != 1.0) {
+            sliderErrorMessage();
+        } else {
+            DW_strength_raw.disable();
+            sliderErrorHide();
+            $("#question2").css("display", "block");
+            luck_raw = new Dragdealer('simple-slider2', {'x': 0.5});
+        }
     } else if ($("#question3").css("display") == "none") {
-        luck_raw.disable();
-        $("#question3").css("display", "block");
-        average_strength_raw = new Dragdealer('simple-slider3', {'x': 0.5});
+        if ($("#slider2").css("opacity") != 1.0) {
+            sliderErrorMessage();
+        } else {
+            luck_raw.disable();
+            sliderErrorHide();
+            $("#question3").css("display", "block");
+            average_strength_raw = new Dragdealer('simple-slider3', {'x': 0.5});
+        }
     } else if ($("#question4").css("display") == "none") {
-        average_strength_raw.disable();
-        $("#question4").css("display", "block");
-        optimism_raw = new Dragdealer('simple-slider4', {'x': 0.5});
+        if ($("#slider3").css("opacity") != 1.0) {
+            sliderErrorMessage();
+        } else {
+            average_strength_raw.disable();
+            sliderErrorHide();
+            $("#question4").css("display", "block");
+            optimism_raw = new Dragdealer('simple-slider4', {'x': 0.5});
+        }
     } else {
-        optimism_raw.disable();
-        numComplete = numComplete+1; 
-        $('#trial-num').html(numComplete);
-        hide_and_seek("eval_slide", "manip_slide");
+        if ($("#slider4").css("opacity") != 1.0) {
+            sliderErrorMessage();
+        } else {
+            optimism_raw.disable();
+            sliderErrorHide();
+            numComplete = numComplete+1; 
+            $('#trial-num').html(numComplete);
+            hide_and_seek("eval_slide", "manip_slide");
+        }
     }     
 
 }

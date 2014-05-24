@@ -82,7 +82,7 @@ var experiment = {
 												 '<td class="task_answer" id="short_a1">banana</td>'+
 												 '<td class="task_evaluation" id="short_e1"><img src="images/check_green.png" class="check_mark"></td>'+
 											'</tr>'+
-											'<tr id="short_row2" style="display: none;"><td class="task_question" id="short_q2">simhc</td>'+
+											'<tr id="short_row2" style="display: none;"><td class="task_question" id="short_q2">sismhc</td>'+
 												 '<td class="task_answer" id="short_a2">schism</td>'+
 												 '<td class="task_evaluation" id="short_e2"><img src="images/check_green.png" class="check_mark"></td>'+
 											'</tr>'+
