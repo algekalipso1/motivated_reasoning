@@ -174,14 +174,14 @@ button {
   padding-right: 5px;
   height: 29px;
   min-width: 70px;
-  align: center;
+  text-align: center;
 }
 button:active {
   border-left: 1px solid #c9c9c9;
   border-top: 1px solid #c9c9c9;
   background: none;
   background-color: #c9c9c9;
-  align: center;
+  text-align: center;
 
 }
 
@@ -191,7 +191,7 @@ button[disabled] {
   border-top: 1px solid #e0e0e0;
   border-left: 1px solid #e0e0e0;
   cursor: not-allowed;
-  align: center;
+  text-align: center;
 
 }
 
