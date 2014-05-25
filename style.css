@@ -10,10 +10,9 @@ body {
 }
 
 .container {
-	width: 800px;
-	height: 600px;
-  margin-left: 200px;
-  margin-right: auto;
+	width: 70%;
+	height: 95%;
+  margin-left: 10%;
   float: left;
 }
 
@@ -25,62 +24,86 @@ body {
   display: none;
 }
 
+
+
 .intro_slide {
-  width: 800px;
-  height: 600px;
+  width: 100%;
+  height: 95%;
 }
 
 .intro_container {
-  width: 800px;
+  width: 100%;
 }
 
 .instructions_slide {
-  width: 800px;
-  height: 600px;
+  width: 100%;
+  height: 100%;
 }
 
 .instructions_container {
-  width: 800px;
+  width: 100%;
+}
+
+.initials_container {
+  width: 100%;
 }
 
 .loading_slide {
-  width: 800px;
-  height: 600px;
+  width: 100%;
+  height: 100%;
 }
 
 .loading_container {
-  width: 800px;
+  width: 100%;
 }
 
 .condition_slide {
-  width: 800px;
-  height: 600px;
+  width: 100%;
+  height: 100%;
 }
 
 .condition_container {
-  width: 800px;
+  width: 100%;
 }
 
 .evidence_slide {
-  width: 800px;
-  height: 600px;
+  width: 100%;
+  height: 100%;
 }
 
 .evidence_container {
-	width: 800px;
+	width: 100%;
 }
 
 .evidence {
-  width: 800px;
+  width: 100%;
   float: center;
 }
 
+.eval_slide {
+  width: 100%;
+}
+
+.eval_container {
+  width: 100%;
+}
+
 .row {
-  width: 800px;
+  width: 100%;
+}
+
+.slider_question_container {
+  width: 100%;
+  margin: 20px;
+  padding:20px;
+}
+
+.question {
+  width: 100%;
 }
 
 .slider_left_text {
-  width: 185px; 
+  width: 20%; 
   float: left; 
   text-align: right; 
   margin-top: 15px;
@@ -88,7 +111,7 @@ body {
 }
 
 .slider_right_text {
-  width: 185px; 
+  width: 25%; 
   float: left; 
   text-align: left; 
   margin-top: 15px; 
@@ -100,10 +123,18 @@ body {
 }
 
 .slider {
-  width: 400px; 
+  width: 50%; 
   float: left; 
   margin-top: 10px;
   outline: black solid 2px; 
+}
+
+.manip_slide {
+  width: 100%;
+}
+
+.manip_container {
+  width: 100%;
 }
 
 .task_question {
@@ -118,21 +149,19 @@ body {
   text-align: center;
 }
 
-
 .task_evaluation {
   width: 100px;
   margin-top: 20px;
   text-align: center;
 }
 
-.slider_question_container {
-	width: 800px;
-  height:100px;
-  margin: 20px;
+.teams_row {
+  width: 50px;
 }
 
+
 .manipulation_question_container {
-  width: 800px;
+  width: 100%;
   margin: 20px;
 }
 
@@ -151,8 +180,8 @@ body {
 }
 
 .button_container {
-  width: 800px;
-  height: 50px;
+  width: 100%;
+  height: 10%;
 }
 
 .continue_button {

@@ -60,6 +60,80 @@ var experiment = {
 		$("#condition_text").html(condition_text);
 	},
 
+	teams_function: function() {
+		var teams_image = '';
+		if (experiment.competition_condition == 0) {
+			//control
+			teams_image += '<p class="block-text">Teams</p>'+
+							'<center class="teams" id="teams">'+
+								'<table class="teams_table" style="width:  190px;">'+
+									'<tr id="teams_header">'+
+										'<th class="teams_row" id="teams_position">Position</th>'+
+										'<th class="teams_row" id="teams_team1"><font color="red">Team 1</font></th>'+
+										'<th class="teams_row" id="teams_team2"><font color="blue">Team 2</font></th></tr>'+
+									'<tr id="teams_row1">'+
+										'<td class="teams_row" id="position_selector">Selector</td>'+
+										'<td class="teams_row" id="team_you"><font color="red" id="team_you_font">(you)</font></td>'+
+										'<td class="teams_row" id="team_ia"><font color="blue">IA</font></td>'+
+									'</tr>'+
+									'<tr id="teams_row2">'+
+										'<td class="teams_row" id="position_unscrambler">Unscrambler</td>'+
+										'<td class="teams_row" id="team_ig"><font color="red">JG</font></td>'+
+										'<td class="teams_row" id="team_gm"><font color="blue">GM</font></td>'+
+									'</tr>'+
+								'</table>'+
+							'</center>';
+		};
+		if (experiment.competition_condition==1) {
+			//team
+			teams_image += '<p class="block-text">Teams</p>'+
+							'<center class="teams" id="teams">'+
+								'<table class="teams_table" style="width:  190px;">'+
+									'<tr id="teams_header">'+
+										'<th class="teams_row" id="teams_position">Position</th>'+
+										'<th class="teams_row" id="teams_team1"><font color="red">Team 1</font></th>'+
+										'<th class="teams_row" id="teams_team2"><font color="blue">Team 2</font></th></tr>'+
+									'<tr id="teams_row1">'+
+										'<td class="teams_row" id="position_selector">Selector</td>'+
+										'<td class="teams_row" id="team_you"><font color="red" id="team_you_font">(you)</font></td>'+
+										'<td class="teams_row" id="team_ia"><font color="blue">IA</font></td>'+
+									'</tr>'+
+									'<tr id="teams_row2">'+
+										'<td class="teams_row" id="position_unscrambler">Unscrambler</td>'+
+										'<td class="teams_row" id="team_ig"><font color="red">JG</font></td>'+
+										'<td class="teams_row" id="team_gm"><font color="blue">GM</font></td>'+
+									'</tr>'+
+								'</table>'+
+							'</center>';
+		};
+		if (experiment.competition_condition==2) {
+			//opponent
+			teams_image += '<p class="block-text">Teams</p>'+
+							'<center class="teams" id="teams">'+
+								'<table class="teams_table" style="width:  190px;">'+
+									'<tr id="teams_header">'+
+										'<th class="teams_row" id="teams_position">Position</th>'+
+										'<th class="teams_row" id="teams_team1"><font color="red">Team 1</font></th>'+
+										'<th class="teams_row" id="teams_team2"><font color="blue">Team 2</font></th></tr>'+
+									'<tr id="teams_row1">'+
+										'<td class="teams_row" id="position_selector">Selector</td>'+
+										'<td class="teams_row" id="team_you"><font color="red" id="team_you_font">(you)</font></td>'+
+										'<td class="teams_row" id="team_ia"><font color="blue">IA</font></td>'+
+									'</tr>'+
+									'<tr id="teams_row2">'+
+										'<td class="teams_row" id="position_unscrambler">Unscrambler</td>'+
+										'<td class="teams_row" id="team_ig"><font color="red">JG</font></td>'+
+										'<td class="teams_row" id="team_gm"><font color="blue">GM</font></td>'+
+									'</tr>'+
+								'</table>'+
+							'</center>';
+		};
+
+		$(".teams_container").html(teams_image);
+		$("#team_you_font").text(experiment.initials_provided_by_participant);
+
+	},
+
 	// Dynamically generated part. This has to be here so that the variables about the experimental conditions and
 	// people's answers are accessible when generating the code.
 	evidence_function: function() {
@@ -75,7 +149,7 @@ var experiment = {
 									'<center class="evidence" id="evidence1">'+
 										'<table class="evidence" style="width:  400px;">'+
 											'<tr><th class="task_question">Scrambled Word</th>'+
-											'<th class="task_answer">Answer</th>'+
+											'<th class="task_answer"><b>DWs Answer</b></th>'+
 											'<th class="task_evaluation">Evaluation</th></tr>'+
 											'<tr id="short_row1" class="row" style="display: none;"><td class="task_question" id="short_q1">naanba</td>'+
 												 '<td class="task_answer" id="short_a1">banana</td>'+
@@ -96,7 +170,7 @@ var experiment = {
 									'<center class="evidence" id="evidence1">'+
 										'<table class="evidence" style="width:  400px;">'+
 											'<tr><th class="task_question">Scrambled Word</th>'+
-											'<th class="task_answer">Answer</th>'+
+											'<th class="task_answer"><b>DWs Answer</b></th>'+
 											'<th class="task_evaluation">Evaluation</th></tr>'+
 											'<tr id="long_row1" style="display: none;"><td class="task_question" id="q1">naanba</td>'+
 												 '<td class="task_answer" id="a1">banana</td>'+

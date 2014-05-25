@@ -40,6 +40,7 @@ function conditionLoad() {
     $('#trial-num').html(numComplete);
     $('.bar').css('width', (200.0 * (1+numComplete)/15) + 'px');
     experiment.instructions_function();
+    experiment.teams_function();
 }
 
 function evClick(condition) {
