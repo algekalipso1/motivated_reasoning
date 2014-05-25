@@ -31,7 +31,6 @@ var experiment = {
 	DW_strength: -1,
 	strength_of_average_player: -1,
 	role_of_luck_in_game: -1,
-	likelihood_of_winning: -1,
 	expectation_of_winning: -1,
 
 	DW_check: -1,
