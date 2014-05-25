@@ -17,7 +17,7 @@ function initialsClick() {
     //for testing
     setTimeout(connectionLoad, 1000);
     //for real runs
-    //setTimeout(connectionLoad, 12000);
+    //setTimeout(connectionLoad, 20000);
 
 
 }
@@ -30,7 +30,7 @@ function connectionLoad() {
     //for testing
     setTimeout(conditionLoad, 1000);
     //for real runs
-    //setTimeout(conditionLoad, 3000);
+    //setTimeout(conditionLoad, 4000);
 }
 
 function conditionLoad() {
@@ -66,7 +66,7 @@ function evClick(condition) {
             numComplete = numComplete+1; 
             $('#trial-num').html(numComplete);
     		$('.bar').css('width', (200.0 * (1+numComplete)/15) + 'px');
-            DW_strength_raw = new Dragdealer('simple-slider1', {'x': 0.5});
+            DW_strength_raw = new Dragdealer('simple-slider1', {'x': 0.5, 'slide': false});
         }
     };
     if (condition == 8) {
@@ -131,7 +131,7 @@ function evClick(condition) {
             numComplete = numComplete+1; 
             $('#trial-num').html(numComplete);
 		    $('.bar').css('width', (200.0 * (1+numComplete)/15) + 'px');
-            DW_strength_raw = new Dragdealer('simple-slider1', {'x': 0.5});
+            DW_strength_raw = new Dragdealer('simple-slider1', {'x': 0.5, 'slide': false});
         }
     };
 
@@ -155,7 +155,7 @@ function evalClick() {
             DW_strength_raw.disable();
             sliderErrorHide();
             $("#question2").css("display", "block");
-            luck_raw = new Dragdealer('simple-slider2', {'x': 0.5});
+            luck_raw = new Dragdealer('simple-slider2', {'x': 0.5, 'slide': false});
         }
     } else if ($("#question3").css("display") == "none") {
         if ($("#slider2").css("opacity") != 1.0) {
@@ -164,7 +164,7 @@ function evalClick() {
             luck_raw.disable();
             sliderErrorHide();
             $("#question3").css("display", "block");
-            average_strength_raw = new Dragdealer('simple-slider3', {'x': 0.5});
+            average_strength_raw = new Dragdealer('simple-slider3', {'x': 0.5, 'slide': false});
         }
     } else if ($("#question4").css("display") == "none") {
         if ($("#slider3").css("opacity") != 1.0) {
@@ -173,7 +173,7 @@ function evalClick() {
             average_strength_raw.disable();
             sliderErrorHide();
             $("#question4").css("display", "block");
-            optimism_raw = new Dragdealer('simple-slider4', {'x': 0.5});
+            optimism_raw = new Dragdealer('simple-slider4', {'x': 0.5, 'slide': false});
         }
     } else {
         if ($("#slider4").css("opacity") != 1.0) {

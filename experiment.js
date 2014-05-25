@@ -151,8 +151,8 @@ var experiment = {
 											'<tr><th class="task_question">Scrambled Word</th>'+
 											'<th class="task_answer"><b>DWs Answer</b></th>'+
 											'<th class="task_evaluation">Evaluation</th></tr>'+
-											'<tr id="short_row1" class="row" style="display: none;"><td class="task_question" id="short_q1">naanba</td>'+
-												 '<td class="task_answer" id="short_a1">banana</td>'+
+											'<tr id="short_row1" class="row" style="display: none;"><td class="task_question" id="short_q1">vereid</td>'+
+												 '<td class="task_answer" id="short_a1">derive</td>'+
 												 '<td class="task_evaluation" id="short_e1"><img src="images/check_green.png" class="check_mark"></td>'+
 											'</tr>'+
 											'<tr id="short_row2" style="display: none;"><td class="task_question" id="short_q2">sismhc</td>'+
