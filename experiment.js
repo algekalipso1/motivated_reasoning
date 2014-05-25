@@ -24,6 +24,8 @@ var experiment = {
 	competition_condition: disposition,
 	evidence_condition: evidence_level,
 
+	//Testing
+	competition_condition: 2,
 
 	// The following variables store the response given by the participant
 	initials_provided_by_participant: '',
@@ -41,8 +43,6 @@ var experiment = {
 
 	instructions_function: function() {
 		var condition_text = '';
-		//testing
-		//condition = 1
 
 		if (experiment.competition_condition == 0) {
 			//control
@@ -62,8 +62,6 @@ var experiment = {
 
 	teams_function: function() {
 		var teams_image = '';
-		//Line below is for testing
-		experiment.competition_condition = 0;
 
 		if (experiment.competition_condition == 0) {
 			//control
@@ -75,64 +73,89 @@ var experiment = {
 										'<th class="teams_row" id="teams_team2"><font color="blue">Team 2</font></th></tr>'+
 									'<tr id="teams_row1">'+
 										'<td class="teams_row table_position" id="position_selector">Selector</td>'+
-										'<td class="teams_row" id="team_you"><font color="red" id="team_you_font">(you)</font></td>'+
-										'<td class="teams_row" id="team_ia"><font color="blue">IA</font></td>'+
+										'<td class="teams_row" id="team_you"><img src="images/shirt_red_s.png" class="shirt_img">'+
+											'<font color="red" id="team_you_font"></font></td></td>'+
+										'<td class="teams_row" id="team_ia"><img src="images/shirt_blue_s.png" class="shirt_img">'+
+											'<font color="blue">IA</font></td>'+
+									'</tr>'+
+									'<tr id="teams_row_you">'+
+										'<td></td>'+
+										'<td class="teams_row"><font color="red" id="team_you_font">(you)</font></td>'+
+										'<td></td>'+
 									'</tr>'+
 									'<tr id="teams_row2">'+
 										'<td class="teams_row table_position" id="position_unscrambler">Unscrambler</td>'+
-										'<td class="teams_row" id="team_ig"><font color="red">JG</font></td>'+
-										'<td class="teams_row" id="team_gm"><font color="blue">GM</font></td>'+
+										'<td class="teams_row" id="team_ig"><img src="images/shirt_red_u.png" class="shirt_img">'+
+											'<font color="red">JG</font></td>'+
+										'<td class="teams_row" id="team_gm"><img src="images/shirt_blue_u.png" class="shirt_img">'+
+											'<font color="blue">GM</font></td>'+
 									'</tr>'+
 								'</table>'+
 							'</center>';
 		};
 		if (experiment.competition_condition==1) {
 			//team
-			teams_image += '<p class="block-text">Teams</p>'+
-							'<center class="teams" id="teams">'+
-								'<table class="teams_table" style="width:  190px;">'+
+			teams_image += '<center class="teams" id="teams">'+
+								'<table class="teams_table" style="width:100%;">'+
 									'<tr id="teams_header">'+
-										'<th class="teams_row" id="teams_position">Position</th>'+
+										'<th class="teams_row" id="teams_position"></th>'+
 										'<th class="teams_row" id="teams_team1"><font color="red">Team 1</font></th>'+
 										'<th class="teams_row" id="teams_team2"><font color="blue">Team 2</font></th></tr>'+
 									'<tr id="teams_row1">'+
-										'<td class="teams_row" id="position_selector">Selector</td>'+
-										'<td class="teams_row" id="team_you"><font color="red" id="team_you_font">(you)</font></td>'+
-										'<td class="teams_row" id="team_ia"><font color="blue">IA</font></td>'+
+										'<td class="teams_row table_position" id="position_selector">Selector</td>'+
+										'<td class="teams_row" id="team_you"><img src="images/shirt_red_s.png" class="shirt_img">'+
+											'<font color="red" id="team_you_font">(you)</font></td></td>'+
+										'<td class="teams_row" id="team_ia"><img src="images/shirt_blue_s.png" class="shirt_img">'+
+											'<font color="blue">IA</font></td>'+
+									'</tr>'+
+									'<tr id="teams_row_you">'+
+										'<td></td>'+
+										'<td class="teams_row"><font color="red" id="team_you_font">(you)</font></td>'+
+										'<td></td>'+
 									'</tr>'+
 									'<tr id="teams_row2">'+
-										'<td class="teams_row" id="position_unscrambler">Unscrambler</td>'+
-										'<td class="teams_row" id="team_ig"><font color="red">JG</font></td>'+
-										'<td class="teams_row" id="team_gm"><font color="blue">GM</font></td>'+
+										'<td class="teams_row table_position" id="position_unscrambler">Unscrambler</td>'+
+										'<td class="teams_row" id="team_ig"><img src="images/shirt_red_u.png" class="shirt_img">'+
+											'<font color="red">DW</font></td>'+
+										'<td class="teams_row" id="team_gm"><img src="images/shirt_blue_u.png" class="shirt_img">'+
+											'<font color="blue">GM</font></td>'+
 									'</tr>'+
 								'</table>'+
 							'</center>';
 		};
 		if (experiment.competition_condition==2) {
 			//opponent
-			teams_image += '<p class="block-text">Teams</p>'+
-							'<center class="teams" id="teams">'+
-								'<table class="teams_table" style="width:  190px;">'+
+			teams_image += '<center class="teams" id="teams">'+
+								'<table class="teams_table" style="width:100%;">'+
 									'<tr id="teams_header">'+
-										'<th class="teams_row" id="teams_position">Position</th>'+
+										'<th class="teams_row" id="teams_position"></th>'+
 										'<th class="teams_row" id="teams_team1"><font color="red">Team 1</font></th>'+
 										'<th class="teams_row" id="teams_team2"><font color="blue">Team 2</font></th></tr>'+
 									'<tr id="teams_row1">'+
-										'<td class="teams_row" id="position_selector">Selector</td>'+
-										'<td class="teams_row" id="team_you"><font color="red" id="team_you_font">(you)</font></td>'+
-										'<td class="teams_row" id="team_ia"><font color="blue">IA</font></td>'+
+										'<td class="teams_row table_position" id="position_selector">Selector</td>'+
+										'<td class="teams_row" id="team_you"><img src="images/shirt_red_s.png" class="shirt_img">'+
+											'<font color="red" id="team_you_font"></font></td></td>'+
+										'<td class="teams_row" id="team_ia"><img src="images/shirt_blue_s.png" class="shirt_img">'+
+											'<font color="blue">IA</font></td>'+
+									'</tr>'+
+									'<tr id="teams_row_you">'+
+										'<td></td>'+
+										'<td class="teams_row"><font color="red" id="team_you_font">(you)</font></td>'+
+										'<td></td>'+
 									'</tr>'+
 									'<tr id="teams_row2">'+
-										'<td class="teams_row" id="position_unscrambler">Unscrambler</td>'+
-										'<td class="teams_row" id="team_ig"><font color="red">JG</font></td>'+
-										'<td class="teams_row" id="team_gm"><font color="blue">GM</font></td>'+
+										'<td class="teams_row table_position" id="position_unscrambler">Unscrambler</td>'+
+										'<td class="teams_row" id="team_ig"><img src="images/shirt_red_u.png" class="shirt_img">'+
+											'<font color="red">GM</font></td>'+
+										'<td class="teams_row" id="team_gm"><img src="images/shirt_blue_u.png" class="shirt_img">'+
+											'<font color="blue">DW</font></td>'+
 									'</tr>'+
 								'</table>'+
 							'</center>';
 		};
 
 		$(".teams_container").html(teams_image);
-		$("#team_you_font").text(experiment.initials_provided_by_participant+' (you)');
+		$("#team_you_font").text(experiment.initials_provided_by_participant);
 
 	},
 
