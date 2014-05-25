@@ -95,6 +95,10 @@ body {
   margin-left: 10px;
 }
 
+.slider_unanswered {
+  text-align: justify;
+}
+
 .slider {
   width: 400px; 
   float: left; 

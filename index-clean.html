@@ -148,7 +148,7 @@
 						<center class="strength_question">
 							<div class="question">How do you think <b>DW</b>'s <b>word knowledge</b> compares to other Turkers?</div>
 							<div class="slider_left_text">The absolute worst</div>
-							<div id="simple-slider1" class="dragdealer slider">
+							<div id="simple-slider1" class="dragdealer slider" onclick='{$("#slider1").css("opacity", "1.0");};'>
 								<img src="images/button.jpg" class="handle" id="slider1" style="opacity: 0.4;" onclick='{$(this).css("opacity", "1.0");};'>
     						</div> 
     						<div class="slider_right_text">The absolute best</div>  
@@ -158,7 +158,7 @@
 						<center class="luck_question">
 							<div class="question">How much do you think <b>luck</b> contributes to performance as <b>unscrambler</b> in this game?</div>
 							<div class="slider_left_text">Luck plays no role</div>
-							<div id="simple-slider2" class="dragdealer slider">
+							<div id="simple-slider2" class="dragdealer slider" onclick='{$("#slider2").css("opacity", "1.0");};'>
 								<img src="images/button.jpg" class="handle" id="slider2" style="opacity: 0.4;" onclick='{$(this).css("opacity", "1.0");};'>
     						</div>   
     						<div class="slider_right_text">This game is entirely luck</div>
@@ -168,7 +168,7 @@
 						<center class="average_question">
 							<div class="question">Approximately <b>how many words</b> do you think the average Turker unscrambles correctly in this game?</div> 
 							<div class="slider_left_text">None</div>
-							<div id="simple-slider3" class="dragdealer slider">
+							<div id="simple-slider3" class="dragdealer slider" onclick='{$("#slider3").css("opacity", "1.0");};'>
 								<img src="images/button.jpg" class="handle" id="slider3" style="opacity: 0.4;" onclick='{$(this).css("opacity", "1.0");};'>
     						</div>  
     						<div class="slider_right_text">All</div> 
@@ -178,7 +178,7 @@
 						<center class="optimism_question">
 							<div class="question"><b>How likely</b> do you think it is that <b>your team will win</b>?</div>
 							<div class="slider_left_text">Will certainly lose</div> 
-							<div id="simple-slider4" class="dragdealer slider">
+							<div id="simple-slider4" class="dragdealer slider" onclick='{$("#slider4").css("opacity", "1.0");};'>
 								<img src="images/button.jpg" class="handle" id="slider4" style="opacity: 0.4;" onclick='{$(this).css("opacity", "1.0");};'>
     						</div> 
     						<div class="slider_right_text">Will certainly win</div>  
@@ -188,9 +188,11 @@
 				<center class="button_container">
 					<button type="button" class="continue_button" id="eval_button" onclick="evalClick()">Continue</button> 
 
-					<div class="slider_unanswered" style="display: none;">
-						<font color="red"> Please click and release the blue slider to activate it.</font>
-					</div>
+					<center class="slider_unanswered block-text" style="display: none;">
+						<font color="red"> Please make sure you adjust the slider before continuing <br>
+							(or tap the slider if you think it's already in the right position).
+						</font>
+					</center>
 				</center>
 			</div>
 
