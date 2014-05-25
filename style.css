@@ -5,7 +5,7 @@ body {
   font-size: 16px;
   line-height: 20px;
   text-align: center;
-  width: 95%;
+  width: 98%;
   height: 95%;
 }
 
@@ -23,6 +23,28 @@ body {
   float: right;
   display: none;
 }
+
+#position_selector, #position_unscrambler {
+  text-align: right;
+}
+
+.teams_row {
+  text-align: center;
+  width: 30%;
+}
+
+#teams_header {
+  width: 35%;
+}
+
+#teams_team1 {
+  width:30%;
+}
+
+#teams_team2 {
+  width:30%;
+}
+
 
 
 
@@ -155,9 +177,6 @@ body {
   text-align: center;
 }
 
-.teams_row {
-  width: 50px;
-}
 
 
 .manipulation_question_container {
