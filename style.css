@@ -12,8 +12,17 @@ body {
 .container {
 	width: 800px;
 	height: 600px;
-  margin-left: auto;
+  margin-left: 200px;
   margin-right: auto;
+  float: left;
+}
+
+.teams_container {
+  width: 190px;
+  height: 200px;
+  outline: solid 1px black;
+  float: right;
+  display: none;
 }
 
 .intro_slide {
