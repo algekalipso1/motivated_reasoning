@@ -148,6 +148,7 @@ function manipClick() {
 
 function endSlideClick(){
     $(".debrief_slide").css("display", "none");
+    $(".progress").css("display", "none");
     $(".end_slide").css("display", "block");
 }
 
