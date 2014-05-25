@@ -39,6 +39,7 @@ var experiment = {
 	familiarization_check: -1,
 	DW_accuracy_check: -1,
 	overall_check: -1,
+	final_comments: -1,
 
 	instructions_function: function() {
 		var condition_text = '';
@@ -185,6 +186,7 @@ var experiment = {
 		experiment.familiarization_check = $("#familiarization_check").val();
 		experiment.DW_accuracy_check = $("#accuracy_check").val();
 		experiment.overall_check = $("#overall_check").val();
+		experiment.final_comments = $("#comment_box").val();
 
 		experiment.end();
     },
