@@ -21,48 +21,33 @@
 			//Adjust: add click-through on history questions, post questions, manipulation questions; check that sliders were active before continuing -->
 	</head>
 	<body>
-		<div class="container_for_progress">
+		<div class="container">
 			<div class="progress">
-	   			<p><span>Preliminaries: </span><span id="trial-num">1</span>
-	    		<span>/</span>
-	    		<span id="total-num">10</span></p>
 				<div class="bar-wrapper">
 					<div class="bar"></div>
 				</div>
 			</div>
-		</div>
-		<!--
-		<div class="container">
-				<div class="progress">
-	   				<div class="bar-wrapper">
-	       				<div class="bar"></div>
-	   				</div>
-	   			<p><span>Preliminaries: </span><span id="trial-num">1</span>
-	    		<span>/</span>
-	    		<span id="total-num">10</span></p>
-				<br><br>
-		</div>
-		-->
+
 			<div class="intro_slide">
 				<center class="intro_container">
 					<img src="images/stanford.png" alt="Stanford University">
     				<p id='logo-text'>Stanford University</p>
     				<p class="block-text">
         				Thank you for participating in our experiment. In this experiment, we are interested in forms of competition. You will participate in a team game and answer some questions about the game. We expect this will take under ten minutes.</p>
-     <p class="block-text" id="legal">Legal information: By answering the
-        following questions, you are participating in a study being performed by
-        cognitive scientists in the Stanford Department of Psychology. If you have
-        questions about this research, please contact <b> M. H. Tessler at <a
-        href="mailto://mhtessler@stanford.edu">mhtessler@stanford.edu</a></b> or Jamil
-        Zaki, at jzaki@stanford.edu. You must be at least 18 years old to
-        participate. Your participation in this research is voluntary. You may
-        decline to answer any or all of the following questions. You may decline
-        further participation, at any time, without adverse consequences. Your
-        anonymity is assured; the researchers who have requested your
-        participation will not receive any personal information about you.</p>
+     				<p class="block-text" id="legal">Legal information: By answering the
+        				following questions, you are participating in a study being performed by
+        				cognitive scientists in the Stanford Department of Psychology. If you have
+        				questions about this research, please contact <b> M. H. Tessler at <a
+        				href="mailto://mhtessler@stanford.edu">mhtessler@stanford.edu</a></b> or Jamil
+        				Zaki, at jzaki@stanford.edu. You must be at least 18 years old to
+        				participate. Your participation in this research is voluntary. You may
+        				decline to answer any or all of the following questions. You may decline
+        				further participation, at any time, without adverse consequences. Your
+        				anonymity is assured; the researchers who have requested your
+        				participation will not receive any personal information about you.</p>
 				</center>
 				<center class="button_container">
-					<button type="button" class="continue_button" id="intro_button" onclick="hide_and_seek('intro_slide', 'instructions_slide'); numComplete = numComplete+1; $('#trial-num').html(numComplete); $('#total-num').html(numTrials);
+					<button type="button" class="continue_button" id="intro_button" onclick="hide_and_seek('intro_slide', 'instructions_slide'); numComplete = numComplete+1; $('#trial-num').html(numComplete); $('#total-num').html(numTrials); $('.bar').css('width', (200.0 * (1+numComplete)/15) + 'px');
 ">Continue</button> 
 				</center>
 			</div>
@@ -80,7 +65,7 @@
 					</div>
 				</center>
 				<center class="button_container">
-					<button type="button" class="continue_button" id="instructions_button" onclick="hide_and_seek('instructions_slide', 'initials_slide'); numComplete = numComplete+1; $('#trial-num').html(numComplete);">Continue</button> 
+					<button type="button" class="continue_button" id="instructions_button" onclick="hide_and_seek('instructions_slide', 'initials_slide'); numComplete = numComplete+1; $('#trial-num').html(numComplete); $('.bar').css('width', (200.0 * (1+numComplete)/15) + 'px');">Continue</button> 
 				</center>
 			</div>
 
@@ -171,7 +156,7 @@
 					</div>
 					<div class="slider_question_container" id="question2" style="display: none;">
 						<center class="luck_question">
-	<div class="question">How much do you think <b>luck</b> contributes to performance as <b>unscrambler</b> in this game?</div>
+							<div class="question">How much do you think <b>luck</b> contributes to performance as <b>unscrambler</b> in this game?</div>
 							<div class="slider_left_text">Luck plays no role</div>
 							<div id="simple-slider2" class="dragdealer", style="width: 400px; float: left; outline: black solid 2px; margin-top: 10px;">
 								<img src="images/button.jpg" class="handle" id="slider2" style="opacity: 0.4;" onclick='{$(this).css("opacity", "1.0");};'>
@@ -272,20 +257,20 @@
 			<center class="debrief_slide" style="display: none;">
 				<center class="block-text">
 					Thank you for completing the questionnaire. As you may know, sometimes scientific methods require that participants in psychology experiments not be given complete information about the setup of the experiment until after the experiment is completed. So even though we cannot always tell you everything "up front," we are absolutely sure to tell you everything when the experiment is completed.
-<br><br>
+					<br><br>
 					We told you earlier that you were competing in a game with another person when this was not the case. Why did we lie about this? We are studying the effects of competitive settings on predictions about the game. Therefore, it was important that you believed you were actually going to play a game with a live partner. 
-<br><br>
-We apologize for having subjected you to this deception, even if it was a minor one, and we appreciate your willingness to participate in this study in order to help us with our research. Your feelings are very important to us, and we truly hope you understand why we felt it necessary to deceive you for a few minutes. We did this in the spirit of acquiring important scientific information about human behavior.
-<br><br>
-Whether our hypothesis is confirmed or disconfirmed, your participation has helped us learn something important about people and how they think. We are very grateful that you decided to help us today. Thank you.
-<br><br>
+					<br><br>
+					We apologize for having subjected you to this deception, even if it was a minor one, and we appreciate your willingness to participate in this study in order to help us with our research. Your feelings are very important to us, and we truly hope you understand why we felt it necessary to deceive you for a few minutes. We did this in the spirit of acquiring important scientific information about human behavior.
+					<br><br>
+					Whether our hypothesis is confirmed or disconfirmed, your participation has helped us learn something important about people and how they think. We are very grateful that you decided to help us today. Thank you.
+					<br><br>
 
-We do have <b>one important request</b> - that you do not discuss the details of this experiment with other individuals who may be participants. If other individuals were to complete the experiment with prior knowledge of the deception, it could invalidate our results.
+					We do have <b>one important request</b> - that you do not discuss the details of this experiment with other individuals who may be participants. If other individuals were to complete the experiment with prior knowledge of the deception, it could invalidate our results.
 
-<br> <br>
+					<br> <br>
 					We told you that the winner of the game would be given a bonus. We instead will randomly selecting 25% of the Turkers who completed this HIT for a bonus. If you happen to be one of the lucky ones we will send you a GrantBonus via AWS's API. We hope to do this within a few days at the very latest. 
-<br><br>
-Finally, please leave us any comments or suggestions you may have on the experiment. Thank you again for your participation!
+					<br><br>
+					Finally, please leave us any comments or suggestions you may have on the experiment. Thank you again for your participation!
 
 				</center>
 				<center class="button_container">
