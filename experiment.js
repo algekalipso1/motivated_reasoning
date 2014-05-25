@@ -73,7 +73,7 @@ var experiment = {
 		if (evidence_level == 1) {
 			info_about_partner += '<div class="evidence_container">'+
 									'<center class="evidence" id="evidence1">'+
-										'<table class="evidence" style="width:  800px;">'+
+										'<table class="evidence" style="width:  400px;">'+
 											'<tr><th class="task_question">Scrambled Word</th>'+
 											'<th class="task_answer">Answer</th>'+
 											'<th class="task_evaluation">Evaluation</th></tr>'+
@@ -94,7 +94,7 @@ var experiment = {
 		} else {
 			info_about_partner += '<div class="evidence_container">'+
 									'<center class="evidence" id="evidence1">'+
-										'<table class="evidence" style="width:  800px;">'+
+										'<table class="evidence" style="width:  400px;">'+
 											'<tr><th class="task_question">Scrambled Word</th>'+
 											'<th class="task_answer">Answer</th>'+
 											'<th class="task_evaluation">Evaluation</th></tr>'+

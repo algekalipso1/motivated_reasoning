@@ -96,7 +96,7 @@ body {
 }
 
 .slider_unanswered {
-  text-align: justify;
+
 }
 
 .slider {
@@ -107,20 +107,20 @@ body {
 }
 
 .task_question {
-  width: 300px;
+  width: 100px;
   margin-top: 20px;
   text-align: center;
 }
 
 .task_answer {
-  width: 300px;
+  width: 100px;
   margin-top: 20px;
   text-align: center;
 }
 
 
 .task_evaluation {
-  width: 180px;
+  width: 100px;
   margin-top: 20px;
   text-align: center;
 }
