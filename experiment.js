@@ -25,7 +25,7 @@ var experiment = {
 	evidence_condition: evidence_level,
 
 	//Testing
-	competition_condition: 2,
+	//competition_condition: 2,
 
 	// The following variables store the response given by the participant
 	initials_provided_by_participant: '',
