@@ -142,7 +142,7 @@ function evalClick() {
 function manipClick() {
     numComplete = numComplete+1; 
     $('#trial-num').html(numComplete);
-    $('.bar').css('width: 200px');
+    $('.bar').css('width:200px;');
     hide_and_seek("manip_slide", "debrief_slide");              
 }
 
