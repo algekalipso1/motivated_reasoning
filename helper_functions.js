@@ -34,6 +34,7 @@ function connectionLoad() {
 }
 
 function conditionLoad() {
+    $(".teams_container").css("display", "block");
     hide_and_seek("loading_slide2", "condition_slide");
     numComplete = numComplete+1; 
     $('#trial-num').html(numComplete);
@@ -131,6 +132,7 @@ function evalClick() {
 	        numComplete = numComplete+1; 
 	        $('#trial-num').html(numComplete);
 		    $('.bar').css('width', (200.0 * (1+numComplete)/15) + 'px');
+            $(".teams_container").css("display", "none");
 	        hide_and_seek("eval_slide", "manip_slide");
         }
     }     
