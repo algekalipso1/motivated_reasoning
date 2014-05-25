@@ -237,3 +237,31 @@ button[disabled] {
 }
 
 
+.progress{
+    text-align: center;
+    margin-top:0.5em;
+}
+
+.progress span{
+    position:relative;
+    top: -6px;
+    text-align: center;
+}
+
+.bar-wrapper{
+    height:20px;
+    width:200px;
+    border:1px solid #000000;
+    display:inline-block;
+    text-align: center;
+}
+
+.bar{
+    position:relative;
+    height:100%;
+    width:0px;
+    background-color:DarkRed;
+    text-align: center;
+}
+
+
