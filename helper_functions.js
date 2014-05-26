@@ -3,6 +3,14 @@ var DW_strength_raw, average_strength_raw, luck_raw,  optimism_raw, motivation_r
 var numTrials = 10; //Number of slides in the experiment
 var numComplete=1; //Number of slides completed (updates throughout)
 
+function checkPreview() {
+   if (turk.previewMode) {
+       alert ("Please accept this HIT to see more questions.");
+       return false;
+   }
+   return true;
+}
+
 
 function hide_and_seek(hide, show) {
     $("."+hide).css("display", "none");

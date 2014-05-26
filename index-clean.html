@@ -47,7 +47,7 @@
         				participation will not receive any personal information about you.</p>
 				</center>
 				<center class="button_container">
-					<button type="button" class="continue_button" id="intro_button" onclick="hide_and_seek('intro_slide', 'instructions_slide'); numComplete = numComplete+1; $('#trial-num').html(numComplete); $('#total-num').html(numTrials); $('.bar').css('width', (200.0 * (1+numComplete)/15) + 'px');
+					<button type="button" class="continue_button" id="intro_button" onclick="this.blur(); if (checkPreview()){ hide_and_seek('intro_slide', 'instructions_slide'); numComplete = numComplete+1; $('#trial-num').html(numComplete); $('#total-num').html(numTrials); $('.bar').css('width', (200.0 * (1+numComplete)/15) + 'px');}
 ">Continue</button> 
 				</center>
 			</center>
