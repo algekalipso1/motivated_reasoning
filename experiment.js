@@ -49,19 +49,19 @@ var experiment = {
 		if (experiment.competition_condition == 0) {
 			//control
 			condition_text += '<p>Your partner will be: <b>JG</b>. </p>'+
-								'<p>You will be playing against a team with <b>IA</b> as the the <b>word selector</b>'+
-									' and <b>GM</b> as the <b>word unscrambler</b>.</p>';;
+								'<p>You will be playing against a team with <b>IA</b> as the <b>word selector</b>'+
+									' and <b>GM</b> as the <b>word unscrambler</b>.</p>';
 		};
 		if (experiment.competition_condition==1) {
 			//team
 			condition_text += '<p>Your partner will be: <b>DW</b>. </p>'+
-								'<p>You will be playing against a team with <b>IA</b> as the the <b>word selector</b>'+
+								'<p>You will be playing against a team with <b>IA</b> as the <b>word selector</b>'+
 									' and <b>GM</b> as the <b>word unscrambler</b>.</p>';
 		};
 		if (experiment.competition_condition==2) {
 			//opponent
 			condition_text += '<p>Your partner will be: <b>SK</b>. </p>'+
-								'<p>You will be playing against a team with <b>MJ</b> as the the <b>word selector</b>'+
+								'<p>You will be playing against a team with <b>MJ</b> as the <b>word selector</b>'+
 									' and <b>DW</b> as the <b>word unscrambler</b>.</p>';
 		};
 
