@@ -43,6 +43,8 @@ var experiment = {
 
 	instructions_function: function() {
 		var condition_text = '';
+		//Testing
+		//experiment.competition_condition = 1;
 
 		if (experiment.competition_condition == 0) {
 			//control
@@ -79,10 +81,10 @@ var experiment = {
 										'<th class="teams_row" id="teams_team2"><font color="blue">Team 2</font></th></tr>'+
 									'<tr id="teams_row1">'+
 										'<td class="teams_row table_position" id="position_selector">Selector</td>'+
-										'<td class="teams_row" id="team_you"><img src="images/shirt_red_s.png" class="shirt_img">'+
+										'<td class="teams_row" id="team_you"><img src="images/shirt_red.png" class="shirt_img">'+
 											'<font color="red" id="team_you_font"></font></td></td>'+
-										'<td class="teams_row" id="team_ia"><img src="images/shirt_blue_s.png" class="shirt_img">'+
-											'<font color="blue">IA</font></td>'+
+										'<td class="teams_row" id="team_ia"><img src="images/shirt_blue.png" class="shirt_img">'+
+											'<font color="blue"><b>IA</b></font></td>'+
 									'</tr>'+
 									'<tr id="teams_row_you">'+
 										'<td></td>'+
@@ -91,10 +93,10 @@ var experiment = {
 									'</tr>'+
 									'<tr id="teams_row2">'+
 										'<td class="teams_row table_position" id="position_unscrambler">Unscrambler</td>'+
-										'<td class="teams_row" id="team_ig"><img src="images/shirt_red_u.png" class="shirt_img">'+
-											'<font color="red">JG</font></td>'+
-										'<td class="teams_row" id="team_gm"><img src="images/shirt_blue_u.png" class="shirt_img">'+
-											'<font color="blue">GM</font></td>'+
+										'<td class="teams_row" id="team_ig"><img src="images/shirt_red.png" class="shirt_img">'+
+											'<font color="red"><b>JG</b></font></td>'+
+										'<td class="teams_row" id="team_gm"><img src="images/shirt_blue.png" class="shirt_img">'+
+											'<font color="blue"><b>GM</b></font></td>'+
 									'</tr>'+
 								'</table>'+
 							'</center>';
@@ -109,10 +111,10 @@ var experiment = {
 										'<th class="teams_row" id="teams_team2"><font color="blue">Team 2</font></th></tr>'+
 									'<tr id="teams_row1">'+
 										'<td class="teams_row table_position" id="position_selector">Selector</td>'+
-										'<td class="teams_row" id="team_you"><img src="images/shirt_red_s.png" class="shirt_img">'+
+										'<td class="teams_row" id="team_you"><img src="images/shirt_red.png" class="shirt_img">'+
 											'<font color="red" id="team_you_font"></font></td></td>'+
-										'<td class="teams_row" id="team_ia"><img src="images/shirt_blue_s.png" class="shirt_img">'+
-											'<font color="blue">IA</font></td>'+
+										'<td class="teams_row" id="team_ia"><img src="images/shirt_blue.png" class="shirt_img">'+
+											'<font color="blue"><b>IA</b></font></td>'+
 									'</tr>'+
 									'<tr id="teams_row_you">'+
 										'<td></td>'+
@@ -121,10 +123,10 @@ var experiment = {
 									'</tr>'+
 									'<tr id="teams_row2">'+
 										'<td class="teams_row table_position" id="position_unscrambler">Unscrambler</td>'+
-										'<td class="teams_row" id="team_ig"><img src="images/shirt_red_u.png" class="shirt_img">'+
-											'<font color="red">DW</font></td>'+
-										'<td class="teams_row" id="team_gm"><img src="images/shirt_blue_u.png" class="shirt_img">'+
-											'<font color="blue">GM</font></td>'+
+										'<td class="teams_row" id="team_ig"><img src="images/shirt_red.png" class="shirt_img">'+
+											'<font color="red"><b>DW</b></font></td>'+
+										'<td class="teams_row" id="team_gm"><img src="images/shirt_blue.png" class="shirt_img">'+
+											'<font color="blue"><b>GM</b></font></td>'+
 									'</tr>'+
 								'</table>'+
 							'</center>';
@@ -139,10 +141,10 @@ var experiment = {
 										'<th class="teams_row" id="teams_team2"><font color="blue">Team 2</font></th></tr>'+
 									'<tr id="teams_row1">'+
 										'<td class="teams_row table_position" id="position_selector">Selector</td>'+
-										'<td class="teams_row" id="team_you"><img src="images/shirt_red_s.png" class="shirt_img">'+
+										'<td class="teams_row" id="team_you"><img src="images/shirt_red.png" class="shirt_img">'+
 											'<font color="red" id="team_you_font"></font></td></td>'+
-										'<td class="teams_row" id="team_ia"><img src="images/shirt_blue_s.png" class="shirt_img">'+
-											'<font color="blue">MJ</font></td>'+
+										'<td class="teams_row" id="team_ia"><img src="images/shirt_blue.png" class="shirt_img">'+
+											'<font color="blue"><b>MJ</b></font></td>'+
 									'</tr>'+
 									'<tr id="teams_row_you">'+
 										'<td></td>'+
@@ -151,10 +153,10 @@ var experiment = {
 									'</tr>'+
 									'<tr id="teams_row2">'+
 										'<td class="teams_row table_position" id="position_unscrambler">Unscrambler</td>'+
-										'<td class="teams_row" id="team_ig"><img src="images/shirt_red_u.png" class="shirt_img">'+
-											'<font color="red">SK</font></td>'+
-										'<td class="teams_row" id="team_gm"><img src="images/shirt_blue_u.png" class="shirt_img">'+
-											'<font color="blue">DW</font></td>'+
+										'<td class="teams_row" id="team_ig"><img src="images/shirt_red.png" class="shirt_img">'+
+											'<font color="red"><b>SK</b></font></td>'+
+										'<td class="teams_row" id="team_gm"><img src="images/shirt_blue.png" class="shirt_img">'+
+											'<font color="blue"><b>DW</b></font></td>'+
 									'</tr>'+
 								'</table>'+
 							'</center>';
