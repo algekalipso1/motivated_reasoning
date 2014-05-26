@@ -15,9 +15,9 @@ function initialsClick() {
     $('#trial-num').html(numComplete);
     $('.bar').css('width', (200.0 * (1+numComplete)/15) + 'px');
     //for testing
-    setTimeout(connectionLoad, 1000);
+    //setTimeout(connectionLoad, 1000);
     //for real runs
-    //setTimeout(connectionLoad, 20000);
+    setTimeout(connectionLoad, 20000);
 
 
 }
@@ -28,9 +28,9 @@ function connectionLoad() {
     $('#trial-num').html(numComplete);
     $('.bar').css('width', (200.0 * (1+numComplete)/15) + 'px');
     //for testing
-    setTimeout(conditionLoad, 1000);
+    //setTimeout(conditionLoad, 1000);
     //for real runs
-    //setTimeout(conditionLoad, 4000);
+    setTimeout(conditionLoad, 4000);
 }
 
 function conditionLoad() {
