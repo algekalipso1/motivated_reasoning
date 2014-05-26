@@ -25,7 +25,7 @@ var experiment = {
 	evidence_condition: evidence_level,
 
 	//Testing
-	competition_condition: 1,
+	competition_condition: 0,
 
 	// The following variables store the response given by the participant
 	initials_provided_by_participant: '',
@@ -46,16 +46,21 @@ var experiment = {
 
 		if (experiment.competition_condition == 0) {
 			//control
-			condition_text += '';
+			condition_text += '<p>Your partner will be: <b>JG</b>. </p>'+
+								'<p>You will be playing against a team with <b>IA</b> as the the <b>word selector</b>'+
+									' and <b>GM</b> as the <b>word unscrambler</b>.</p>';;
 		};
 		if (experiment.competition_condition==1) {
 			//team
-			condition_text += '<p>Your partner will be: <b>DW</b>.</p>';
+			condition_text += '<p>Your partner will be: <b>DW</b>. </p>'+
+								'<p>You will be playing against a team with <b>IA</b> as the the <b>word selector</b>'+
+									' and <b>GM</b> as the <b>word unscrambler</b>.</p>';
 		};
 		if (experiment.competition_condition==2) {
 			//opponent
-			condition_text += '<p>Your partner will be: SK. </p>'+
-								'<p>You will be playing against a team with MJ as the the word selector and DW as the word unscrambler.</p>';
+			condition_text += '<p>Your partner will be: <b>SK</b>. </p>'+
+								'<p>You will be playing against a team with <b>MJ</b> as the the <b>word selector</b>'+
+									' and <b>DW</b> as the <b>word unscrambler</b>.</p>';
 		};
 
 		$("#condition_text").html(condition_text);
@@ -105,7 +110,7 @@ var experiment = {
 									'<tr id="teams_row1">'+
 										'<td class="teams_row table_position" id="position_selector">Selector</td>'+
 										'<td class="teams_row" id="team_you"><img src="images/shirt_red_s.png" class="shirt_img">'+
-											'<font color="red" id="team_you_font">(you)</font></td></td>'+
+											'<font color="red" id="team_you_font"></font></td></td>'+
 										'<td class="teams_row" id="team_ia"><img src="images/shirt_blue_s.png" class="shirt_img">'+
 											'<font color="blue">IA</font></td>'+
 									'</tr>'+
