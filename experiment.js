@@ -25,7 +25,7 @@ var experiment = {
 	evidence_condition: evidence_level,
 
 	//Testing
-	//competition_condition: 2,
+	competition_condition: 0,
 
 	// The following variables store the response given by the participant
 	initials_provided_by_participant: '',
@@ -50,11 +50,12 @@ var experiment = {
 		};
 		if (experiment.competition_condition==1) {
 			//team
-			condition_text += '<p>Then, you will play two rounds. The first round, your <b>word unscrambler</b> will be <b>DW</b>.</p>';
+			condition_text += '<p>Your partner will be: <b>DW</b>.</p>';
 		};
 		if (experiment.competition_condition==2) {
 			//opponent
-			condition_text += '<p>Then, you will play two rounds. The first round, you will be playing against a team with <b>DW</b> as the <b>word unscrambler</b>.</p>';
+			condition_text += '<p>Your partner will be: SK. </p>'+
+								'<p>You will be playing against a team with MJ as the the word selector and DW as the word unscrambler.</p>';
 		};
 
 		$("#condition_text").html(condition_text);
@@ -136,7 +137,7 @@ var experiment = {
 										'<td class="teams_row" id="team_you"><img src="images/shirt_red_s.png" class="shirt_img">'+
 											'<font color="red" id="team_you_font"></font></td></td>'+
 										'<td class="teams_row" id="team_ia"><img src="images/shirt_blue_s.png" class="shirt_img">'+
-											'<font color="blue">IA</font></td>'+
+											'<font color="blue">MJ</font></td>'+
 									'</tr>'+
 									'<tr id="teams_row_you">'+
 										'<td></td>'+
@@ -146,7 +147,7 @@ var experiment = {
 									'<tr id="teams_row2">'+
 										'<td class="teams_row table_position" id="position_unscrambler">Unscrambler</td>'+
 										'<td class="teams_row" id="team_ig"><img src="images/shirt_red_u.png" class="shirt_img">'+
-											'<font color="red">GM</font></td>'+
+											'<font color="red">SK</font></td>'+
 										'<td class="teams_row" id="team_gm"><img src="images/shirt_blue_u.png" class="shirt_img">'+
 											'<font color="blue">DW</font></td>'+
 									'</tr>'+
@@ -172,10 +173,11 @@ var experiment = {
 		if (evidence_level == 1) {
 			info_about_partner += '<div class="evidence_container">'+
 									'<center class="evidence" id="evidence1">'+
+										'<p id="logo-text">Sample Round</p>'+
 										'<table class="evidence" style="width:  400px;">'+
 											'<tr><th class="task_question">Scrambled Word</th>'+
 											'<th class="task_answer"><b>DWs Answer</b></th>'+
-											'<th class="task_evaluation">Evaluation</th></tr>'+
+											'<th class="task_evaluation">Correct and Under 10 seconds)?</th></tr>'+
 											'<tr id="short_row1" class="row" style="display: none;"><td class="task_question" id="short_q1">vereid</td>'+
 												 '<td class="task_answer" id="short_a1">derive</td>'+
 												 '<td class="task_evaluation" id="short_e1"><img src="images/check_green.png" class="check_mark"></td>'+
@@ -193,6 +195,7 @@ var experiment = {
 		} else {
 			info_about_partner += '<div class="evidence_container">'+
 									'<center class="evidence" id="evidence1">'+
+										'<p id="logo-text">Sample Round</p>'+
 										'<table class="evidence" style="width:  400px;">'+
 											'<tr><th class="task_question">Scrambled Word</th>'+
 											'<th class="task_answer"><b>DWs Answer</b></th>'+
