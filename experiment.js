@@ -25,7 +25,7 @@ var experiment = {
 	evidence_condition: evidence_level,
 
 	//Testing
-	//competition_condition: 0,
+	competition_condition: 1,
 
 	// The following variables store the response given by the participant
 	initials_provided_by_participant: '',
@@ -177,7 +177,7 @@ var experiment = {
 										'<table class="evidence" style="width:  400px;">'+
 											'<tr><th class="task_question">Scrambled Word</th>'+
 											'<th class="task_answer"><b>DWs Answer</b></th>'+
-											'<th class="task_evaluation">Correct and Under 10 seconds)?</th></tr>'+
+											'<th class="task_evaluation">Correct and Under 10 seconds?</th></tr>'+
 											'<tr id="short_row1" class="row" style="display: none;"><td class="task_question" id="short_q1">vereid</td>'+
 												 '<td class="task_answer" id="short_a1">derive</td>'+
 												 '<td class="task_evaluation" id="short_e1"><img src="images/check_green.png" class="check_mark"></td>'+
@@ -199,7 +199,7 @@ var experiment = {
 										'<table class="evidence" style="width:  400px;">'+
 											'<tr><th class="task_question">Scrambled Word</th>'+
 											'<th class="task_answer"><b>DWs Answer</b></th>'+
-											'<th class="task_evaluation">Evaluation</th></tr>'+
+											'<th class="task_evaluation">Correct and Under 10 seconds?</th></tr>'+
 											'<tr id="long_row1" style="display: none;"><td class="task_question" id="q1">naanba</td>'+
 												 '<td class="task_answer" id="a1">banana</td>'+
 												 '<td class="task_evaluation" id="e1"><img src="images/check_green.png" class="check_mark"></td>'+
