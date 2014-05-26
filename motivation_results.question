@@ -1,1 +1,1 @@
-<?xml version='1.0'?><ExternalQuestion xmlns='http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2006-07-14/ExternalQuestion.xsd'><ExternalURL>https://langcog.stanford.edu/expts/index-clean.html</ExternalURL><FrameHeight>500</FrameHeight></ExternalQuestion>
+<?xml version='1.0'?><ExternalQuestion xmlns='http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2006-07-14/ExternalQuestion.xsd'><ExternalURL>http://stanford.edu/~mtessler/motivation/index-clean.html</ExternalURL><FrameHeight>700</FrameHeight></ExternalQuestion>

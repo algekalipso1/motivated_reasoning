@@ -1,7 +1,6 @@
-#!/usr/bin/env python
-import os, sys
+import os
 
-settings = open(sys.argv[1], 'r')
+settings = open("README", 'r')
 lines = settings.readlines()
 settings.close()
 dict={}
@@ -85,5 +84,5 @@ posthits.close()
 
 #write the bash script for getting results from MTurk
 getResults = open(dict["nameofexperimentfiles"] + "-getResults.sh", 'w')
-getResults.write("#!/usr/bin/env sh\npushd " + dict["locationofCLT"] + "/bin\n./getResults.sh $1 $2 $3 $4 $5 $6 $7 $8 $9 -successfile " + dict["hitfolderpath"] + "/" + dict["nameofexperimentfiles"] + ".success -outputfile " + dict["hitfolderpath"] + "/" + dict["nameofexperimentfiles"] + ".results.tsv\npopd")
+getResults.write("#!/usr/bin/env sh\npushd " + dict["locationofCLT"] + "/bin\n./getResults.sh $1 $2 $3 $4 $5 $6 $7 $8 $9 -successfile " + dict["hitfolderpath"] + "/" + dict["nameofexperimentfiles"] + ".success -outputfile " + dict["hitfolderpath"] + "/" + dict["nameofexperimentfiles"] + ".results\npopd")
 getResults.close()
