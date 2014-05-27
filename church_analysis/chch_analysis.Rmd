@@ -1,0 +1,15 @@
+Motivated church analysis
+========================================================
+
+I'm going to slowly walk through the analysis of church output from the program "motivationofwar_modelO_cl.church".
+
+```{r}
+summary(cars)
+```
+
+You can also embed plots, for example:
+
+```{r fig.width=7, fig.height=6}
+plot(cars)
+```
+
