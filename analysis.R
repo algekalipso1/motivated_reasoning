@@ -223,7 +223,7 @@ ggplot(ms, aes(x= conditions_combined, y=c, fill=object)) +
 
 
 
-write.csv(ms, file = "breakdown_by_conditions.csv")
+write.csv(ms, file = "breakdown_by_competition.csv")
 
 
 
