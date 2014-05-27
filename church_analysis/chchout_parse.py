@@ -10,7 +10,7 @@ def mean_confidence_interval(data, confidence=0.95):
     h = se * sp.stats.t._ppf((1+confidence)/2., n-1)
     return m, m-h, m+h
 
-rnm = 'modelO_opt0.75_n1000b.chchout'
+rnm = 'modelO_opt1_n1000.chchout'
 rg = open(rnm)
 line = rg.readline()
 rg.close()

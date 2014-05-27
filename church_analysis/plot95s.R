@@ -5,7 +5,7 @@
 # rows 7-12 = LUCK
 # i,ii,iii,iv,... = 2partner,2opponent,2neither,8partner,...
 
-ci95s= read.csv('modelO_opt0.75_n1000b_95ci.csv',header=F)
+ci95s= read.csv('modelO_opt1_n1000_95ci.csv',header=F)
 names(ci95s)<-c('lbound','ubound')
 ci95s$mean = (ci95s$ubound+ci95s$lbound)/2
 ci95s$measurement = c(rep('st',6),rep('lu',6))
