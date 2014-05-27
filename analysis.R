@@ -26,7 +26,7 @@ agrci <- function(x){
 
 
 
-first_batch = read.csv("motivation_results_first_study.csv",header=TRUE, sep="\t")
+first_batch = read.csv("motivation_results_one_point_five.csv",header=TRUE, sep="\t")
 head(first_batch)
 colnames(first_batch)
 
@@ -113,7 +113,7 @@ table_by_both <- aggregate(cbind(Answer.DW_strength,
                                  Answer.evidence_condition + Answer.competition_condition, data=first_batch_c, mean)
 
 
-summary(aov(Answer.DW_strength ~ Answer.evidence_condition + as.factor(Answer.competition_condition), data = first_batch_c))
+summary(aov(Answer.DW_strength ~ Answer.evidence_condition * as.factor(Answer.competition_condition), data = first_batch_c))
 summary(aov(Answer.strength_of_average_player ~ Answer.evidence_condition + as.factor(Answer.competition_condition), data = first_batch_c))
 summary(aov(Answer.role_of_luck_in_game ~ Answer.evidence_condition + as.factor(Answer.competition_condition), data = first_batch_c))
 summary(aov(Answer.expectation_of_winning ~ Answer.evidence_condition + as.factor(Answer.competition_condition), data = first_batch_c))
@@ -121,7 +121,7 @@ summary(aov(Answer.expectation_of_winning ~ Answer.evidence_condition + as.facto
 
 # Multiple regression of DW strength from everything else
 summary(glm(Answer.expectation_of_winning ~ Answer.DW_strength + Answer.evidence_condition + as.factor(Answer.competition_condition) + Answer.strength_of_average_player + Answer.role_of_luck_in_game, data = first_batch_c))
-summary(glm(Answer.DW_strength ~  Answer.evidence_condition + Answer.expectation_of_winning + as.factor(Answer.competition_condition) + Answer.strength_of_average_player + Answer.role_of_luck_in_game , data = first_batch_c))
+summary(glm(Answer.DW_strength ~  Answer.evidence_condition * as.factor(Answer.competition_condition) + Answer.expectation_of_winning +  Answer.strength_of_average_player + Answer.role_of_luck_in_game , data = first_batch_c))
 
 
 # Excluding the control condition:
@@ -223,7 +223,7 @@ ggplot(ms, aes(x= conditions_combined, y=c, fill=object)) +
 
 
 
-write.csv(ms, file = "breakdown_by_competition.csv")
+write.csv(ms, file = "breakdown_by_competition_n_140.csv")
 
 
 
