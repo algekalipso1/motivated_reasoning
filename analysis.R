@@ -144,7 +144,6 @@ library(binom)
 
 ## Only on evidence:
 
-
 md <- melt(first_batch_c, measure.vars = c("Answer.DW_strength","Answer.expectation_of_winning","Answer.strength_of_average_player", "Answer.role_of_luck_in_game"), variable.name="object", value.name="chosen")
 ms <- ddply(md, .(object, Answer.evidence_condition), # Evidence
             summarise, 
@@ -164,6 +163,34 @@ ggplot(ms, aes(x= evidence, y=c, fill=object)) +
   geom_linerange(aes(ymin=c.cil,ymax=c.cih), 
                  position=position_dodge(width=.9)) + 
   ylab("Slider value")
+
+
+
+
+
+
+## Only on competition:
+
+md <- melt(first_batch_c, measure.vars = c("Answer.DW_strength","Answer.expectation_of_winning","Answer.strength_of_average_player", "Answer.role_of_luck_in_game"), variable.name="object", value.name="chosen")
+ms <- ddply(md, .(object, Answer.competition_condition), # Evidence
+            summarise, 
+            c = mean(chosen),
+            n = sum(chosen), 
+            l = length(chosen),
+            sdc = sd(chosen),
+            c.cih = c + ci.high(chosen),
+            c.cil = c - ci.low(chosen))
+
+
+ms$competition <- factor(ms$Answer.competition_condition)
+levels(ms$competition) <- c("control", "partner", "opponent")
+
+ggplot(ms, aes(x= competition, y=c, fill=object)) + 
+  geom_bar(position=position_dodge()) + 
+  geom_linerange(aes(ymin=c.cil,ymax=c.cih), 
+                 position=position_dodge(width=.9)) + 
+  ylab("Slider value")
+
 
 
 
@@ -196,7 +223,7 @@ ggplot(ms, aes(x= conditions_combined, y=c, fill=object)) +
 
 
 
-
+write.csv(ms, file = "breakdown_by_conditions.csv")
 
 
 
