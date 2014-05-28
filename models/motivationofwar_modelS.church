@@ -1,0 +1,81 @@
+; this is a model that assumes our strength is above average
+
+; the main result of this is that we think we will win our game against bob, even though he is clearly good
+; phenomenon as of yet uncaptured:
+;  - judgment of bob as weaker than the evidence suggests
+
+(define samples
+  (mh-query 
+   1000 
+   10
+   
+   ; there is some average strength, which we assume is somewhere between -0.5 & 0.5
+   (define mean-strength (lambda () (uniform -0.5 0.5)))
+   ; strength is normally distributed with mean "mean-strength" and stdev 1
+   (define strength-prior (lambda () (gaussian (mean-strength) 1)))
+   
+   ; when we introspect strength, we assume our strength is above average
+   ; though there is uncertainty about what the true average is
+   (define (introspect-strength)
+     (rejection-query
+      (define my-strength (strength-prior))
+      my-strength
+      (> my-strength (mean-strength))))
+   
+   ; luck can vary from 0 to 1, with 2 intermediate values
+   (define luck-prior (lambda () (uniform-draw '(0 0.33 0.66 1))))
+   
+   ; luck is a persistent property of a type-of-game
+   (define luck (mem (lambda (type-of-game) (luck-prior))))
+   
+   ; strength is a persistent property of a person
+   ; if you are gauging your own strength, use the introspect-strength function
+   (define strength (mem (lambda (person) 
+                           (if (equal? person 'you)
+                               (introspect-strength)
+                               (strength-prior)))))
+   
+   ; compare to the typical strength function below
+   ; (define strength (mem (lambda (person) (strength-prior))))
+   
+   ; total-pulling for a team is a sum of the strengths of team-members
+   (define (total-pulling team)
+     (sum (map (lambda (person) (strength person)) team)))
+   
+   ; winner of a match between two teams in a particular game
+   (define match-winner 
+     (lambda (team1 team2 type-of-game)
+       ; with probability = luck, match-winner is determined by chance (a coin flip)
+       (if (flip (luck type-of-game))
+           (if (flip) 'team1 'team2)
+           ; with probability = (1 - luck), match-winner is stronger team
+           (if (> (total-pulling team1) (total-pulling team2)) 'team1 'team2))))
+   
+   
+   
+   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+   ; joint inference for bob's strength, your strength, and some-other-guy's strength  
+   ; & probability of winning the match against bob
+   (list (strength 'bob) (strength 'you) (strength 'steve) (eq? 'team1 (match-winner '(you) '(bob) 'game)))
+   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+   
+   
+   (and
+    (eq? 'team1 (match-winner '(bob) '(sue) 'game))
+    (eq? 'team1 (match-winner '(bob) '(lou) 'game))
+    ;  (eq? 'team1 (match-winner '(bob) '(stew) 'game))
+    ;  (eq? 'team1 (match-winner '(bob) '(drew) 'game))
+    )
+   ))
+
+
+(multiviz
+ "Expected strength: " (mean (map first samples))
+ (density (map first samples)  "Bob strength" true)
+ "Expected strength: " (mean (map second samples))
+ (density (map second samples)  "Your strength" true)
+ "Expected strength: " (mean (map third samples))
+ (density (map third samples)  "Steve's strength" true)
+ "Probability of winning: " (mean (map fourth samples))
+ (hist (map fourth samples)  "probability of winning")
+ )

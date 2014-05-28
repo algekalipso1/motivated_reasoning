@@ -1,0 +1,135 @@
+; this is a model that has an optimism assumption
+; the assumption is that with some degree of optimism, the agent thinks their team is going to win with probability=optimism
+
+;try conditioning on only the past matches (that bob has won)
+; next try uncommenting the "next-match" conditioner,
+; also try seeing what happens when the next-match does not involve you
+
+; there are two querying statements: the default is to print the 
+; agent's perception of bob's strength and how much luck is involved in the game
+
+; the second is to print how likely the agent thinks she will win against bob in the next game
+; n.b.: in the multiviz function at the bottom, comment the "density" call, and uncomment the "hist" function above
+
+
+(define conditions 
+(list
+  (list 2 'partner)
+  (list 2 'opponent)
+  (list 2 'neither)
+  (list 8 'partner)
+  (list 8 'opponent)
+  (list 8 'neither)
+  ))
+
+
+(define (sample cndtn)
+  (rejection-query
+      ; strength is normally distributed with mean 0 and stdev 1
+   (define strength-prior (lambda () (uniform 0 1)))
+   ; luck can vary from 0 to 1, with 2 intermediate values
+   ;(define luck-prior (lambda () (uniform-draw '(0 0.33 0.66 1))))
+   (define luck-prior (lambda () (uniform 0 1)))
+
+   
+   ; luck is a persistent property of a type-of-game
+   (define luck (mem (lambda (type-of-game) (luck-prior))))
+   ; strength is a persistent property of a person
+   ;(define strength (mem (lambda (person) (strength-prior))))
+   (define strength (mem (lambda (person) (strength-prior))))
+   
+   (define (team-ability team)
+     (prod (map (lambda (person) (strength person)) team)))
+
+   (define (single-hit team type-of-game)
+    (or 
+      (and (flip (luck type-of-game)) (flip)) 
+      (flip (team-ability team))))
+
+   (define (total-hits team type-of-game num-rounds)
+    (repeat num-rounds (lambda () (single-hit team type-of-game))))
+
+   (define (num-correct team type-of-game num-rounds)
+    (sum (map boolean_to_number (total-hits team type-of-game num-rounds))))
+   
+   ; winner of a match between two teams in a particular game
+   (define match-winner 
+     (lambda (team1 team2 type-of-game num-rounds)
+       ; with probability = luck, match-winner is determined by chance (a coin flip)
+       (if (> (num-correct team1 type-of-game num-rounds) (num-correct team2 type-of-game num-rounds))
+           'team1
+           (if (< (num-correct team1 type-of-game num-rounds) (num-correct team2 type-of-game num-rounds))
+              'team2
+              (if (flip) 'team1 'team2)
+            ))))
+
+   ; optimistic-outcome; with probability = optimism, We will win our next game!
+   ; with probability = 1 - optimism, we will lose..
+   ; if optimism = 0, we are perfectly pessimistic
+   ; if optimism = 1, we are delusional
+   (define optimistic-outcome
+    (lambda (optimism our-team opponent-team the-name-of-the-game num-rounds)
+      (if (flip optimism) 
+        (eq? 'team1 (match-winner our-team opponent-team the-name-of-the-game num-rounds)) 
+        (eq? 'team2 (match-winner our-team opponent-team the-name-of-the-game num-rounds)))
+      ))
+
+   ;next-match function determines if we are in the next match
+   ; if we are, we will be optimistic with the optimism parameter
+   (define next-match
+    (lambda (team1 team2 optimism the-name-of-the-game num-rounds)
+      (if (> (list_index team1 'you) -1)
+        (optimistic-outcome optimism team1 team2 the-name-of-the-game num-rounds)
+        false
+      )
+      ))
+
+   (define args (map string->number (regexp_split argstring ",")))
+   (define opt-param (first args))
+
+   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+   ; joint inference for bob's strength and luck of the game
+   (list (strength 'dw) (luck 'game))      
+;   (list (strength 'dw) (strength 'cd))
+
+   ; joint inference for how much you expect to win against bob and luck of the game
+   ; (list (eq? 'team1 (match-winner '(you cb) '(dw dd) 'game 8)) (strength 'dw) )
+   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+   (and
+    (equal? (num-correct '(dw aa) 'game (first cndtn)) (first cndtn))
+ ; (eq? 'team1 (match-winner '(dw ab) '(cd ef) 'game 8))
+    ;  (eq? 'team1 (match-winner '(bob) '(drew) 'game))
+    ;;; NEXT-MATCH (optimism) CONDITION
+    (case (second cndtn)
+      (('partner) (next-match '(you dw) '(yy zz) opt-param 'game 10))
+      (('opponent) (next-match '(you yy) '(dw zz) opt-param 'game 10))
+      (('neither) (next-match '(you yy) '(xx zz) opt-param 'game 10))
+    )
+    )
+   ))
+
+(define n 10000)
+(define (samples cnd) (repeat n (lambda () (sample cnd))))
+
+(define predictions (map samples conditions))
+
+;(list (mean (map first samples)) (mean (map second samples)))
+(list 
+  (list 
+    (map first (first predictions))
+    (map first (second predictions))
+    (map first (third predictions))
+    (map first (fourth predictions))
+    (map first (fifth predictions))
+    (map first (sixth predictions)))
+  (list 
+    (map second (first predictions))
+    (map second (second predictions))
+    (map second (third predictions))
+    (map second (fourth predictions))
+    (map second (fifth predictions))
+    (map second (sixth predictions)))
+  )
+ ; (mean (map second samples)))
