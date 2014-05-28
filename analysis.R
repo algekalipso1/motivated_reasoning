@@ -121,7 +121,7 @@ summary(aov(Answer.expectation_of_winning ~ Answer.evidence_condition + as.facto
 
 # Multiple regression of DW strength from everything else
 summary(glm(Answer.expectation_of_winning ~ Answer.DW_strength + Answer.evidence_condition + as.factor(Answer.competition_condition) + Answer.strength_of_average_player + Answer.role_of_luck_in_game, data = first_batch_c))
-summary(glm(Answer.DW_strength ~  Answer.evidence_condition * as.factor(Answer.competition_condition) + Answer.expectation_of_winning +  Answer.strength_of_average_player + Answer.role_of_luck_in_game , data = first_batch_c))
+summary(glm(Answer.DW_strength ~ study_time +  Answer.evidence_condition + as.factor(Answer.competition_condition) + Answer.expectation_of_winning +  Answer.strength_of_average_player + Answer.role_of_luck_in_game , data = first_batch_c))
 
 
 # Excluding the control condition:
