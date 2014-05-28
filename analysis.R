@@ -26,7 +26,7 @@ agrci <- function(x){
 
 
 
-first_batch = read.csv("motivation_results_one_point_five.csv",header=TRUE, sep="\t")
+first_batch = read.csv("csv/motivation_results_one_point_five.csv",header=TRUE, sep="\t")
 head(first_batch)
 colnames(first_batch)
 
