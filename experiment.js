@@ -28,7 +28,11 @@ var experiment = {
 	//competition_condition: 2,
 
 	// The following variables store the response given by the participant
+	participant_age: '',
+	participant_gender: '',
+	participant_native_lang: '',
 	initials_provided_by_participant: '',
+
 
 	DW_strength: -1,
 	strength_of_average_player: -1,
@@ -299,6 +303,9 @@ var experiment = {
 
 
     check_finished: function() {
+    	experiment.participant_age = $("#age_id").val();
+    	experiment.participant_gender = $("#female_button").val(); //If T, female, else male
+    	experiment.participant_native_lang = $("#language_id").val();
     	//Post-questions
 		experiment.DW_strength = DW_strength_raw.getValue()[0];
 		experiment.strength_of_average_player = average_strength_raw.getValue()[0];
