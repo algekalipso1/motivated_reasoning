@@ -22,12 +22,30 @@ function initialsClick() {
     numComplete = numComplete+1; 
     $('#trial-num').html(numComplete);
     $('.bar').css('width', (200.0 * (1+numComplete)/15) + 'px');
+
+    setTimeout(connectionTransition, 9000);
+
     //for testing
     //setTimeout(connectionLoad, 1000);
     //for real runs
-    setTimeout(connectionLoad, 20000);
+    //setTimeout(connectionLoad, 20000);
 
 
+}
+
+function connectionTransition() {
+    $("#loading_box").text("1 / 4 users found...");
+    setTimeout(connectionTransition2, 7000);
+}
+
+function connectionTransition2() {
+    $("#loading_box").text("2 / 4 users found...");
+    setTimeout(connectionTransition3, 4000);
+}
+
+function connectionTransition3() {
+    $("#loading_box").text("3 / 4 users found...");
+    setTimeout(connectionLoad, 1000);
 }
 
 function connectionLoad() {
@@ -40,6 +58,8 @@ function connectionLoad() {
     //for real runs
     setTimeout(conditionLoad, 4000);
 }
+
+
 
 function conditionLoad() {
     $(".teams_container").css("display", "block");
