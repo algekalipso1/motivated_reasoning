@@ -73,11 +73,15 @@ function conditionLoad() {
 
 function conditionFunction() {
     hide_and_seek('condition_slide', 'condition_slide2');
+    experiment.instructions_function();
     experiment.instructions_function2();
 }
 
 function loadCondition3() {
     hide_and_seek('condition_slide2', 'condition_slide3');
+    experiment.instructions_function();
+    experiment.instructions_function2();
+
     var text = '';
     if (experiment.competition_condition == 0) {
         text += '<span class="block-text">Before we begin, you will see the results from a previous round in order to get a feel for the ability of <b>DW</b>, a randomly selected player.</span>';
@@ -90,7 +94,7 @@ function loadCondition3() {
         text+= '<span class="block-text">Before we begin, you will see the results from a previous round in order to get a feel for the ability of your opponent, <b>DW</b>.</span>';
     };
 
-    $("#condition_text3").html(text);
+    $("#condition_text6").html(text);
      
 }
 

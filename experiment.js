@@ -64,6 +64,10 @@ var experiment = {
 		};
 
 		$("#condition_text").html(condition_text);
+		$("#condition_text2").html(condition_text);
+		$("#condition_text4").html(condition_text);
+
+
 	},
 
 	instructions_function2: function() {
@@ -87,7 +91,9 @@ var experiment = {
 									' and <b>DW</b> as the <b>word unscrambler</b>.</p>';
 		};
 
-		$("#condition_text2").html(condition_text);
+		$("#condition_text3").html(condition_text);
+		$("#condition_text5").html(condition_text);
+
 	},
 
 	teams_function: function() {
