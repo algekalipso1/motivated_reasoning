@@ -71,6 +71,11 @@ function conditionLoad() {
     experiment.teams_function();
 }
 
+function conditionFunction() {
+    hide_and_seek('condition_slide', 'condition_slide2');
+    experiment.instructions_function2();
+}
+
 function evClick(condition) {
 
 
@@ -94,7 +99,7 @@ function evClick(condition) {
             numComplete = numComplete+1; 
             $('#trial-num').html(numComplete);
     		$('.bar').css('width', (200.0 * (1+numComplete)/15) + 'px');
-            DW_strength_raw = new Dragdealer('simple-slider1', {'x': 0.5, 'slide': false});
+            motivation_raw = new Dragdealer('simple-slider0', {'x': 0.5, 'slide': false});
         }
     };
     if (condition == 8) {
@@ -159,7 +164,7 @@ function evClick(condition) {
             numComplete = numComplete+1; 
             $('#trial-num').html(numComplete);
 		    $('.bar').css('width', (200.0 * (1+numComplete)/15) + 'px');
-            DW_strength_raw = new Dragdealer('simple-slider1', {'x': 0.5, 'slide': false});
+            motivation_raw = new Dragdealer('simple-slider0', {'x': 0.5, 'slide': false});
         }
     };
 
@@ -176,7 +181,16 @@ function sliderErrorHide() {
 function evalClick() {
 
 
-    if ($("#question2").css("display") == "none") {
+    if ($("#question1").css("display") == "none") {
+        if ($("#slider0").css("opacity") != 1.0) {
+            sliderErrorMessage();
+        } else {
+            motivation_raw.disable();
+            sliderErrorHide();
+            $("#question1").css("display", "block");
+            DW_strength_raw = new Dragdealer('simple-slider1', {'x': 0.5, 'slide': false});
+        }
+    } else if ($("#question2").css("display") == "none") {
         if ($("#slider1").css("opacity") != 1.0) {
             sliderErrorMessage();
         } else {

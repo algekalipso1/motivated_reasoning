@@ -24,13 +24,9 @@ body {
   display: none;
 }
 
-#position_selector, #position_unscrambler {
-  text-align: right;
-}
-
 .teams_row {
   text-align: center;
-  width: 30%;
+  width: 20%;
 }
 
 #teams_header {
@@ -297,7 +293,7 @@ button[disabled] {
 }
 
 .block-text {
-  width: 500px;
+  width: 80%;
   text-align: justify;
   margin: 2 auto;
   margin-bottom: 1em;

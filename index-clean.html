@@ -56,8 +56,8 @@
 			<div class="demographic_slide" style="display: none;">
 				<center class="demographic_container">
 					<p id='logo-text'>Basic Info</p>
-					<div class="long_instructions_text" style="margin: 10px;">
-						<p class="block-text"> 
+					<center class="long_instructions_text" style="margin: 10px;">
+						<p> 
 							Please complete the questions below.
 						</p>
 						<span id="age">Age: <input type="text" name="age" id = "age_id" maxlength="3"><br></span><br>
@@ -68,7 +68,7 @@
 						<span id="language">Native Language: <input type="text" name="language" id = "language_id"><br></span>
 
 											
-					</div>
+					</center>
 				</center>
 				<center class="button_container">
 					<button type="button" class="continue_button" id="demographic_button" onclick="hide_and_seek('demographic_slide', 'instructions_slide'); numComplete = numComplete+1; $('#trial-num').html(numComplete); $('.bar').css('width', (200.0 * (1+numComplete)/15) + 'px');">Continue</button> 
@@ -147,13 +147,47 @@
 						<p class="block-text" id="condition_text">
 							
 						</p>
+					</div>
+				</center>
+				<center class="button_container">
+				<button type="button" class="continue_button" id="instructions_button" onclick="conditionFunction(); ">Continue</button> 
+				<!-- <button type="button" class="continue_button" id="instructions_button" onclick="experiment.evidence_function()">Continue</button> -->
+					
+				</center>
+			</div>
+
+			<div class="condition_slide2" style="display: none;">
+				<center class="condition_container2">
+					<p id='logo-text'>Teams</p>
+					<div class="long_instructions_text" style="margin: 10px;">
+
+						<p class="block-text" id="condition_text2">
+							
+						</p>
+					</div>
+				</center>
+				<center class="button_container">
+				<button type="button" class="continue_button" id="instructions_button" onclick="hide_and_seek('condition_slide2', 'condition_slide3');">Continue</button> 
+				<!-- <button type="button" class="continue_button" id="instructions_button" onclick="experiment.evidence_function()">Continue</button> -->
+					
+				</center>
+			</div>
+
+			<div class="condition_slide3" style="display: none;">
+				<center class="condition_container3">
+					<p id='logo-text'>Teams</p>
+					<div class="long_instructions_text" style="margin: 10px;">
+						
+						<p class="block-text" id="condition_text2">
+							
+						</p>
 						<p class="block-text">
 							Before we begin, you will see the results from a previous round in order to familiarize yourself with how the game works. In this sample round, the unscrambler was: <b>DW</b>. You will see the word chosen by the word selector in <b>scrambled</b> form, the unscrambled <b>answer</b>, and an indication of whether or not the response submitted was <b>correct and in time (submitted under 10 seconds)</b>.</p>
 							<br>
 					</div>
 				</center>
 				<center class="button_container">
-				<button type="button" class="continue_button" id="instructions_button" onclick="hide_and_seek('condition_slide', 'evidence_slide'); experiment.evidence_function();">Continue</button> 
+				<button type="button" class="continue_button" id="instructions_button" onclick="hide_and_seek('condition_slide3', 'evidence_slide'); experiment.evidence_function();">Continue</button> 
 				<!-- <button type="button" class="continue_button" id="instructions_button" onclick="experiment.evidence_function()">Continue</button> -->
 					
 				</center>
@@ -169,8 +203,19 @@
 
 			<div class="eval_slide" style="display: none;">
 				<center class="eval_container">
-					<p id="logo-text">Based on the results from the previous screen:</p>
-					<div class="slider_question_container" id="question1">
+					<p id="logo-text">In the next page, you will compete against the: BLUE TEAM. <br>
+										Before you start, please answer the following:</p>
+					<div class="slider_question_container" id="question0">
+						<center class="motivation_question">
+							<div class="question">How motivated are you to win this game?</div>
+							<div class="slider_left_text">Not very motivated</div>
+							<div id="simple-slider0" class="dragdealer slider" onclick='{$("#slider0").css("opacity", "1.0");};'>
+								<img src="images/button.jpg" class="handle" id="slider0" style="opacity: 0.4;" onclick='{$(this).css("opacity", "1.0");};'>
+    						</div> 
+    						<div class="slider_right_text">Very motivated</div>  
+						</center>
+					</div>
+					<div class="slider_question_container" id="question1" style="display: none;">
 						<center class="strength_question">
 							<div class="question">How do you think <b>DW</b>'s <b>unscrambling ability</b> compares to other Turkers?</div>
 							<div class="slider_left_text">The absolute worst</div>

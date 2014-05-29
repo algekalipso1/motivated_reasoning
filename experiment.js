@@ -33,7 +33,7 @@ var experiment = {
 	participant_native_lang: '',
 	initials_provided_by_participant: '',
 
-
+	motivation_to_win: -1,
 	DW_strength: -1,
 	strength_of_average_player: -1,
 	role_of_luck_in_game: -1,
@@ -52,24 +52,42 @@ var experiment = {
 
 		if (experiment.competition_condition == 0) {
 			//control
-			condition_text += '<p>Your partner will be: <b>JG</b>. </p>'+
-								'<p>You will be playing against a team with <b>IA</b> as the <b>word selector</b>'+
+			condition_text += '<p>Your partner will be: <b>JG</b>. </p>';
+		};
+		if (experiment.competition_condition==1) {
+			//team
+			condition_text += '<p>Your partner will be: <b>DW</b>. </p>';
+		};
+		if (experiment.competition_condition==2) {
+			//opponent
+			condition_text += '<p>Your partner will be: <b>SK</b>. </p>';
+		};
+
+		$("#condition_text").html(condition_text);
+	},
+
+	instructions_function2: function() {
+		var condition_text = '';
+		//Testing
+		//experiment.competition_condition = 1;
+
+		if (experiment.competition_condition == 0) {
+			//control
+			condition_text += '<p>You will be playing against a team with <b>IA</b> as the <b>word selector</b>'+
 									' and <b>GM</b> as the <b>word unscrambler</b>.</p>';
 		};
 		if (experiment.competition_condition==1) {
 			//team
-			condition_text += '<p>Your partner will be: <b>DW</b>. </p>'+
-								'<p>You will be playing against a team with <b>IA</b> as the <b>word selector</b>'+
+			condition_text += '<p>You will be playing against a team with <b>IA</b> as the <b>word selector</b>'+
 									' and <b>GM</b> as the <b>word unscrambler</b>.</p>';
 		};
 		if (experiment.competition_condition==2) {
 			//opponent
-			condition_text += '<p>Your partner will be: <b>SK</b>. </p>'+
-								'<p>You will be playing against a team with <b>MJ</b> as the <b>word selector</b>'+
+			condition_text += '<p>You will be playing against a team with <b>MJ</b> as the <b>word selector</b>'+
 									' and <b>DW</b> as the <b>word unscrambler</b>.</p>';
 		};
 
-		$("#condition_text").html(condition_text);
+		$("#condition_text2").html(condition_text);
 	},
 
 	teams_function: function() {
@@ -86,7 +104,7 @@ var experiment = {
 										'<th class="teams_row" id="teams_team2">Unscrambler</th>'+
 									'</tr>'+
 									'<tr id="teams_row1">'+
-										'<td class="teams_row" id="position_selector"><font color="red">Team 1</font></td>'+
+										'<td class="teams_row" id="position_selector"><font color="red">YOUR <br> TEAM</font></td>'+
 										'<td class="teams_row" id="team_you"><img src="images/shirt_red.png" class="selector_shirt"></td>'+
 										'<td class="teams_row" id="team_jg"><img src="images/shirt_red.png" class="unscrambler_shirt"></td>'+
 									'</tr>'+
@@ -101,7 +119,7 @@ var experiment = {
 										'<td></td>'+
 									'</tr>'+
 									'<tr id="teams_row2">'+
-										'<td class="teams_row table_position" id="position_unscrambler"><font color="blue">Team 2</font></td>'+
+										'<td class="teams_row table_position" id="position_unscrambler"><font color="blue">THEIR <br> TEAM</font></td>'+
 										'<td class="teams_row" id="team_ia"><img src="images/shirt_blue.png" class="selector_shirt">'+
 										'<td class="teams_row" id="team_gm"><img src="images/shirt_blue.png" class="unscrambler_shirt">'+
 									'</tr>'+
@@ -123,7 +141,7 @@ var experiment = {
 										'<th class="teams_row" id="teams_team2">Unscrambler</th>'+
 									'</tr>'+
 									'<tr id="teams_row1">'+
-										'<td class="teams_row" id="position_selector"><font color="red">Team 1</font></td>'+
+										'<td class="teams_row" id="position_selector"><font color="red">YOUR <br> TEAM</font></td>'+
 										'<td class="teams_row" id="team_you"><img src="images/shirt_red.png" class="selector_shirt"></td>'+
 										'<td class="teams_row" id="team_jg"><img src="images/shirt_red.png" class="unscrambler_shirt"></td>'+
 									'</tr>'+
@@ -138,7 +156,7 @@ var experiment = {
 										'<td></td>'+
 									'</tr>'+
 									'<tr id="teams_row2">'+
-										'<td class="teams_row table_position" id="position_unscrambler"><font color="blue">Team 2</font></td>'+
+										'<td class="teams_row table_position" id="position_unscrambler"><font color="blue">THEIR <br> TEAM</font></td>'+
 										'<td class="teams_row" id="team_ia"><img src="images/shirt_blue.png" class="selector_shirt">'+
 										'<td class="teams_row" id="team_gm"><img src="images/shirt_blue.png" class="unscrambler_shirt">'+
 									'</tr>'+
@@ -160,7 +178,7 @@ var experiment = {
 										'<th class="teams_row" id="teams_team2">Unscrambler</th>'+
 									'</tr>'+
 									'<tr id="teams_row1">'+
-										'<td class="teams_row" id="position_selector"><font color="red">Team 1</font></td>'+
+										'<td class="teams_row" id="position_selector"><font color="red">YOUR <br> TEAM</font></td>'+
 										'<td class="teams_row" id="team_you"><img src="images/shirt_red.png" class="selector_shirt"></td>'+
 										'<td class="teams_row" id="team_jg"><img src="images/shirt_red.png" class="unscrambler_shirt"></td>'+
 									'</tr>'+
@@ -175,7 +193,7 @@ var experiment = {
 										'<td></td>'+
 									'</tr>'+
 									'<tr id="teams_row2">'+
-										'<td class="teams_row table_position" id="position_unscrambler"><font color="blue">Team 2</font></td>'+
+										'<td class="teams_row table_position" id="position_unscrambler"><font color="blue">THEIR <br> TEAM</font></td>'+
 										'<td class="teams_row" id="team_ia"><img src="images/shirt_blue.png" class="selector_shirt">'+
 										'<td class="teams_row" id="team_gm"><img src="images/shirt_blue.png" class="unscrambler_shirt">'+
 									'</tr>'+
@@ -307,6 +325,7 @@ var experiment = {
     	experiment.participant_gender = $("#female_button").val(); //If T, female, else male
     	experiment.participant_native_lang = $("#language_id").val();
     	//Post-questions
+    	experiment.motivation_to_win = motivation_raw.getValue()[0];
 		experiment.DW_strength = DW_strength_raw.getValue()[0];
 		experiment.strength_of_average_player = average_strength_raw.getValue()[0];
 		experiment.role_of_luck_in_game = luck_raw.getValue()[0];
