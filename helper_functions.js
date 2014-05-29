@@ -76,6 +76,24 @@ function conditionFunction() {
     experiment.instructions_function2();
 }
 
+function loadCondition3() {
+    hide_and_seek('condition_slide2', 'condition_slide3');
+    var text = '';
+    if (experiment.competition_condition == 0) {
+        text += '<span class="block-text">Before we begin, you will see the results from a previous round in order to get a feel for the ability of <b>DW</b>, a randomly selected player.</span>';
+
+    };
+    if (experiment.competition_condition == 1) {
+        text += '<span class="block-text">Before we begin, you will see the results from a previous round in order to get a feel for the ability of your teammate, <b>DW</b>.</span>';
+    };
+    if (experiment.competition_condition == 2) {
+        text+= '<span class="block-text">Before we begin, you will see the results from a previous round in order to get a feel for the ability of your opponent, <b>DW</b>.</span>';
+    };
+
+    $("#condition_text3").html(text);
+     
+}
+
 function evClick(condition) {
 
 

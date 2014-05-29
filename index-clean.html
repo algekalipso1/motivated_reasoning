@@ -167,7 +167,7 @@
 					</div>
 				</center>
 				<center class="button_container">
-				<button type="button" class="continue_button" id="instructions_button" onclick="hide_and_seek('condition_slide2', 'condition_slide3');">Continue</button> 
+				<button type="button" class="continue_button" id="instructions_button" onclick="loadCondition3();">Continue</button> 
 				<!-- <button type="button" class="continue_button" id="instructions_button" onclick="experiment.evidence_function()">Continue</button> -->
 					
 				</center>
@@ -178,12 +178,15 @@
 					<p id='logo-text'>Teams</p>
 					<div class="long_instructions_text" style="margin: 10px;">
 						
-						<p class="block-text" id="condition_text2">
+						<p class="block-text" id="condition_text3">
 							
 						</p>
 						<p class="block-text">
-							Before we begin, you will see the results from a previous round in order to familiarize yourself with how the game works. In this sample round, the unscrambler was: <b>DW</b>. You will see the word chosen by the word selector in <b>scrambled</b> form, the unscrambled <b>answer</b>, and an indication of whether or not the response submitted was <b>correct and in time (submitted under 10 seconds)</b>.</p>
+							<p id="ability_check"></p>
+							
+							<p>You will see the word chosen by the word selector in <b>scrambled</b> form, the unscrambled <b>answer</b>, and an indication of whether or not the response submitted was <b>correct and in time (submitted under 10 seconds)</b>.</p>
 							<br>
+						</p>
 					</div>
 				</center>
 				<center class="button_container">
