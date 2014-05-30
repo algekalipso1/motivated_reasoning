@@ -17,6 +17,20 @@ function hide_and_seek(hide, show) {
     $("."+show).css("display", "block");
 }
 
+function demographic_check() {
+    if ($("#age_id").val() == '' || $("#language_id").val() == '') {
+        $(".error_message_demographic").css("display", "block");
+    } else if ($('input[name=gender]:checked').length == 0) {
+        $(".error_message_demographic").css("display", "block");
+    } else {
+        $(".error_message_demographic").css("display", "none");
+        hide_and_seek('demographic_slide', 'instructions_slide'); 
+        numComplete = numComplete+1; $('#trial-num').html(numComplete); 
+        $('.bar').css('width', (200.0 * (1+numComplete)/15) + 'px');
+    }
+    
+}
+
 function initialsClick() {
     hide_and_seek("initials_slide", "loading_slide");
     numComplete = numComplete+1; 
@@ -35,12 +49,12 @@ function initialsClick() {
 
 function connectionTransition() {
     $("#loading_box").text("1 / 4 users found...");
-    setTimeout(connectionTransition2, 7000);
+    setTimeout(connectionTransition2, 2000);
 }
 
 function connectionTransition2() {
     $("#loading_box").text("2 / 4 users found...");
-    setTimeout(connectionTransition3, 4000);
+    setTimeout(connectionTransition3, 6000);
 }
 
 function connectionTransition3() {

@@ -72,7 +72,10 @@
 					</center>
 				</center>
 				<center class="button_container">
-					<button type="button" class="continue_button" id="demographic_button" onclick="hide_and_seek('demographic_slide', 'instructions_slide'); numComplete = numComplete+1; $('#trial-num').html(numComplete); $('.bar').css('width', (200.0 * (1+numComplete)/15) + 'px');">Continue</button> 
+					<button type="button" class="continue_button" id="demographic_button" onclick="demographic_check();">Continue</button> 
+					<div class="error_message_demographic" style="display: none;">
+						<font color="red"> Please make sure that you answered the questions.</font>
+					</div>
 				</center>
 			</div>
 

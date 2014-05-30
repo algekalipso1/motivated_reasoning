@@ -110,7 +110,7 @@ var experiment = {
 										'<th class="teams_row" id="teams_team2">Unscrambler</th>'+
 									'</tr>'+
 									'<tr id="teams_row1">'+
-										'<td class="teams_row" id="position_selector"><font color="red">YOUR <br> TEAM</font></td>'+
+										'<td class="teams_row" id="position_selector"><font color="red">RED <br> TEAM</font></td>'+
 										'<td class="teams_row" id="team_you"><img src="images/shirt_red.png" class="selector_shirt"></td>'+
 										'<td class="teams_row" id="team_jg"><img src="images/shirt_red.png" class="unscrambler_shirt"></td>'+
 									'</tr>'+
@@ -125,7 +125,7 @@ var experiment = {
 										'<td></td>'+
 									'</tr>'+
 									'<tr id="teams_row2">'+
-										'<td class="teams_row table_position" id="position_unscrambler"><font color="blue">THEIR <br> TEAM</font></td>'+
+										'<td class="teams_row table_position" id="position_unscrambler"><font color="blue">BLUE <br> TEAM</font></td>'+
 										'<td class="teams_row" id="team_ia"><img src="images/shirt_blue.png" class="selector_shirt">'+
 										'<td class="teams_row" id="team_gm"><img src="images/shirt_blue.png" class="unscrambler_shirt">'+
 									'</tr>'+
@@ -147,7 +147,7 @@ var experiment = {
 										'<th class="teams_row" id="teams_team2">Unscrambler</th>'+
 									'</tr>'+
 									'<tr id="teams_row1">'+
-										'<td class="teams_row" id="position_selector"><font color="red">YOUR <br> TEAM</font></td>'+
+										'<td class="teams_row" id="position_selector"><font color="red">RED <br> TEAM</font></td>'+
 										'<td class="teams_row" id="team_you"><img src="images/shirt_red.png" class="selector_shirt"></td>'+
 										'<td class="teams_row" id="team_jg"><img src="images/shirt_red.png" class="unscrambler_shirt"></td>'+
 									'</tr>'+
@@ -162,7 +162,7 @@ var experiment = {
 										'<td></td>'+
 									'</tr>'+
 									'<tr id="teams_row2">'+
-										'<td class="teams_row table_position" id="position_unscrambler"><font color="blue">THEIR <br> TEAM</font></td>'+
+										'<td class="teams_row table_position" id="position_unscrambler"><font color="blue">BLUE <br> TEAM</font></td>'+
 										'<td class="teams_row" id="team_ia"><img src="images/shirt_blue.png" class="selector_shirt">'+
 										'<td class="teams_row" id="team_gm"><img src="images/shirt_blue.png" class="unscrambler_shirt">'+
 									'</tr>'+
@@ -184,7 +184,7 @@ var experiment = {
 										'<th class="teams_row" id="teams_team2">Unscrambler</th>'+
 									'</tr>'+
 									'<tr id="teams_row1">'+
-										'<td class="teams_row" id="position_selector"><font color="red">YOUR <br> TEAM</font></td>'+
+										'<td class="teams_row" id="position_selector"><font color="red">RED <br> TEAM</font></td>'+
 										'<td class="teams_row" id="team_you"><img src="images/shirt_red.png" class="selector_shirt"></td>'+
 										'<td class="teams_row" id="team_jg"><img src="images/shirt_red.png" class="unscrambler_shirt"></td>'+
 									'</tr>'+
@@ -199,7 +199,7 @@ var experiment = {
 										'<td></td>'+
 									'</tr>'+
 									'<tr id="teams_row2">'+
-										'<td class="teams_row table_position" id="position_unscrambler"><font color="blue">THEIR <br> TEAM</font></td>'+
+										'<td class="teams_row table_position" id="position_unscrambler"><font color="blue">BLUE <br> TEAM</font></td>'+
 										'<td class="teams_row" id="team_ia"><img src="images/shirt_blue.png" class="selector_shirt">'+
 										'<td class="teams_row" id="team_gm"><img src="images/shirt_blue.png" class="unscrambler_shirt">'+
 									'</tr>'+
