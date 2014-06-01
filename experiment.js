@@ -242,15 +242,15 @@ var experiment = {
 												'<th class="task_evaluation">Correct?</th>'+
 												'<th class="task_time">Time (seconds)</th>'+
 											'</tr>'+
-											'<tr id="short_row1" class="row" style="display: none;"><td class="task_question" id="short_q1">tlbae</td>'+
-												 '<td class="task_answer" id="short_a1">table</td>'+
+											'<tr id="short_row1" class="row" style="display: none;"><td class="task_question" id="short_q1">serea</td>'+
+												 '<td class="task_answer" id="short_a1">erase</td>'+
 												 '<td class="task_evaluation" id="short_e1"><img src="images/check_green.png" class="check_mark"></td>'+
 												 '<td class="task_time" id="short_t1">6.4</td>'+
 											'</tr>'+
 											'<tr id="short_row2" style="display: none;"><td class="task_question" id="short_q2">seaktb</td>'+
 												 '<td class="task_answer" id="short_a2">basket</td>'+
-												 '<td class="task_evaluation" id="short_e2"><img src="images/check_green.png" class="check_mark"></td>'+
-												 '<td class="task_time" id="short_t2">8.7</td>'+
+												 '<td class="task_evaluation" id="short_e2"><img src="images/red_x.png" class="check_mark"></td>'+
+												 '<td class="task_time" id="short_t2">10.0</td>'+
 											'</tr>'+
 										'</table>'+
 									'</center>'+

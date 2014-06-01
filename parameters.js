@@ -19,5 +19,5 @@ var drag2_check = false;
 // Evidence level ~ amount of evidence: high or low, (2 or 8)
 // 1 -> low evidence
 // 0 -> high evidence 
-var evidence_level = random(0, 1);
-//var evidence_level = 0;
+//var evidence_level = random(0, 1);
+var evidence_level = 1;
