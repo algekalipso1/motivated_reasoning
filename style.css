@@ -204,6 +204,11 @@ body {
   text-align: center;
 }
 
+.task_time {
+  width: 100px;
+  margin-top: 20px;
+  text-align: center;
+}
 
 
 .manipulation_question_container {

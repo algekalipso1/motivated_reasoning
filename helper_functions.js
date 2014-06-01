@@ -161,16 +161,20 @@ function evClick(condition) {
             $("#short_row1").css("display", "table-row");
             $("#short_a1").css("display", "none");
             $("#short_e1").css("display", "none");
+            $("#short_t1").css("display", "none");
         } else if ($("#short_e1").css("display") == "none") {
             $("#short_a1").css("display", "table-cell");
             $("#short_e1").css("display", "table-cell");
+            $("#short_t1").css("display", "table-cell");
         } else if ($("#short_row2").css("display") == "none") {
             $("#short_row2").css("display", "table-row");
             $("#short_a2").css("display", "none");
             $("#short_e2").css("display", "none");
+            $("#short_t2").css("display", "none");
         } else if ($("#short_e2").css("display") == "none") {
             $("#short_a2").css("display", "table-cell");
             $("#short_e2").css("display", "table-cell");
+            $("#short_t2").css("display", "table-cell");
         } else {
             hide_and_seek("evidence_slide", "eval_slide");
             numComplete = numComplete+1; 
@@ -184,58 +188,74 @@ function evClick(condition) {
             $("#long_row1").css("display", "table-row");
             $("#a1").css("display", "none");
             $("#e1").css("display", "none");
+            $("#t1").css("display", "none");
         } else if ($("#e1").css("display") == "none") {
             $("#a1").css("display", "table-cell");
             $("#e1").css("display", "table-cell");
+            $("#t1").css("display", "table-cell");
         } else if ($("#long_row2").css("display") == "none") {
             $("#long_row2").css("display", "table-row");
             $("#a2").css("display", "none");
             $("#e2").css("display", "none");
+            $("#t2").css("display", "none");
         } else if ($("#e2").css("display") == "none") {
             $("#a2").css("display", "table-cell");
             $("#e2").css("display", "table-cell");
+            $("#t2").css("display", "table-cell");
         } else if ($("#long_row3").css("display") == "none") {
             $("#long_row3").css("display", "table-row");
             $("#a3").css("display", "none");
             $("#e3").css("display", "none");
+            $("#t3").css("display", "none");
         } else if ($("#e3").css("display") == "none") {
             $("#a3").css("display", "table-cell");
             $("#e3").css("display", "table-cell");
+            $("#t3").css("display", "table-cell");
         } else if ($("#long_row4").css("display") == "none") {
             $("#long_row4").css("display", "table-row");
             $("#a4").css("display", "none");
             $("#e4").css("display", "none");
+            $("#t4").css("display", "none");
         } else if ($("#e4").css("display") == "none") {
             $("#a4").css("display", "table-cell");
             $("#e4").css("display", "table-cell");
+            $("#t4").css("display", "table-cell");
         } else if ($("#long_row5").css("display") == "none") {
             $("#long_row5").css("display", "table-row");
             $("#a5").css("display", "none");
             $("#e5").css("display", "none");
+            $("#t5").css("display", "none");
         } else if ($("#e5").css("display") == "none") {
             $("#a5").css("display", "table-cell");
             $("#e5").css("display", "table-cell");
+            $("#t5").css("display", "table-cell");
         } else if ($("#long_row6").css("display") == "none") {
             $("#long_row6").css("display", "table-row");
             $("#a6").css("display", "none");
             $("#e6").css("display", "none");
+            $("#t6").css("display", "none");
         } else if ($("#e6").css("display") == "none") {
             $("#a6").css("display", "table-cell");
             $("#e6").css("display", "table-cell");
+            $("#t6").css("display", "table-cell");
         } else if ($("#long_row7").css("display") == "none") {
             $("#long_row7").css("display", "table-row");
             $("#a7").css("display", "none");
             $("#e7").css("display", "none");
+            $("#t7").css("display", "none");
         } else if ($("#e7").css("display") == "none") {
             $("#a7").css("display", "table-cell");
             $("#e7").css("display", "table-cell");
+            $("#t7").css("display", "table-cell");
         } else if ($("#long_row8").css("display") == "none") {
             $("#long_row8").css("display", "table-row");
             $("#a8").css("display", "none");
             $("#e8").css("display", "none");
+            $("#t8").css("display", "none");
         } else if ($("#e8").css("display") == "none") {
             $("#a8").css("display", "table-cell");
             $("#e8").css("display", "table-cell");
+            $("#t8").css("display", "table-cell");
         } else {
             hide_and_seek("evidence_slide", "eval_slide");
             numComplete = numComplete+1; 

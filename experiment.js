@@ -230,7 +230,7 @@ var experiment = {
 
 		var info_about_partner = '';
 		//testing
-		//evidence_level=0;
+		//evidence_level=2;
 
 		if (evidence_level == 1) {
 			info_about_partner += '<div class="evidence_container">'+
@@ -240,15 +240,17 @@ var experiment = {
 											'<tr><th class="task_question">Scrambled Word</th>'+
 												'<th class="task_answer"><b>DWs Answer</b></th>'+
 												'<th class="task_evaluation">Correct?</th>'+
-												'<th class="task_time">Time</th>'+
+												'<th class="task_time">Time (seconds)</th>'+
 											'</tr>'+
-											'<tr id="short_row1" class="row" style="display: none;"><td class="task_question" id="short_q1">vereid</td>'+
-												 '<td class="task_answer" id="short_a1">derive</td>'+
+											'<tr id="short_row1" class="row" style="display: none;"><td class="task_question" id="short_q1">tlbae</td>'+
+												 '<td class="task_answer" id="short_a1">table</td>'+
 												 '<td class="task_evaluation" id="short_e1"><img src="images/check_green.png" class="check_mark"></td>'+
+												 '<td class="task_time" id="short_t1">6.4</td>'+
 											'</tr>'+
-											'<tr id="short_row2" style="display: none;"><td class="task_question" id="short_q2">sismhc</td>'+
-												 '<td class="task_answer" id="short_a2">schism</td>'+
+											'<tr id="short_row2" style="display: none;"><td class="task_question" id="short_q2">seaktb</td>'+
+												 '<td class="task_answer" id="short_a2">basket</td>'+
 												 '<td class="task_evaluation" id="short_e2"><img src="images/check_green.png" class="check_mark"></td>'+
+												 '<td class="task_time" id="short_t2">8.7</td>'+
 											'</tr>'+
 										'</table>'+
 									'</center>'+
@@ -264,39 +266,47 @@ var experiment = {
 											'<tr><th class="task_question">Scrambled Word</th>'+
 												'<th class="task_answer"><b>DWs Answer</b></th>'+
 												'<th class="task_evaluation">Correct?</th>'+
-												'<th class="task_time">Time</th>'+
+												'<th class="task_time">Time (seconds)</th>'+
 											'</tr>'+
-											'<tr id="long_row1" style="display: none;"><td class="task_question" id="q1">naanba</td>'+
-												 '<td class="task_answer" id="a1">banana</td>'+
+											'<tr id="long_row1" style="display: none;"><td class="task_question" id="q1">tlbae</td>'+
+												 '<td class="task_answer" id="a1">table</td>'+
 												 '<td class="task_evaluation" id="e1"><img src="images/check_green.png" class="check_mark"></td>'+
+												 '<td class="task_time" id="t1">6.4</td>'+
 											'</tr>'+
-											'<tr id="long_row2" style="display: none;"><td class="task_question" id="q2">sismhc</td>'+
-												 '<td class="task_answer" id="a2">schism</td>'+
+											'<tr id="long_row2" style="display: none;"><td class="task_question" id="q2">seaktb</td>'+
+												 '<td class="task_answer" id="a2">basket</td>'+
 												 '<td class="task_evaluation" id="e2"><img src="images/check_green.png" class="check_mark"></td>'+
+												 '<td class="task_time" id="t2">8.7</td>'+
 											'</tr>'+
-											'<tr id="long_row3" style="display: none;"><td class="task_question" id="q3">yptrho</td>'+
-												 '<td class="task_answer" id="a3">trophy</td>'+
+											'<tr id="long_row3" style="display: none;"><td class="task_question" id="q3">rahte</td>'+
+												 '<td class="task_answer" id="a3">heart</td>'+
 												 '<td class="task_evaluation" id="e3"><img src="images/check_green.png" class="check_mark"></td>'+
+												 '<td class="task_time" id="t3">5.1</td>'+
 											'</tr>'+
-											'<tr id="long_row4" style="display: none;"><td class="task_question" id="q4">ralopt</td>'+
-												 '<td class="task_answer" id="a4">portal</td>'+
+											'<tr id="long_row4" style="display: none;"><td class="task_question" id="q4">tkas</td>'+
+												 '<td class="task_answer" id="a4">task</td>'+
 												 '<td class="task_evaluation" id="e4"><img src="images/check_green.png" class="check_mark"></td>'+
+												 '<td class="task_time" id="t4">2.2</td>'+
 											'</tr>'+
 											'<tr id="long_row5" style="display: none;"><td class="task_question" id="q5">nddaci</td>'+
 												 '<td class="task_answer" id="a5">candid</td>'+
-												 '<td class="task_evaluation" id="e5"><img src="images/check_green.png" class="check_mark"></td>'+
+												 '<td class="task_evaluation" id="e5"><img src="images/red_x.png" class="check_mark"></td>'+
+												 '<td class="task_time" id="t5">10.0</td>'+
 											'</tr>'+
-											'<tr id="long_row6" style="display: none;"><td class="task_question" id="q6">lnomsa</td>'+
-												 '<td class="task_answer" id="a6">salmon</td>'+
+											'<tr id="long_row6" style="display: none;"><td class="task_question" id="q6">serea</td>'+
+												 '<td class="task_answer" id="a6">erase</td>'+
 												 '<td class="task_evaluation" id="e6"><img src="images/check_green.png" class="check_mark"></td>'+
+												 '<td class="task_time" id="t6">8.3</td>'+
 											'</tr>'+
 											'<tr id="long_row7" style="display: none;"><td class="task_question" id="q7">octivr</td>'+
 												 '<td class="task_answer" id="a7">victor</td>'+
 												 '<td class="task_evaluation" id="e7"><img src="images/check_green.png" class="check_mark"></td>'+
+												 '<td class="task_time" id="t7">7.7</td>'+
 											'</tr>'+
-											'<tr id="long_row8" style="display: none;"><td class="task_question" id="q8">vereid</td>'+
-												 '<td class="task_answer" id="a8">derive</td>'+
+											'<tr id="long_row8" style="display: none;"><td class="task_question" id="q8">paelp</td>'+
+												 '<td class="task_answer" id="a8">apple</td>'+
 												 '<td class="task_evaluation" id="e8"><img src="images/check_green.png" class="check_mark"></td>'+
+												 '<td class="task_time" id="t8">4.1</td>'+
 											'</tr>'+
 										'</table>'+
 									'</center>'+
