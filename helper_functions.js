@@ -48,17 +48,17 @@ function initialsClick() {
 }
 
 function connectionTransition() {
-    $("#loading_box").text("1 / 4 users found...");
+    $("#loading_box").text("1 / 3 other users found...");
     setTimeout(connectionTransition2, 2000);
 }
 
 function connectionTransition2() {
-    $("#loading_box").text("2 / 4 users found...");
+    $("#loading_box").text("2 / 3 other users found...");
     setTimeout(connectionTransition3, 6000);
 }
 
 function connectionTransition3() {
-    $("#loading_box").text("3 / 4 users found...");
+    $("#loading_box").text("3 / 3 other users found...");
     setTimeout(connectionLoad, 500);
 }
 
@@ -132,7 +132,7 @@ function conditionFunction() {
     $(".chat_container").css("display", "block");
     experiment.instructions_function();
     experiment.instructions_function2();
-    setTimeout(responseMessage, 2000)
+    setTimeout(responseMessage, 4000)
 }
 
 function answer_reveal(level) {

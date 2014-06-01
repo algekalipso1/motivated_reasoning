@@ -242,8 +242,8 @@ var experiment = {
 												'<th class="task_evaluation">Correct?</th>'+
 												'<th class="task_time">How long it took</th>'+
 											'</tr>'+
-											'<tr id="short_row1" class="row" style="display: none;"><td class="task_question" id="short_q1">serea</td>'+
-												 '<td class="task_answer" id="short_a1">erase</td>'+
+											'<tr id="short_row1" class="row" style="display: none;"><td class="task_question" id="short_q1">serera</td>'+
+												 '<td class="task_answer" id="short_a1">eraser</td>'+
 												 '<td class="task_evaluation" id="short_e1"><img src="images/check_green.png" class="check_mark"></td>'+
 												 '<td class="task_time" id="short_t1">6.4</td>'+
 											'</tr>'+
