@@ -59,7 +59,7 @@ function connectionTransition2() {
 
 function connectionTransition3() {
     $("#loading_box").text("3 / 4 users found...");
-    setTimeout(connectionLoad, 1000);
+    setTimeout(connectionLoad, 500);
 }
 
 function connectionLoad() {
@@ -77,8 +77,6 @@ function connectionLoad() {
 
 function conditionLoad() {
     $(".teams_container").css("display", "block");
-    $(".chat_container").css("display", "block");
-    //$(".chat_message_box").text(experiment.initials_provided_by_participant+':');
     hide_and_seek("loading_slide2", "condition_slide");
     numComplete = numComplete+1; 
     $('#trial-num').html(numComplete);
@@ -90,14 +88,16 @@ function conditionLoad() {
 function chatFunction () {
     $("#sendButton").attr("disabled", "disabled");
     experiment.message_text_by_participant = $("#chat_entry").val();
-    var chat_text = "<div>"+experiment.initials_provided_by_participant+': '+$("#chat_entry").val()+"</div>";
+    var chat_text = $(".chat_message_box").html();
+    console.log(chat_text);
+    chat_text += "<div>"+experiment.initials_provided_by_participant+': '+$("#chat_entry").val()+"</div>";
     $("#chat_entry").val(null);
     $(".chat_message_box").html(chat_text);
-    setTimeout(responseMessage, 2000, chat_text);
 
 }
 
-function responseMessage(chat_text) {
+function responseMessage() {
+    chat_text = '';
     if (experiment.competition_condition == 0) {
         chat_text += "<div id='team_response'>JG: ... (typing) </div>";
     }
@@ -109,7 +109,8 @@ function responseMessage(chat_text) {
     }
 
     $(".chat_message_box").html(chat_text);
-    setTimeout(teamResponse, 4000, chat_text);
+
+    setTimeout(teamResponse, 4000);
 }
 
 function teamResponse(chat_text) {
@@ -122,14 +123,16 @@ function teamResponse(chat_text) {
     if (experiment.competition_condition == 2) {
         response_text = "SK: We can do this!";
     }
-    response_text = 
+    //response_text = 
     $("#team_response").text(response_text);
 }
 
 function conditionFunction() {
     hide_and_seek('condition_slide', 'condition_slide2');
+    $(".chat_container").css("display", "block");
     experiment.instructions_function();
     experiment.instructions_function2();
+    setTimeout(responseMessage, 2000)
 }
 
 function answer_reveal(level) {
@@ -151,22 +154,22 @@ function loadCondition3() {
         var text = '';
         if (experiment.competition_condition == 0) {
             text += '<span class="block-text">Before we begin, you will see the results from a previous round '+
-                        'in order to get a feel for the ability of <b>DW</b>, a randomly selected player.</span>'+
-                        '<p class="block-text">You will see the word chosen by the word selector in <b>scrambled</b> form, the unscrambled <b>answer</b>,'+
-                        'and an indication of whether or not the response submitted was <b>correct and in time (submitted under 10 seconds)</b>.</p><br>';
+                        'in order to get a feel for the ability of <b>DW</b>, a randomly selected player.</span> '+
+                        '<span class="block-text">You will see the word chosen by the word selector in <b>scrambled</b> form, the unscrambled <b>answer</b>, '+
+                        'and an indication of whether or not the response submitted was <b>correct and in time (submitted under 10 seconds)</b>.</span><br>';
 
         };
         if (experiment.competition_condition == 1) {
             text += '<span class="block-text">Before we begin, you will see the results from a previous round '+
-                        'in order to get a feel for the ability of your teammate, <b>DW</b>.</span>'+
-                        '<p class="block-text">You will see the word chosen by the word selector in <b>scrambled</b> form, the unscrambled <b>answer</b>,'+
-                        'and an indication of whether or not the response submitted was <b>correct and in time (submitted under 10 seconds)</b>.</p><br>';
+                        'in order to get a feel for the ability of your teammate, <b>DW</b>.</span> '+
+                        '<span class="block-text">You will see the word chosen by the word selector in <b>scrambled</b> form, the unscrambled <b>answer</b>, '+
+                        'and an indication of whether or not the response submitted was <b>correct and in time (submitted under 10 seconds)</b>.</span><br>';
         };
         if (experiment.competition_condition == 2) {
             text+= '<span class="block-text">Before we begin, you will see the results from a previous round '+
-                        'in order to get a feel for the ability of your opponent, <b>DW</b>.</span>'+
-                        '<p class="block-text">You will see the word chosen by the word selector in <b>scrambled</b> form, the unscrambled <b>answer</b>,'+
-                        'and an indication of whether or not the response submitted was <b>correct and in time (submitted under 10 seconds)</b>.</p><br>';
+                        'in order to get a feel for the ability of your opponent, <b>DW</b>.</span> '+
+                        '<span class="block-text">You will see the word chosen by the word selector in <b>scrambled</b> form, the unscrambled <b>answer</b>, '+
+                        'and an indication of whether or not the response submitted was <b>correct and in time (submitted under 10 seconds)</b>.</span><br>';
         };
 
         $("#condition_text6").css("display", "block");
@@ -349,6 +352,7 @@ function evalClick() {
 		    $('.bar').css('width', (200.0 * (1+numComplete)/15) + 'px');
             $(".teams_container").css("display", "none");
             $(".chat_container").css("display", "none");
+            $(".banner_container").css("display", "none");
 	        hide_and_seek("eval_slide", "manip_slide");
         }
     }     

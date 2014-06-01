@@ -26,6 +26,7 @@
 				<div class="bar-wrapper">
 					<div class="bar"></div>
 				</div>
+				<div class="banner_container" style="display: none;"><img src="images/red_banner_named.png" style="width: 15%; height: 15%;"></div>
 			</div>
 
 			<center class="intro_slide">
@@ -153,8 +154,7 @@
 						<p class="block-text" id="condition_text">
 							
 						</p>
-						<p class="block-text">
-							Take a moment to send your partner an encouraging message in the text box to the right and wait for his response. </p>
+						
 					</div>
 				</center>
 				<center class="button_container">
@@ -179,10 +179,12 @@
 						<p class="block-text" id="condition_text3">
 							
 						</p>
+						<p class="block-text">
+							Take a moment to send your partner an encouraging message in the text box to the right. </p>
 					</div>
 				</center>
 				<center class="button_container">
-				<button type="button" class="continue_button" id="instructions_button" onclick="hide_and_seek('condition_slide2', 'practice_slide');">Continue</button> 
+				<button type="button" class="continue_button" id="instructions_button" onclick="hide_and_seek('condition_slide2', 'practice_slide'); $('.banner_container').css('display', 'block');">Continue</button> 
 				<!-- <button type="button" class="continue_button" id="instructions_button" onclick="experiment.evidence_function()">Continue</button> -->
 					
 				</center>
@@ -193,8 +195,8 @@
 					<p id='logo-text'>Practice</p>
 					<div class="long_instructions_text" style="margin: 10px;">
 						<p class="block-text"> 
-							Now, we will have you do a practice round to familiarize yourself with how the game works.<br>
-							Below, you will be shown an "easy", "medium", and "hard" scrambled word similar to the ones in the task. <br>
+							Now, we will have you do a practice round to familiarize yourself with how the game works.
+							Below, you will be shown an "easy", "medium", and "hard" scrambled word similar to the ones in the task.
 							Take a few moments to try and figure it out, then press the green arrow to check your answer and see if you were right.
 						</p>
 
