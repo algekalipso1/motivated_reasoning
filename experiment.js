@@ -32,6 +32,7 @@ var experiment = {
 	participant_gender: '',
 	participant_native_lang: '',
 	initials_provided_by_participant: '',
+	message_text_by_participant: '',
 
 	motivation_to_win: -1,
 	DW_strength: -1,

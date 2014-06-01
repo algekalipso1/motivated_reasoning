@@ -78,7 +78,7 @@ function connectionLoad() {
 function conditionLoad() {
     $(".teams_container").css("display", "block");
     $(".chat_container").css("display", "block");
-    $(".chat_message_box").text(experiment.initials_provided_by_participant+':');
+    //$(".chat_message_box").text(experiment.initials_provided_by_participant+':');
     hide_and_seek("loading_slide2", "condition_slide");
     numComplete = numComplete+1; 
     $('#trial-num').html(numComplete);
@@ -88,15 +88,42 @@ function conditionLoad() {
 }
 
 function chatFunction () {
-    //$("#sendButton").attr("disabled", "disabled");
-    var chat_text = experiment.initials_provided_by_participant+': '+$("#chat_entry").val();
-    $(".chat_message_box").html("<div>"+chat_text+"</div>");
-    setTimeout(responseMessage, 6000, chat_text);
+    $("#sendButton").attr("disabled", "disabled");
+    experiment.message_text_by_participant = $("#chat_entry").val();
+    var chat_text = "<div>"+experiment.initials_provided_by_participant+': '+$("#chat_entry").val()+"</div>";
+    $("#chat_entry").val(null);
+    $(".chat_message_box").html(chat_text);
+    setTimeout(responseMessage, 2000, chat_text);
 
 }
 
 function responseMessage(chat_text) {
-    alert(chat_text);
+    if (experiment.competition_condition == 0) {
+        chat_text += "<div id='team_response'>JG: ... (typing) </div>";
+    }
+    if (experiment.competition_condition == 1) {
+        chat_text += "<div id='team_response'>DW: ... (typing) </div>";
+    }
+    if (experiment.competition_condition == 2) {
+        chat_text += "<div id='team_response'>SK: ... (typing) </div>";
+    }
+
+    $(".chat_message_box").html(chat_text);
+    setTimeout(teamResponse, 4000, chat_text);
+}
+
+function teamResponse(chat_text) {
+    if (experiment.competition_condition == 0) {
+        response_text = "JG: We can do this!";
+    }
+    if (experiment.competition_condition == 1) {
+        response_text = "DW: We can do this!";
+    }
+    if (experiment.competition_condition == 2) {
+        response_text = "SK: We can do this!";
+    }
+    response_text = 
+    $("#team_response").text(response_text);
 }
 
 function conditionFunction() {
@@ -276,6 +303,7 @@ function evalClick() {
 	        $('#trial-num').html(numComplete);
 		    $('.bar').css('width', (200.0 * (1+numComplete)/15) + 'px');
             $(".teams_container").css("display", "none");
+            $(".chat_container").css("display", "none");
 	        hide_and_seek("eval_slide", "manip_slide");
         }
     }     
