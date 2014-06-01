@@ -77,12 +77,26 @@ function connectionLoad() {
 
 function conditionLoad() {
     $(".teams_container").css("display", "block");
+    $(".chat_container").css("display", "block");
+    $(".chat_message_box").text(experiment.initials_provided_by_participant+':');
     hide_and_seek("loading_slide2", "condition_slide");
     numComplete = numComplete+1; 
     $('#trial-num').html(numComplete);
     $('.bar').css('width', (200.0 * (1+numComplete)/15) + 'px');
     experiment.instructions_function();
     experiment.teams_function();
+}
+
+function chatFunction () {
+    //$("#sendButton").attr("disabled", "disabled");
+    var chat_text = experiment.initials_provided_by_participant+': '+$("#chat_entry").val();
+    $(".chat_message_box").html("<div>"+chat_text+"</div>");
+    setTimeout(responseMessage, 6000, chat_text);
+
+}
+
+function responseMessage(chat_text) {
+    alert(chat_text);
 }
 
 function conditionFunction() {

@@ -24,6 +24,23 @@ body {
   display: none;
 }
 
+.chat_container {
+  width: 20%;
+  height: 20%;
+  outline: solid 2px black;
+  float: right;
+  display: none;
+}
+
+.chat_message_box {
+  margin: 5px;
+  height:100px;
+  outline: solid 1px black;
+  float: center;
+  background-image: url("images/chat_background.png");
+  text-align: left;
+}
+
 .teams_row {
   text-align: center;
   width: 20%;

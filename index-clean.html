@@ -20,6 +20,7 @@
 		<div class="teams_container">
 			<!--This gets filled in dynamically-->
 		</div>
+
 		<div class="container">
 			<div class="progress">
 				<div class="bar-wrapper">
@@ -145,12 +146,15 @@
 					<p id='logo-text'>Teams</p>
 					<div class="long_instructions_text" style="margin: 10px;">
 						<p class="block-text"> 
-							Teams have been assigned. The table to the right shows the upcoming game round.</p>
+							Teams have been assigned. You will play two rounds. The table to the right shows the upcoming game round.</p>
+						<div class="banner_container"><img src="images/red_banner_named.png" style="width: 20%; height: 20%;"></div>
 						<p class="block-text"> 
-							You will play two rounds. The first round, you will be the <b>word selector</b>. You will select words for your partner to unscramble. </p>
+							The first round, you will be the Red Team <b>word selector</b>. You will select words for your partner to unscramble. </p>
 						<p class="block-text" id="condition_text">
 							
 						</p>
+						<p class="block-text">
+							Take a moment to send your partner an encouraging message in the text box to the right! </p>
 					</div>
 				</center>
 				<center class="button_container">
@@ -165,9 +169,10 @@
 					<p id='logo-text'>Teams</p>
 					<div class="long_instructions_text" style="margin: 10px;">
 						<p class="block-text"> 
-							Teams have been assigned. The table to the right shows the upcoming game round.</p>
+							Teams have been assigned. You will play two rounds. The table to the right shows the upcoming game round.</p>
+						<div class="banner_container"><img src="images/red_banner_named.png" style="width: 20%; height: 20%;"></div>
 						<p class="block-text"> 
-							You will play two rounds. The first round, you will be the <b>word selector</b>. You will select words for your partner to unscramble. </p>
+							The first round, you will be the Red Team <b>word selector</b>. You will select words for your partner to unscramble. </p>
 						<p class="block-text" id="condition_text2">
 							
 						</p>
@@ -188,9 +193,11 @@
 					<p id='logo-text'>Teams</p>
 					<div class="long_instructions_text" style="margin: 10px;">
 						<p class="block-text"> 
-							Teams have been assigned. The table to the right shows the upcoming game round.</p>
+							Teams have been assigned. You will play two rounds. The table to the right shows the upcoming game round.</p>
+						<div class="banner_container"><img src="images/red_banner_named.png" style="width: 20%; height: 20%;"></div>
+
 						<p class="block-text"> 
-							You will play two rounds. The first round, you will be the <b>word selector</b>. You will select words for your partner to unscramble. </p>
+							The first round, you will be the Red Team <b>word selector</b>. You will select words for your partner to unscramble. </p>
 						<p class="block-text" id="condition_text4">
 							
 						</p>
@@ -386,6 +393,12 @@
 					Thank you! You're finished.
 				</center>
 			</div>
+		</div>
+		<div class="chat_container">
+			<center>Message Center</center>
+			<center class="chat_message_box"></center>
+			<textarea id="chat_entry" rows="4" cols="30"></textarea>
+			<button type="button" id="sendButton" onclick="chatFunction()">Send</button>
 		</div>
 	</body>
 </html>

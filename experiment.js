@@ -77,18 +77,21 @@ var experiment = {
 
 		if (experiment.competition_condition == 0) {
 			//control
-			condition_text += '<p>You will be playing against a team with <b>IA</b> as the <b>word selector</b>'+
-									' and <b>GM</b> as the <b>word unscrambler</b>.</p>';
+			condition_text += '<center class="banner_container"><img src="images/blue_banner_2_named.png" style="width: 30%; height: 20%;"></center>'+
+								'<p>You will be playing against the Blue Team with <b>IA</b> as the <b>word selector</b>'+
+								' and <b>GM</b> as the <b>word unscrambler</b>.</p>';
 		};
 		if (experiment.competition_condition==1) {
 			//team
-			condition_text += '<p>You will be playing against a team with <b>IA</b> as the <b>word selector</b>'+
-									' and <b>GM</b> as the <b>word unscrambler</b>.</p>';
+			condition_text += '<center class="banner_container"><img src="images/blue_banner_2_named.png" style="width: 30%; height: 20%;"></center>'+
+								'<p>You will be playing against the Blue Team with <b>IA</b> as the <b>word selector</b>'+
+								' and <b>GM</b> as the <b>word unscrambler</b>.</p>';
 		};
 		if (experiment.competition_condition==2) {
 			//opponent
-			condition_text += '<p>You will be playing against a team with <b>MJ</b> as the <b>word selector</b>'+
-									' and <b>DW</b> as the <b>word unscrambler</b>.</p>';
+			condition_text += '<center class="banner_container"><img src="images/blue_banner_2_named.png" style="width: 30%; height: 20%;"></center>'+
+								'<p>You will be playing against the Blue Team with <b>MJ</b> as the <b>word selector</b>'+
+								' and <b>DW</b> as the <b>word unscrambler</b>.</p>';
 		};
 
 		$("#condition_text3").html(condition_text);
@@ -216,6 +219,7 @@ var experiment = {
 		$("#team_you_font").text(experiment.initials_provided_by_participant);
 
 	},
+
 
 	// Dynamically generated part. This has to be here so that the variables about the experimental conditions and
 	// people's answers are accessible when generating the code.
