@@ -182,42 +182,32 @@
 					</div>
 				</center>
 				<center class="button_container">
-				<button type="button" class="continue_button" id="instructions_button" onclick="loadCondition3();">Continue</button> 
+				<button type="button" class="continue_button" id="instructions_button" onclick="hide_and_seek('condition_slide2', 'practice_slide');">Continue</button> 
 				<!-- <button type="button" class="continue_button" id="instructions_button" onclick="experiment.evidence_function()">Continue</button> -->
 					
 				</center>
 			</div>
 
-			<div class="condition_slide3" style="display: none;">
-				<center class="condition_container3">
-					<p id='logo-text'>Teams</p>
+			<div class="practice_slide" style="display: none; margin-bottom: 50px;">
+				<center class="practice_container">
+					<p id='logo-text'>Practice</p>
 					<div class="long_instructions_text" style="margin: 10px;">
 						<p class="block-text"> 
-							Teams have been assigned. You will play two rounds. The table to the right shows the upcoming game round.</p>
-						<div class="banner_container"><img src="images/red_banner_named.png" style="width: 20%; height: 20%;"></div>
-
-						<p class="block-text"> 
-							The first round, you will be the Red Team <b>word selector</b>. You will select words for your partner to unscramble. </p>
-						<p class="block-text" id="condition_text4">
-							
+							Now, we will have you do a practice round to familiarize yourself with how the game works.<br>
+							Below, you will be shown an "easy", "medium", and "hard" scrambled word similar to the ones in the task. <br>
+							Take a few moments to try and figure it out, then check your answer to see if you were right.
 						</p>
-						<p class="block-text" id="condition_text5">
+
+						
+
+						<p class="block-text" id="condition_text6" style="display: none;">
 							
 						</p>
 						
-						<p class="block-text" id="condition_text6">
-							
-						</p>
-						<p class="block-text">
-							<p id="ability_check"></p>
-							
-							<p class="block-text">You will see the word chosen by the word selector in <b>scrambled</b> form, the unscrambled <b>answer</b>, and an indication of whether or not the response submitted was <b>correct and in time (submitted under 10 seconds)</b>.</p>
-							<br>
-						</p>
 					</div>
 				</center>
 				<center class="button_container">
-				<button type="button" class="continue_button" id="instructions_button" onclick="hide_and_seek('condition_slide3', 'evidence_slide'); experiment.evidence_function();">Continue</button> 
+				<button type="button" class="continue_button" id="instructions_button" onclick="loadCondition3();">Continue</button> 
 				<!-- <button type="button" class="continue_button" id="instructions_button" onclick="experiment.evidence_function()">Continue</button> -->
 					
 				</center>

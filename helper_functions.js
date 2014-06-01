@@ -133,23 +133,34 @@ function conditionFunction() {
 }
 
 function loadCondition3() {
-    hide_and_seek('condition_slide2', 'condition_slide3');
-    experiment.instructions_function();
-    experiment.instructions_function2();
+    if ($("#condition_text6").css("display") == "none") {
+        var text = '';
+        if (experiment.competition_condition == 0) {
+            text += '<span class="block-text">Before we begin, you will see the results from a previous round '+
+                        'in order to get a feel for the ability of <b>DW</b>, a randomly selected player.</span>'+
+                        '<p class="block-text">You will see the word chosen by the word selector in <b>scrambled</b> form, the unscrambled <b>answer</b>,'+
+                        'and an indication of whether or not the response submitted was <b>correct and in time (submitted under 10 seconds)</b>.</p><br>';
 
-    var text = '';
-    if (experiment.competition_condition == 0) {
-        text += '<span class="block-text">Before we begin, you will see the results from a previous round in order to get a feel for the ability of <b>DW</b>, a randomly selected player.</span>';
+        };
+        if (experiment.competition_condition == 1) {
+            text += '<span class="block-text">Before we begin, you will see the results from a previous round '+
+                        'in order to get a feel for the ability of your teammate, <b>DW</b>.</span>'+
+                        '<p class="block-text">You will see the word chosen by the word selector in <b>scrambled</b> form, the unscrambled <b>answer</b>,'+
+                        'and an indication of whether or not the response submitted was <b>correct and in time (submitted under 10 seconds)</b>.</p><br>';
+        };
+        if (experiment.competition_condition == 2) {
+            text+= '<span class="block-text">Before we begin, you will see the results from a previous round '+
+                        'in order to get a feel for the ability of your opponent, <b>DW</b>.</span>'+
+                        '<p class="block-text">You will see the word chosen by the word selector in <b>scrambled</b> form, the unscrambled <b>answer</b>,'+
+                        'and an indication of whether or not the response submitted was <b>correct and in time (submitted under 10 seconds)</b>.</p><br>';
+        };
 
-    };
-    if (experiment.competition_condition == 1) {
-        text += '<span class="block-text">Before we begin, you will see the results from a previous round in order to get a feel for the ability of your teammate, <b>DW</b>.</span>';
-    };
-    if (experiment.competition_condition == 2) {
-        text+= '<span class="block-text">Before we begin, you will see the results from a previous round in order to get a feel for the ability of your opponent, <b>DW</b>.</span>';
-    };
-
-    $("#condition_text6").html(text);
+        $("#condition_text6").css("display", "block");
+        $("#condition_text6").html(text);
+    } else {
+        hide_and_seek('practice_slide', 'evidence_slide'); 
+        experiment.evidence_function();
+    }    
      
 }
 
