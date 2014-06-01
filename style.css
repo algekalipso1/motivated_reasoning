@@ -141,6 +141,13 @@ body {
   width: 100%;
 }
 
+
+.practice_question, .practice_answer, .practice_evaluation {
+  margin:10px;
+  text-align: center;
+  width: 40%;
+}
+
 .slider_question_container {
   width: 100%;
   margin: 20px;

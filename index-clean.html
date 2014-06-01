@@ -195,10 +195,40 @@
 						<p class="block-text"> 
 							Now, we will have you do a practice round to familiarize yourself with how the game works.<br>
 							Below, you will be shown an "easy", "medium", and "hard" scrambled word similar to the ones in the task. <br>
-							Take a few moments to try and figure it out, then check your answer to see if you were right.
+							Take a few moments to try and figure it out, then press the green arrow to check your answer and see if you were right.
 						</p>
 
-						
+					
+						<table class="practice_table">
+							<tr><th class="practice_question">Scrambled Word</th>
+								<th class="practice_answer"><b>Guess</b></th>
+								<th class="practice_evaluation">Correct?</th>
+							</tr>
+							<tr id="practice_row1" class="row">
+								<td class="practice_question" id="easy_problem">teask <br> <em>(easy)</em></td>
+								<td class="practice_answer" id="easy_answer">
+									Answer: <input type="text" name="answer">
+									<img src="images/green_arrow.png" style="width: 20px; height: 25px;" onclick="answer_reveal('easy')">
+								</td>
+								<td class="practice_evaluation" id="easy_ev" style="display: none;">skate</td>
+							</tr>
+							<tr id="practice_row2" class="row">
+								<td class="practice_question" id="med_problem">aanabn <br> <em>(medium)</em></td>
+								<td class="practice_answer" id="med_answer">
+									Answer: <input type="text" name="answer">
+									<img src="images/green_arrow.png" style="width: 20px; height: 25px;" onclick="answer_reveal('med')">
+								</td>
+								<td class="practice_evaluation" id="med_ev" style="display: none;">banana</td>
+							</tr>
+							<tr id="practice_row3" class="row">
+								<td class="practice_question" id="hard_problem">eartid <br> <em>(hard)</em></td>
+								<td class="practice_answer" id="hard_answer">
+									Answer: <input type="text" name="answer">
+									<img src="images/green_arrow.png" style="width: 20px; height: 25px;" onclick="answer_reveal('hard')">
+								</td>
+								<td class="practice_evaluation" id="hard_ev" style="display: none;">tirade</td>
+							</tr>
+						</table>
 
 						<p class="block-text" id="condition_text6" style="display: none;">
 							

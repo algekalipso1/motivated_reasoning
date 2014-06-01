@@ -132,6 +132,20 @@ function conditionFunction() {
     experiment.instructions_function2();
 }
 
+function answer_reveal(level) {
+    if (level=="easy") {
+        $('#easy_ev').css('display', 'table-cell');    
+    }
+    if (level=="med") {
+        $('#med_ev').css('display', 'table-cell');    
+    }
+    if (level=="hard") {
+        $('#hard_ev').css('display', 'table-cell');    
+    }
+
+    
+}
+
 function loadCondition3() {
     if ($("#condition_text6").css("display") == "none") {
         var text = '';
