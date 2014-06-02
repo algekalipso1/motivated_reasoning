@@ -54,7 +54,7 @@ title::Competition study
 description:: Play a 2-4 minute game and complete a brief survey
 &&& 	A brief description of your experiment, in a phrase or short sentence
 
-nameofexperimentfiles::motivation_results
+nameofexperimentfiles::motivationV2_results
 &&& 	The files that the script generates for you will have names based on this option. 
 
 experimentURL::http://stanford.edu/~mtessler/motivation/index-clean.html
@@ -84,7 +84,7 @@ frameheight::700
 reward::0.25
 &&&	How much you're paying per HIT, in dollars. E.g., if you want to pay 30 cents per HIT, enter ".30".
 
-numberofassignments::100
+numberofassignments::20
 &&&	How many subjects you want. You can always add more later, through the web interface.
 
 assignmentduration::600

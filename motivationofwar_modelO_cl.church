@@ -25,8 +25,11 @@
 
 (define (sample cndtn)
   (rejection-query
-      ; strength is normally distributed with mean 0 and stdev 1
-   (define strength-prior (lambda () (uniform 0 1)))
+    
+   (define strength-prior (lambda () (beta 1 1)))
+   ; luck can vary from 0 to 1, with 2 intermediate va
+   
+
    ; luck can vary from 0 to 1, with 2 intermediate values
    ;(define luck-prior (lambda () (uniform-draw '(0 0.33 0.66 1))))
    (define luck-prior (lambda () (uniform 0 1)))
