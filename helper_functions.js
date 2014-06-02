@@ -156,20 +156,20 @@ function loadCondition3() {
             text += '<span class="block-text">Before we begin, we will show you the results from a previous round '+
                         'so you can get a feel for the ability of a randomly selected player, <b>DW</b>.</span> '+
                         "<span class='block-text'>You will see the word chosen by the word selector in <b>scrambled</b> form, DW's unscrambled <b>response</b>, "+
-                        'and an indication of whether or not the response was <b>correct</b>. and <b>how long it took</b> for the response to be submitted. (Note that only responses within the first 10 seconds are recorded.)</span><br>';
+                        'and an indication of whether or not the response was <b>correct</b>. and <b>how long it took</b> for them to respond. (Note that the unscrambler must respond within the first 10 seconds.)</span><br>';
 
         };
         if (experiment.competition_condition == 1) {
             text += '<span class="block-text">Before we begin, we will show you the results from a previous round '+
                         'in order to get a feel for the ability of your teammate, <b>DW</b>.</span> '+
                         "<span class='block-text'>You will see the word chosen by the word selector in <b>scrambled</b> form, DW's unscrambled <b>response</b>, "+
-                        'and an indication of whether or not the response was <b>correct</b>. and <b>how long it took</b> for the response to be submitted. (Note that only responses within the first 10 seconds are recorded.)</span><br>';
+                        'and an indication of whether or not the response was <b>correct</b>. and <b>how long it took</b> for them to respond. (Note that the unscrambler must respond within the first 10 seconds.)</span><br>';
         };
         if (experiment.competition_condition == 2) {
             text+= '<span class="block-text">Before we begin, we will show you the results from a previous round '+
                         'in order to get a feel for the ability of your opponent, <b>DW</b>.</span> '+
                         "<span class='block-text'>You will see the word chosen by the word selector in <b>scrambled</b> form, DW's unscrambled <b>response</b>, "+
-                        'and an indication of whether or not the response was <b>correct</b>. and <b>how long it took</b> for the response to be submitted. (Note that only responses within the first 10 seconds are recorded.)</span><br>';
+                        'and an indication of whether or not the response was <b>correct</b>. and <b>how long it took</b> for them to respond. (Note that the unscrambler must respond within the first 10 seconds.)</span><br>';
         };
 
         $("#condition_text6").css("display", "block");
