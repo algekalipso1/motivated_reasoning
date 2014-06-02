@@ -76,7 +76,7 @@ first_batch$evidence_compliant = (first_batch$Answer.evidence_condition == 1 & f
 
 first_batch$competition_condition_compliant = (first_batch$Answer.competition_condition == 1 & first_batch$Answer.DW_check == '"partner"') |
   (first_batch$Answer.competition_condition == 2 & first_batch$Answer.DW_check == '"opponent"') |
-  (first_batch$Answer.competition_condition == 0 & first_batch$Answer.DW_check == '"opponent"')
+  (first_batch$Answer.competition_condition == 0 & first_batch$Answer.DW_check == '"neither"')
 
 
 first_batch$compliant = first_batch$evidence_compliant & first_batch$competition_condition_compliant
@@ -116,7 +116,7 @@ table_by_both <- aggregate(cbind(Answer.DW_strength,
                                  Answer.evidence_condition + Answer.competition_condition, data=first_batch_c, mean)
 
 
-summary(aov(Answer.DW_strength ~ Answer.evidence_condition * as.factor(Answer.competition_condition), data = first_batch_c))
+summary(aov(Answer.DW_strength ~  as.factor(Answer.competition_condition), data = first_batch_c))
 summary(aov(Answer.strength_of_average_player ~ Answer.evidence_condition + as.factor(Answer.competition_condition), data = first_batch_c))
 summary(aov(Answer.role_of_luck_in_game ~ Answer.evidence_condition + as.factor(Answer.competition_condition), data = first_batch_c))
 summary(aov(Answer.expectation_of_winning ~ Answer.evidence_condition + as.factor(Answer.competition_condition), data = first_batch_c))
@@ -124,13 +124,13 @@ summary(aov(Answer.expectation_of_winning ~ Answer.evidence_condition + as.facto
 
 # Multiple regression of DW strength from everything else
 summary(glm(Answer.expectation_of_winning ~ Answer.DW_strength + Answer.evidence_condition + as.factor(Answer.competition_condition) + Answer.strength_of_average_player + Answer.role_of_luck_in_game, data = first_batch_c))
-summary(glm(Answer.DW_strength ~ study_time +  Answer.evidence_condition + as.factor(Answer.competition_condition) + Answer.expectation_of_winning +  Answer.strength_of_average_player + Answer.role_of_luck_in_game , data = first_batch_c))
+summary(glm(Answer.DW_strength ~ as.factor(Answer.competition_condition) + Answer.expectation_of_winning +  Answer.strength_of_average_player, data = first_batch_c))
 
 
 # Excluding the control condition:
 summary(glm(Answer.DW_strength ~  Answer.evidence_condition + Answer.expectation_of_winning + as.factor(Answer.competition_condition) + Answer.strength_of_average_player + Answer.role_of_luck_in_game , data = first_batch_DW_relevant))
 
-hist(first_batch_c$Answer.strength_of_average_player)
+hist(first_batch_c$Answer.DW_strength)
 
 
 
@@ -226,7 +226,7 @@ ggplot(ms, aes(x= conditions_combined, y=c, fill=object)) +
 
 
 
-write.csv(ms, file = "breakdown_by_condition_study2_n70_all.csv")
+write.csv(ms, file = "breakdown_by_condition_study2_n40_compliant.csv")
 
 lucky_winners = sample(first_batch$workerid, 35, replace = FALSE)
 write.csv(lucky_winners, file = "csv/lucky_winners.csv")
