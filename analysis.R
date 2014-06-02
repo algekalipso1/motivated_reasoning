@@ -26,7 +26,7 @@ agrci <- function(x){
 
 
 
-first_batch = read.csv("csv/motivation_results_one_point_five.csv",header=TRUE, sep="\t")
+first_batch = read.csv("csv/motivation_results_study_2.csv",header=TRUE, sep="\t")
 head(first_batch)
 colnames(first_batch)
 
@@ -71,7 +71,7 @@ first_batch$Answer.evidence_condition
 
 
 # Subset of compliant / participants who attended to stimuli
-first_batch$evidence_compliant = (first_batch$Answer.evidence_condition == 1 & first_batch$Answer.familiarization_check == '"2"' & first_batch$Answer.DW_accuracy_check == '"2"') |
+first_batch$evidence_compliant = (first_batch$Answer.evidence_condition == 1 & first_batch$Answer.familiarization_check == '"2"' & first_batch$Answer.DW_accuracy_check == '"1"') |
   (first_batch$Answer.evidence_condition == 0 & first_batch$Answer.familiarization_check == '"8"' & first_batch$Answer.DW_accuracy_check == '"8"')
 
 first_batch$competition_condition_compliant = (first_batch$Answer.competition_condition == 1 & first_batch$Answer.DW_check == '"partner"') |
@@ -80,7 +80,10 @@ first_batch$competition_condition_compliant = (first_batch$Answer.competition_co
 
 
 first_batch$compliant = first_batch$evidence_compliant & first_batch$competition_condition_compliant
+first_batch_c = subset(first_batch, first_batch$compliant)
 first_batch_c = subset(first_batch, first_batch$evidence_compliant)
+first_batch_c = subset(first_batch, first_batch$competition_condition_compliant)
+
 
 # without the neither opponent nor teammate
 first_batch_c$match =  first_batch_c$Answer.competition_condition == 1 | first_batch_c$Answer.competition_condition == 2
@@ -223,9 +226,10 @@ ggplot(ms, aes(x= conditions_combined, y=c, fill=object)) +
 
 
 
-write.csv(ms, file = "breakdown_by_competition_n_140.csv")
+write.csv(ms, file = "breakdown_by_condition_study2_n46_competition_compliant.csv")
 
-
+lucky_winners = sample(first_batch$workerid, 35, replace = FALSE)
+write.csv(lucky_winners, file = "csv/lucky_winners.csv")
 
 
 
