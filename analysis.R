@@ -83,7 +83,7 @@ first_batch$compliant = first_batch$evidence_compliant & first_batch$competition
 first_batch_c = subset(first_batch, first_batch$compliant)
 first_batch_c = subset(first_batch, first_batch$evidence_compliant)
 first_batch_c = subset(first_batch, first_batch$competition_condition_compliant)
-
+first_batch_c = first_batch
 
 # without the neither opponent nor teammate
 first_batch_c$match =  first_batch_c$Answer.competition_condition == 1 | first_batch_c$Answer.competition_condition == 2
@@ -226,7 +226,7 @@ ggplot(ms, aes(x= conditions_combined, y=c, fill=object)) +
 
 
 
-write.csv(ms, file = "breakdown_by_condition_study2_n46_competition_compliant.csv")
+write.csv(ms, file = "breakdown_by_condition_study2_n70_all.csv")
 
 lucky_winners = sample(first_batch$workerid, 35, replace = FALSE)
 write.csv(lucky_winners, file = "csv/lucky_winners.csv")
