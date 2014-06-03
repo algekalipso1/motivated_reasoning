@@ -47,7 +47,7 @@
   ; (define strength-prior (lambda () (uniform 0 1)))
    ; luck can vary from 0 to 1, with 2 intermediate values
    ;(define luck-prior (lambda () (uniform-draw '(0 0.33 0.66 1))))
-   (define luck-prior (lambda () (uniform 0 1)))
+   (define luck-prior (lambda () (beta 5 5)))
 
    
    ; luck is a persistent property of a type-of-game
@@ -135,7 +135,7 @@
     )
    ))
 
-(define n 1000)
+(define n 2000)
 (define (samples cnd) (repeat n (lambda () (sample cnd))))
 
 (define predictions (map samples conditions))
