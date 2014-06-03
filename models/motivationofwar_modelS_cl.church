@@ -14,12 +14,12 @@
 
 (define conditions 
 (list
-  (list 8 'partner '(you dw) '(yy zz) 'optimism)
-  (list 8 'opponent '(you yy) '(dw zz) 'optimism)
-  (list 8 'neither '(you yy) '(xx zz) 'optimism)
-  (list 8 'partner '(you dw) '(yy zz) 'strength)
-  (list 8 'opponent '(you yy) '(dw zz) 'strength)
-  (list 8 'neither '(you yy) '(xx zz) 'strength)
+  (list 2 'partner '(you dw) '(yy zz) 'optimism)
+  (list 2 'opponent '(you yy) '(dw zz) 'optimism)
+  (list 2 'neither '(you yy) '(xx zz) 'optimism)
+  (list 2 'partner '(you dw) '(yy zz) 'strength)
+  (list 2 'opponent '(you yy) '(dw zz) 'strength)
+  (list 2 'neither '(you yy) '(xx zz) 'strength)
 ;  (list 8 'partner)
 ;  (list 8 'opponent)
 ;  (list 8 'neither)
@@ -107,17 +107,17 @@
 
    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
    ; joint inference for bob's strength and luck of the game
-   ; (list (strength 'dw) 
-   ;  (luck 'game) 
-   ;  (strength 'someotherguy) 
-   ;  (boolean_to_number (eq? 'team1 (match-winner my-team their-team 'game 10)))
-   ;  )
-    (list 
-    (strength 'dw) 
-    (strength 'you) 
-    (strength 'someotherguy) 
-    (luck 'game)
-    )
+    (list (strength 'dw) 
+     (luck 'game) 
+     (strength 'someotherguy) 
+     (boolean_to_number (eq? 'team1 (match-winner my-team their-team 'game 10)))
+     )
+   ; (list 
+   ; (strength 'dw) 
+   ; (strength 'you) 
+   ; (strength 'someotherguy) 
+   ; (luck 'game)
+   ; )
 
    ; joint inference for how much you expect to win against bob and luck of the game
    ; (list (eq? 'team1 (match-winner '(you cb) '(dw dd) 'game 8)) (strength 'dw) )
@@ -125,7 +125,7 @@
 
 
    (and
-    (equal? (num-correct '(dw aa) 'game (first cndtn)) 8)
+    (equal? (num-correct '(dw aa) 'game (first cndtn)) 1)
  ; (eq? 'team1 (match-winner '(dw ab) '(cd ef) 'game 8))
     ;  (eq? 'team1 (match-winner '(bob) '(drew) 'game))
     ;;; NEXT-MATCH (optimism) CONDITION
@@ -135,7 +135,7 @@
     )
    ))
 
-(define n 200)
+(define n 1000)
 (define (samples cnd) (repeat n (lambda () (sample cnd))))
 
 (define predictions (map samples conditions))
