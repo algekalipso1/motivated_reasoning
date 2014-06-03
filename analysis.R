@@ -27,7 +27,9 @@ agrci <- function(x){
 
 
 #first_batch = read.csv("csv/motivation_results_one_point_five.csv",header=TRUE, sep="\t")
-first_batch = read.csv("csv/motivation_results_study_2.csv",header=TRUE, sep="\t")
+#first_batch = read.csv("csv/motivation_results_study_2.csv",header=TRUE, sep="\t")
+first_batch = read.csv("csv/motivation_results_study_2_n_88.csv",header=TRUE, sep="\t")
+
 
 
 head(first_batch)
@@ -120,7 +122,7 @@ table_by_both <- aggregate(cbind(Answer.DW_strength,
                                  Answer.evidence_condition + Answer.competition_condition, data=first_batch_c, mean)
 
 
-summary(aov(Answer.DW_strength ~  as.factor(Answer.competition_condition), data = first_batch_c))
+summary(aov(Answer.DW_strength ~ Answer.evidence_condition + Answer.expectation_of_winning + as.factor(Answer.competition_condition) + Answer.strength_of_average_player + Answer.role_of_luck_in_game, data = first_batch_c))
 summary(aov(Answer.strength_of_average_player ~ Answer.evidence_condition + as.factor(Answer.competition_condition), data = first_batch_c))
 summary(aov(Answer.role_of_luck_in_game ~ Answer.evidence_condition + as.factor(Answer.competition_condition), data = first_batch_c))
 summary(aov(Answer.expectation_of_winning ~ Answer.evidence_condition + as.factor(Answer.competition_condition), data = first_batch_c))
@@ -132,7 +134,7 @@ summary(glm(Answer.DW_strength ~ as.factor(Answer.competition_condition) + Answe
 
 
 # Excluding the control condition:
-summary(glm(Answer.DW_strength ~  Answer.evidence_condition + Answer.expectation_of_winning + as.factor(Answer.competition_condition) + Answer.strength_of_average_player + Answer.role_of_luck_in_game , data = first_batch_DW_relevant))
+summary(aov(Answer.DW_strength ~  Answer.evidence_condition + Answer.expectation_of_winning + as.factor(Answer.competition_condition) + Answer.strength_of_average_player + Answer.role_of_luck_in_game , data = first_batch_DW_relevant))
 
 
 
@@ -235,7 +237,7 @@ ggplot(ms, aes(x= conditions_combined, y=c, fill=object)) +
 
 
 
-write.csv(ms, file = "breakdown_by_condition_study2_n40_compliant.csv")
+write.csv(ms, file = "breakdown_by_condition_study2_n63_compliant.csv")
 
 lucky_winners = sample(first_batch$workerid, 35, replace = FALSE)
 write.csv(lucky_winners, file = "csv/lucky_winners.csv")
