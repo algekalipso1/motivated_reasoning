@@ -46,7 +46,8 @@ ggplot(ci95s, aes(x=cond.model, y=mean,colour=cond.team,group=cond.team))+
 
 
 dt = read.csv('../csv/breakdown_by_condition_study2_n48_competition_compliant.csv')
-#dt$evidence<-factor(dt$evidence,levels=c('low','high'))
+dt = read.csv('../csv/breakdown_by_competition_n_140.csv')
+dt$evidence<-factor(dt$evidence,levels=c('low','high'))
 dt$target<-factor(dt$competition,levels=c('partner','opponent','control'))
 dt$question<-factor(dt$object,levels=c('Answer.DW_strength',"Answer.strength_of_average_player","Answer.role_of_luck_in_game","Answer.expectation_of_winning"),labels=c('target strength','average strength','role of luck','P(win)'))
 dt$l
@@ -71,4 +72,24 @@ ggplot(dt, aes(x=competition, y=c,colour=target,group=target)) +
         strip.text.y = element_text(size=15),#, face="bold"),
         strip.background = element_rect(colour="white", fill="white"))
 
+ggplot(dt, aes(x=evidence, y=c,colour=target,group=target)) +   
+  geom_line(position=position_dodge(width=0.4))+
+  geom_errorbar(aes(ymin=c.cil,ymax=c.cih),width=0.4,alpha=1,
+                position=position_dodge(width=0.4))+
+  xlab("condition")+
+  ylab("percent endorsement")+
+  facet_wrap(~question)+
+  theme_bw()+
+  theme(plot.title=element_text(size=20),
+        axis.line = element_line(colour = "black"),
+        axis.title.x = element_text(size=18),
+        axis.title.y = element_text(size=18),
+        axis.text.x = element_text(size=12),
+        legend.text = element_text(size=18),
+        legend.title = element_text(size=18),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        strip.text.x = element_text(size=15),#, face="bold"),
+        strip.text.y = element_text(size=15),#, face="bold"),
+        strip.background = element_rect(colour="white", fill="white"))
 
