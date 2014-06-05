@@ -8,7 +8,7 @@ library(ggplot2)
 numqueries=4
 numcond=6
 setwd('/Users/mht/Documents/class/socmods/motivated_reasoning/models')
-ci95s= read.csv('modelOS_4test_1_opt1_n1000_95ci.csv',header=F)
+ci95s= read.csv('modelOS_betaLuck_n2000_95ci.csv',header=F)
 ci95s= read.csv('modelO_4q_opt1_n1000_95ci.csv',header=F)
 names(ci95s)<-c('lbound','ubound')
 ci95s$mean = (ci95s$ubound+ci95s$lbound)/2
@@ -45,8 +45,8 @@ ggplot(ci95s, aes(x=cond.model, y=mean,colour=cond.team,group=cond.team))+
         strip.background = element_rect(colour="white", fill="white"))
 
 
-dt = read.csv('../csv/breakdown_by_condition_study2_n48_competition_compliant.csv')
-dt = read.csv('../csv/breakdown_by_competition_n_140.csv')
+dt = read.csv('../csv/breakdown_by_condition_study2_n63_compliant.csv')
+dt = read.csv('../csv/breakdown_by_condition_study1_n125_compliant.csv')
 dt$evidence<-factor(dt$evidence,levels=c('low','high'))
 dt$target<-factor(dt$competition,levels=c('partner','opponent','control'))
 dt$question<-factor(dt$object,levels=c('Answer.DW_strength',"Answer.strength_of_average_player","Answer.role_of_luck_in_game","Answer.expectation_of_winning"),labels=c('target strength','average strength','role of luck','P(win)'))

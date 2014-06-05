@@ -1,0 +1,55 @@
+\documentclass{article} \usepackage{apacite} \usepackage{graphicx} \usepackage{listings}
+\usepackage{epigraph} \usepackage{etoolbox} \usepackage{amsmath}
+\makeatletter
+\patchcmd{\epigraph}{\@epitext{#1}}{\itshape\@epitext{#1}}{}{}
+\makeatother \def\signed
+#1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip2em
+\hbox{}\nobreak\hfil#1% \parfillskip=0pt \finalhyphendemerits=0
+\endgraf}} \newsavebox\mybox \newenvironment{aquote}[1]
+{\savebox\mybox{#1}\begin{quote}} {\signed{\usebox\mybox}\end{quote}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+% Default margins are too wide all the way around. I reset them here
+\setlength{\topmargin}{-.5in} \setlength{\textheight}{9in}
+\setlength{\oddsidemargin}{.125in} \setlength{\textwidth}{6in}
+
+\begin{document} \title{Motivated reasoning in minimal groups}
+\author{M. H. Tessler, Erik, and Andres} \renewcommand{\today}{Psych 241\\June 8,
+2014} \maketitle
+
+\section{Introduction}
+
+\subsection{Motivated reasoning}
+
+\subsection{Sources of motivated reasoning: optimism biases}
+
+\section{Minimal groups}
+
+\section{A computational model}
+
+\section{Experiment 1}
+
+\subsection{Methods}
+
+\subsection{Materials}
+
+include exclusion criteria
+
+\subsection{Procedure}
+
+\subsection{Results}
+
+\section{Experiment 2}
+
+\subsection{Methods}
+
+\subsection{Materials}
+
+include exclusion criteria
+
+\subsection{Procedure}
+
+\subsection{Results}
+
+\section{Discussion}
+
+\end{document}
