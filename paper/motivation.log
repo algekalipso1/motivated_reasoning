@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  8 JUN 2014 15:14
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  8 JUN 2014 15:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -296,94 +296,34 @@ e
 [1
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<basePredictions2.png, id=11, 799.98875pt x 324.21124pt>
+[2] [3] <basePredictions2.png, id=16, 799.98875pt x 324.21124pt>
 File: basePredictions2.png Graphic file (type png)
 
 <use basePredictions2.png>
-Package pdftex.def Info: basePredictions2.png used on input line 118.
+Package pdftex.def Info: basePredictions2.png used on input line 131.
 (pdftex.def)             Requested size: 433.62pt x 175.73436pt.
- [2 <./basePredictions2.png>] [3]
-./motivation.tex:186: Missing $ inserted.
-<inserted text> 
-                $
-l.186 As it can be seen in (DW_
-                               strength_pilot.png), the mode of DW's strengt...
-
-? 
-./motivation.tex:187: Missing $ inserted.
-<inserted text> 
-                $
-l.187 
-      
-? 
-
-Overfull \hbox (2070.7515pt too wide) in paragraph at lines 186--187
-[]\OT1/cmr/m/n/10 As it can be seen in (DW$[]\OML/cmm/m/it/10 trength[]ilot:png
-\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; themodeofDW[]sstrengthasestimatedbytheparti
-cipantsisthehighestpossiblevalue:Clearlytheitemswereregardedasconsiderablyharde
-rthanwhatpeoplearecapableofunscramblinginthetimeprovided:Wecallthisaceilingeffe
-ct; wherethescalebecomeslessusefulduetoanextremeskewingofthepossibleanswers:Num
-erically; theaverageDWstrengthisforthehighevidenceconditionis\OT1/cmr/m/n/10 0\
-OML/cmm/m/it/10 :\OT1/cmr/m/n/10 8798980(0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 843
-5525\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 91011
-50\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 95%\OML/cmm/m/it/10 bootstrappedconfidence
-intervals\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; and\OT1/cmr/m/n/10 0\OML/cmm/m/it/
-10 :\OT1/cmr/m/n/10 7799735(0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 7516508\OML/cmm/
-m/it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 8099752\OML/cmm/m/
-it/10 ; \OT1/cmr/m/n/10 95%\OML/cmm/m/it/10 bootstrappedconfidenceintervals\OT1
-/cmr/m/n/10 )\OML/cmm/m/it/10 :$ 
- []
-
-./motivation.tex:195: Missing $ inserted.
-<inserted text> 
-                $
-l.195 ... the task and motivated to win. See team_
-                                                  picture.pmg.
-? 
-./motivation.tex:196: Missing $ inserted.
-<inserted text> 
-                $
-l.196 
-      
-? 
-[4]
-./motivation.tex:211: Missing $ inserted.
-<inserted text> 
-                $
-l.211 Show: motiv2_
-                   facet-Question_n48.png
-? 
-./motivation.tex:212: Missing $ inserted.
-<inserted text> 
-                $
-l.212 
-      
-? 
-[5] (./motivation.bbl) [6] (./motivation.aux) ) 
+ [4] [5 <./basePredictions2.png>] [6] [7] [8]
+(./motivation.bbl) [9] (./motivation.aux) ) 
 Here is how much of TeX's memory you used:
- 5102 strings out of 493315
- 68014 string characters out of 6137904
- 166897 words of memory out of 5000000
- 8488 multiletter control sequences out of 15000+600000
- 9397 words of font info for 35 fonts, out of 8000000 for 9000
+ 5101 strings out of 493315
+ 68004 string characters out of 6137904
+ 171897 words of memory out of 5000000
+ 8487 multiletter control sequences out of 15000+600000
+ 8943 words of font info for 33 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,6n,40p,1391b,1478s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2013/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2013/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2013/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2013/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2013/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2013/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2013/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmtt8.pfb>
-Output written on motivation.pdf (6 pages, 175866 bytes).
+ 38i,6n,40p,2315b,984s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2013/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2013/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2013/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2013/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmtt8.pfb>
+Output written on motivation.pdf (9 pages, 152715 bytes).
 PDF statistics:
- 70 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 65 PDF objects out of 1000 (max. 8388607)
+ 44 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
