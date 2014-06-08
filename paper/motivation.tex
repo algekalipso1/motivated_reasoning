@@ -1,5 +1,49 @@
-\documentclass{article} \usepackage{apacite} \usepackage{graphicx} \usepackage{listings}
-\usepackage{epigraph} \usepackage{etoolbox} \usepackage{amsmath}
+\documentclass{article} 
+\usepackage{apacite} 
+\usepackage{graphicx} 
+\usepackage{natbib}
+\usepackage{listings}
+\usepackage{epigraph} 
+\usepackage{etoolbox} 
+\usepackage{amsmath}
+
+\usepackage{color}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\definecolor{Red}{RGB}{255,0,0}
+\newcommand{\red}[1]{\textcolor{Red}{#1}}  
+  
+\usepackage{listings}
+%\usepackage{inconsolata}
+\usepackage{xcolor} %to use colored text
+
+%\lstset{
+%language=Scheme,\lstinline
+%basicstyle=\footnotesize\ttfamily,
+%mathescape=true,
+%frame=single
+%}
+
+\lstset{
+  language=Scheme, % Andreas Stuhlmüller. Scheme listings. https://github.com/stuhlmueller/scheme-listings.git
+  columns=fixed,
+  tabsize=2,
+  extendedchars=true,
+  breaklines=true,
+  frame=single,
+%  numbers=left,
+  numbersep=5pt,
+    basicstyle=\scriptsize\ttfamily
+%  rulesepcolor=\color{solarized@base03},
+%  numberstyle=\tiny\color{solarized@base01},
+%  keywordstyle=\color{solarized@green},
+%  stringstyle=\color{solarized@cyan}\ttfamily,
+%  identifierstyle=\color{blue},
+%  commentstyle=\color{solarized@base01},
+%  emphstyle=\color{solarized@red}
+}
+
 \makeatletter
 \patchcmd{\epigraph}{\@epitext{#1}}{\itshape\@epitext{#1}}{}{}
 \makeatother \def\signed
@@ -13,7 +57,7 @@
 \setlength{\oddsidemargin}{.125in} \setlength{\textwidth}{6in}
 
 \begin{document} \title{Motivated reasoning in minimal groups}
-\author{M. H. Tessler, Erik, and Andres} \renewcommand{\today}{Psych 241\\June 8,
+\author{Erik Brockbank, Andres Gomez Emilsson, and M. H. Tessler} \renewcommand{\today}{Psych 241\\June 8,
 2014} \maketitle
 
 \section{Introduction}
@@ -24,7 +68,47 @@
 
 \section{Minimal groups}
 
-\section{A computational model}
+\section{Two computational models}
+
+We compose a generative model that considers an team game analogous to that used in \citet{Klein1992}. A game is made up of two teams playing in parallel to accrue points. A point in the game is a Bernoulli random variable that can be true in one of two ways: either by the team being skillful or by the team being lucky, as in:
+
+\begin{lstlisting}
+   (define (single-hit team type-of-game)
+    (or 
+      (and (flip (luck type-of-game)) (flip)) 
+      (flip (team-ability team))))
+\end{lstlisting}
+
+A team gets lucky according to probability 0.5 in situations where the point is determined by luck, this latter component is determined by \lstinline{(flip (luck type-of-game))}. This captures the intuition that some games have a lot of luck involved, whereas others are determined largely by chance.
+
+Our game involves teams with distinct roles and as such, the \lstinline{team-ability} is determined by the product of the individual players' abilities. 
+
+\begin{lstlisting}
+   (define (team-ability team)
+     (prod (map (lambda (person) (player-ability person)) team)))
+\end{lstlisting}
+
+We consider a player's ability to a persistent, but random, property of the individual. We consider the luck in a game to be defined similarly. 
+
+\begin{lstlisting}
+   (define player-ability (mem (lambda (person) (ability-prior))))
+   (define luck (mem (lambda (type-of-game) (luck-prior))))
+\end{lstlisting}
+
+As a first pass, we define \lstinline{ability-prior} and \lstinline{luck-prior} to be drawn from a \lstinline{(beta 5 5)} distribution. 
+
+In \citet{Klein1992}, participants were given evidence about the past performance of a target individual. The evidence they received was in the form of \lstinline{total-hits}, which is defined as \lstinline{(repeat num-rounds (lambda () (single-hit team type-of-game)))}. Thus, the form of the evidence the participants received was 
+
+\begin{lstlisting}
+(condition (equal? (total-hits '(target other) 'history 8) 8))
+\end{lstlisting}
+
+This says that the total-hits of the target person in an game which had eight rounds was equal to 8. The reason \lstinline{'other} is included is because the game is a two-person game, and so even though the other player is not referred to explicitly in the evidence, she needs to be included to make sense of the \lstinline{total-hits} function. Notice also that the string \lstinline{'history} is used to signify that we are referring to a particular type of game (e.g. the history game). This is important in determining the value of \lstinline{(luck type-of-game)}, which we defined as a persistent property of a game.
+
+The predictions of the base model are shown below. Throughout this modeling section, we will show plots with bootstrapped 95\% confidence intervals for the following four quantities: (1) perceived ability of target (2) perceived ability of the average player (or, a randomly selected new player) (3) perceived luck in the game and (4) the probability of winning a game against a team that includes the target individual. 
+
+
+
 
 \section{Experiment 1}
 
@@ -47,9 +131,9 @@ Of the 145 subjects, we excluded 20 from the analysis due to failing the competi
 
 \subsection{Procedure}
 
-Each participant is assigned to a competition condition and to an evidence condition at random (with equal probabily for each of the permutations). Before they accept to participate, participants are told that the task will take less than 10 minutes (which is the maximum time allocated to complete the task), that they will be compensated with 25 cents for participating (and that they can leave the study anytime if they so desire). Once they accept to particpate, we ask them to write down their inicials (e.g. AGE) and we explain to them that they are about to play two rounds of a \"word game\" with a live partner. The game consists of two teams, each consisting of two persons: a word selector and a word unscrambler. The precise wording is:
+Each participant is assigned to a competition condition and to an evidence condition at random (with equal probabily for each of the permutations). Before they accept to participate, participants are told that the task will take less than 10 minutes (which is the maximum time allocated to complete the task), that they will be compensated with 25 cents for participating (and that they can leave the study anytime if they so desire). Once they accept to particpate, we ask them to write down their initials (e.g. AGE) and we explain to them that they are about to play two rounds of a \"word game\" with a live partner. The game consists of two teams, each consisting of two persons: a word selector and a word unscrambler. The precise wording is:
 
-\"Each team will have a word selector and a word unscrambler. The word selector will select a word from a list of 6-letter words. The word will appear scrambled, and the word unscrambler will have 10 seconds to figure out the original word. Each team will repeat this process for ten words, and the team with the greater number of correct answers could earn up to 1 dollar, depending on the margin of difference between the two teams.\"
+``Each team will have a word selector and a word unscrambler. The word selector will select a word from a list of 6-letter words. The word will appear scrambled, and the word unscrambler will have 10 seconds to figure out the original word. Each team will repeat this process for ten words, and the team with the greater number of correct answers could earn up to 1 dollar, depending on the margin of difference between the two teams."
 
 Stating that they can earn up to 1 extra dollar if they win the game is intended to enhance the outcome dependency of the study, to increase motivation and thus enhance the potential for motivated reasoning. 
 
@@ -65,11 +149,11 @@ Participants were then fully debrief, and an open text field was provided for fi
 
 \subsection{Results}
 
-Show: motiv-facetQuestion_mht0_n140-lines.png, or motiv-facetQuestion_mht0_n140.png.
+%Show: motiv-facetQuestion_mht0_n140-lines.png, or motiv-facetQuestion_mht0_n140.png.
 
 We used an anova test to analyze what accounts for the variance of the estimated strength DW. The evidence condition is significant at the p < 0.001 level, but the competition condition is not significant. When an interaction between the conditions is tested, the result is that only the evidence condition remains significant (and not the interaction variable). When other vairables are included as predictors, such as the average strength of AMT participants, the role of luck in the game and the expectation of winning, the competition condition remains non-significant. A statistical sigificance of the competition condition as a predictor for DW strenght was not found in any further analysis.
 
-As it can be seen in (DW_strength_pilot.png), the mode of DW's strength as estimated by the participants is the highest possible value. Clearly the items were regarded as considerably harder than what people are capable of unscrambling in the time provided. We call this a ceiling effect, where the scale becomes less useful due to an extreme skeweing of the possible answers. Numerically, the average DW strength is for the high evidence condition is 0.8798980 (0.8435525, 0.9101150, 95\% bootrstrapped confidence intervales), and 0.7799735 (0.7516508, 0.8099752, 95\% bootstrapped confidence intervals).
+As it can be seen in (DW_strength_pilot.png), the mode of DW's strength as estimated by the participants is the highest possible value. Clearly the items were regarded as considerably harder than what people are capable of unscrambling in the time provided. We call this a ceiling effect, where the scale becomes less useful due to an extreme skewing of the possible answers. Numerically, the average DW strength is for the high evidence condition is 0.8798980 (0.8435525, 0.9101150, 95\% bootstrapped confidence intervals), and 0.7799735 (0.7516508, 0.8099752, 95\% bootstrapped confidence intervals).
 
 \section{Experiment 2}
 
@@ -110,5 +194,11 @@ Another possible explanation for the null result would be that participants did 
 
 Finally, it could be that the evidence provided does not allow participants to construct a believable and desirable account of DW's strength in more than one way. As argued in Klein and Kunda (1992), motivated reasoning arises only when people have information at their disposal with which to construct justifications for one's desired beliefs. The evidence that we presented participants in Study 1 was very similar to the evidence used in the original study. I.e. two or eight questions, all answered correctly. We obtained a ceiling effect and hypothezised that it could account for the null result, but it is not clear that the original study did not also have a ceiling effect (with means ranging from 6.4 to 8.1 out of 10). Even with the ceiling effect we obtained, we still saw a statistically significant difference for the evidence condition. More so, we obtained a wide spread of estimated DW strengths in Study 2 (mean of 0.57, sd of 0.197). Thus the ceiling effect is not a plausible explanation for the null results. The remaining point could be that the subject matter and difficulty of the questions we used simply do not lend themselves to motivated reasoning. Perhaps people can more readily justify their belief about a person's knowledge of American History, but cannot make a plausible story to justify motivated beliefs about ability to solve anagrams. 
 
+\bibliographystyle{apacite}
+
+\setlength{\bibleftmargin}{.125in}
+\setlength{\bibindent}{-\bibleftmargin}
+
+\bibliography{motivation}
 
 \end{document}
