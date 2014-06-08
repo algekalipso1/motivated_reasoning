@@ -76,13 +76,14 @@ The goal of further dissecting the motivated reasoning process raises questions 
 \subsection{Prior Motivation}
 A clear example of the first strategy comes from a study by Bastardi, Uhlmann, and Ross (2011) with participants who had indicated on a pre-survey that they thought home care was superior to day care. Of these participants, half expressed intentions of enrolling their children in day care?the ?conflicted? group?despite the above convictions, presumably due to outside factors and the other half expressed intentions of caring for their children at home?the ?unconflicted? group?consistent with their beliefs about which was better. Accordingly, the ?conflicted? group should be motivated to reason that day care is better (i.e. that their initial convictions were wrong). Participants were asked to read two fictional studies with distinct methodologies and with opposite conclusions (one that child care is better, the other that home care is better). Perhaps unsurprisingly, The ?conflicted? group valued the study significantly higher when its results supported day care than home care; their evaluation was consistent with their motivations to justify the choice of day care despite their earlier misgivings. In the unconflicted group, participants rated the study more negatively when its results supported day care. This design and its results are typical of other research in motivated inference which selects participants with certain existing motivations in order to evaluate how such motivations affect subsequent inferences. These studies, however, have the problem of separating motivation from differences in prior beliefs (e.g. smokers may just believe smoking is not as bad as nonsmokers believe, even without taking into account motivation). The Bastardi study tries to get around this issue by only selecting participants who believed day care was indeed better than home care.
 \subsection{Minimal Groups}
-A second strategy in formalizing a motivated inference paradigm is to induce motivation, controlling for whether a participant is motivated to draw a certain conclusion (and potentially how much) by whether they receive a particular manipulation. This is commonly done with ?minimal groups? paradigms, in which participants are assigned to be responsible for a particular cause or outcome in a made-up team game where they will be rewarded based on whether they win. A 1992 study by Klein and Kunda used a typical structure for motivated inference research. In that study, 63 male Princeton undergraduates were told that they would be competing in an American History quiz game in which they would be partnered with a randomly selected teammate; the participant would be tasked with selecting questions from a list to give his teammate, who would then have to answer the questions. Teams would compete to answer the most questions and win 50 dollars. After being shown a sample set of quiz answers in which all questions had been answered correctly by a previous participant (ostensibly to provide the participants with a sense of what the questions were to look like), participants were told that the sample quiz had belonged to either (A) the participant?s partner for the next round, (B) one of the participant?s opponents on the next round, or (B) a previous participant not involved in this round (control). After being shown the sample quiz, participants responded to questions about the skill level of the person who took the sample quiz, the skill level of the average Princeton student, and the role of luck in the game. Consistent with the motivated inference hypotheses, participants who judged partners rated that person?s ability as significantly higher than participants who judged opponents. In particular, partners rated the target person similarly to control subjects; the effect was driven by opponents, derogating the target. Additionally, opponents rated the average person?s ability as significantly higher than partners and controls; if the average person is pretty good at the task, the opponent does not seem exceptional. Finally, opponents rated luck as being far more contributive to success in the game than partners (who rated it as lower than the control condition), again consistent with motivations among opponents to derogate the true ability of the target person and motivations among partners to elevate the target person?s ability.  
+A second strategy in formalizing a motivated inference paradigm is to induce motivation, controlling for whether a participant is motivated to draw a certain conclusion (and potentially how much) by whether they receive a particular manipulation. This is commonly done with ?minimal groups? paradigms, in which participants are assigned to be responsible for a particular cause or outcome in a made-up team game where they will be rewarded based on whether they win. A 1992 study by Klein and Kunda used a typical structure for motivated inference research. In that study, 63 male Princeton undergraduates were told that they would be competing in an American History quiz game in which they would be partnered with a randomly selected teammate; the participant would be tasked with selecting questions from a list to give his teammate, who would then have to answer the questions. Teams would compete to answer the most questions and win 50 dollars. After being shown a sample set of quiz answers in which all questions had been answered correctly by a previous participant (ostensibly to provide the participants with a sense of what the questions were to look like), participants were told that the sample quiz had belonged to either (A) the participant?s partner for the next round, (B) one of the participant?s opponents on the next round, or (B) a previous participant not involved in this round (control). After being shown the sample quiz, participants responded to questions about the skill level of the person who took the sample quiz, the skill level of the average Princeton student, and the role of luck in the game. 
+Consistent with the motivated inference hypotheses, participants who judged partners rated that person?s ability as significantly higher than participants who judged opponents. In particular, partners rated the target person similarly to control subjects; the effect was driven by opponents, derogating the target. Additionally, opponents rated the average person?s ability as significantly higher than partners and controls; if the average person is pretty good at the task, the opponent does not seem exceptional. Finally, opponents rated luck as being far more contributive to success in the game than partners (who rated it as lower than the control condition), again consistent with motivations among opponents to derogate the true ability of the target person and motivations among partners to elevate the target person?s ability.  
 
 Klein and Kunda attribute these findings to the theory that people placed in a teammate or opponent relationship with a target person will not only form motivated inferences about that person, but will also form more general motivated beliefs (about the average person?s ability and the role of luck in the game) which allow them to further justify their beliefs about the target. Additionally, participants were placed in one of two ?degree of evidence? conditions which varied the number of questions on the ?sample quiz? (thus, the amount of evidence about the target). The effects described above were stronger for participants in the 2-question condition than the 8-question condition, indicating the extent to which motivation can act on reasoning is constrained by the available evidence (and presumably, an accuracy goal). Klein and Kunda?s 1992 work (and the background literature described here) form the basis for our own research, which places Mechanical Turk users in a minimal group setting and, after providing some evidence about earlier results from another Turker, elicits judgments about the ability of this player, who is to be either the participant?s teammate, opponent, or neither in the upcoming game. In what follows, we discuss computational models for this experiment as well as the empirical results.
 
 \section{Two computational models}
 
-We compose a generative model that considers an team game analogous to that used in \citet{Klein1992}. A game is made up of two teams playing in parallel to accrue points. A point in the game is a Bernoulli random variable that can be true in one of two ways: either by the team being skillful or by the team being lucky, as in:
+We compose a generative model that considers an team game analogous to that used in \citet{Klein1992} (KK). A game is made up of two teams playing in parallel to accrue points. A point in the game is a Bernoulli random variable that can be true in one of two ways: either by the team being skillful or by the team being lucky, as in:
 
 \begin{lstlisting}
    (define (single-hit team type-of-game)
@@ -100,12 +101,6 @@ Our game involves teams with distinct roles and as such, the \lstinline{team-abi
      (prod (map (lambda (person) (player-ability person)) team)))
 \end{lstlisting}
 
-However, in the \citet{Klein1992} setup, as well as in ours below, there is reason to believe the roles are asymmetric. As well, using the product of the two players abilities to determine the probability of a correct answer makes the task more difficult than we would expect. This is important when we consider inferences about \lstinline{luck} later. For these reasons, our models consider the team's ability to be determined by only one player, as in:
-
-\begin{lstlisting}
-(define (team-ability team) (strength (first team)))
-\end{lstlisting}
-
 We consider a player's ability to a persistent, but random, property of the individual. We consider the luck in a game to be defined similarly. 
 
 \begin{lstlisting}
@@ -113,9 +108,9 @@ We consider a player's ability to a persistent, but random, property of the indi
    (define luck (mem (lambda (type-of-game) (luck-prior))))
 \end{lstlisting}
 
-As a first pass, we define \lstinline{ability-prior} and \lstinline{luck-prior} to be drawn from a \lstinline{(beta 5 5)} distribution. 
+We want the mean team performance to be approximately 50\%, so we define \lstinline{ability-prior} to be a \lstinline{(beta 3 1)} distribution (implicitly then, the team ability distribution is \lstinline{(* (beta 3 1) (beta 3 1))}. We take \lstinline{luck-prior} to be a symmetric \lstinline{(beta 3 3)} distribution. 
 
-In \citet{Klein1992}, participants were given evidence about the past performance of a target individual. The evidence they received was in the form of \lstinline{total-hits}, which is defined as \lstinline{(repeat num-rounds (lambda ()   (single-hit team type-of-game)))}. Thus, the form of the evidence the participants received was 
+In KK, participants were given evidence about the past performance of a target individual. The evidence they received was in the form of \lstinline{total-hits}, which is defined as \lstinline{(repeat num-rounds (lambda ()   (single-hit team type-of-game)))}. Thus, the form of the evidence the participants received was:
 
 \begin{lstlisting}
 (condition (equal? (total-hits '(target other) 'history 8) 8))
@@ -127,7 +122,7 @@ The predictions of the base model in Figure \ref{fig:base}. Throughout this mode
 
 \begin{figure}
 \centering
-    \includegraphics[width=\columnwidth]{basePredictions2}
+    \includegraphics[width=\columnwidth]{basePredictions}
     \caption{Base model predictions. The forward predictions are simply the results of the generative model conditioned on no evidence. The conditional predictions are those conditioned on the target getting 8 out of 8 questions correct on the previous round.}
       \label{fig:base}
 \end{figure}
@@ -136,21 +131,43 @@ The predictions of the base model in Figure \ref{fig:base}. Throughout this mode
 Below, we consider two possible sources of motivated reasoning: optimism and perceived excellence. 
 \subsection{Optimism model}
 
-In the Optimism model (henceforth, Model O), the participant is optimistic about his expected performance in the upcoming match. This is operationalized in the model by introducing a new conditioning statement: 
+In the Optimism model (henceforth, Model O), the participant is optimistic about his expected performance in the upcoming match. This is implemented in the model by introducing a new conditioning statement: 
 
 \begin{lstlisting}
-      (if (flip optimism) 
-        (eq? 'team1 (match-winner my-team their-team game num-rounds)) 
-        (eq? 'team2 (match-winner my-team their-team game num-rounds)))
+(if (flip optimism) 
+    (eq? 'team1 (match-winner my-team their-team game num-rounds)) 
+    (eq? 'team2 (match-winner my-team their-team game num-rounds)))
 \end{lstlisting}
 
-This states with with a certain degree of optimism \lstinline{(flip optimism)}, the participant expects her team will win the next match. If \lstinline{optimism} is equal to 1, the state of the world is updated as if the participant has already won. If  \lstinline{optimism} is equal to 0, the participant believes with absolute certainty that she will lose. To account for the effects of \citet{Klein1992}, \lstinline{optimism} would fall between 0.5 and 1. 
+This states with with a certain degree of optimism \lstinline{(flip optimism)}, the participant expects her team will win the next match. If \lstinline{optimism} is equal to 1, the state of the world is updated as if the participant has already won. If  \lstinline{optimism} is equal to 0, the participant believes with absolute certainty that she will lose. To account for the effects of KK, \lstinline{optimism} would fall between 0.5 and 1. 
+
+In Figure \ref{fig:modelo}, we show below what happens when optimism is set to 1. We consider model predictions for the main experimental manipulation in KK: the role of the target. Predictions for when the target is the participant's partner, opponent, and control condition are considered when an optimistic outcome is assumed. The effects are subtle but robust. When considering the target ability (or target strength), the partner tends to overestimate and the opponent tends to underestimate the target's ability. The opposite is true for the role of luck in the game. 
+
+One possible reason for the subtlety of the effects can be found in the difference between the evidence for the target and the optimistic outcome condition. We are given the target performance on individual trials (or questions): she gets 8 out of 8 correct. The optimistic outcome, however, is about the match-winner. The condition is that we get more questions correct than our opponent. This is a weaker condition that the evidence about the target. For example, it's possible to achieve this condition with the target's team getting 7 out of 8 correct in our hypothetical optimistic game, and so the evidence is not so strong against the idea that the target has considerably high ability. 
+
+\begin{figure}
+\centering
+    \includegraphics[width=\columnwidth]{modelO-predictions}
+    \caption{Model O predictions. ``Target" refers to the main experimental manipulation in KK. Partner or opponent refers the target individual's relationship to the participant in the upcoming round. In the control condition, the participant rated an individual who was neither going to be their partner nor opponent.}
+      \label{fig:modelo}
+\end{figure}
 
 
 \subsection{Excellence model}
 In the Excellence model (model E), the participant does not have optimistic (or pessimistic) expectations about the future but rather believes she is an above average player. This would also lead to a ``better than expected" performance at the game (meaning that the probability that her team will win is better than the evidence would suggest). For this we need to assume that the participant is uncertain about what the average ability is (or, equivalently, how difficult the game is), but knows that whatever the average is, she is better than it.
 
-The influence on the experimental queries is a little more subtle in this model. 
+For simplicity, we randomly sample the \lstinline{alpha} parameter of the beta distribution and for simplicity, we take
+\lstinline{(define alpha (uniform-draw (list 2 3 4 5 6)))}. This corresponds to the difficulty of the task (or likewise, the average ability). The higher the alpha the easier the task. To adequately compare across models, we assume the \lstinline{mean-strength} is subtracted from the target strength and \lstinline{0.75} --- the mean in the base model --- is added back, as in \lstinline{(+ (- (strength 'target) mean-strength) 0.75)}.
+
+The influence on the experimental queries is a little more subtle in this model, but it seems that the both Model O and Model E make the same predictions about the appraisal of target strength. The models appear to diverge in their predictions about the ability of the average person in the game.
+
+\begin{figure}
+\centering
+    \includegraphics[width=\columnwidth]{modelE-predictions}
+    \caption{Model E predictions.}
+      \label{fig:modele}
+\end{figure}
+
 
 \section{Experiment 1}
 
@@ -158,22 +175,22 @@ The influence on the experimental queries is a little more subtle in this model.
 
 Both Experiment 1 and Experiment 2 attempt to replicate in an online setting the empirical results observed in Klein and Kunda (1992). The general structure of the experiment will be outlined here, and in the Experiment 2 section the improvements made upon Experiment 1 will be discussed.
 
-According to the literature reviewed, motivated reasonig manifests in the difference in skill level attributed to a player (who we call DW) that is judged based on previous performance. When the study participant wonders about DW's strength at a game, his beliefs could be influenced by what is at stake in the game. Since both the relationship between the person being judged and the information available about that person seem to matter for motivated reasoning, our study incorporates a 2x3 condition design with a conpetition condition and an evidence condition. The competition condition describes the relationship between the study participant and DW, who is either a partner (P), an opponent(O), or a control (C, who is neither a partner nor an opponent). Motivated reasoning anticipates that DW will be judged as having a highest ability in the Partner condition, the lowest ability in the Opponent condition, and in-between when DW in the control condition. 
+According to the literature reviewed, motivated reasoning manifests in the difference in skill level attributed to a player (who we call DW) that is judged based on previous performance. When the study participant wonders about DW's strength at a game, his beliefs could be influenced by what is at stake in the game. Since both the relationship between the person being judged and the information available about that person seem to matter for motivated reasoning, our study incorporates a 2x3 condition design with a competition condition and an evidence condition. The competition condition describes the relationship between the study participant and DW, who is either a partner (P), an opponent(O), or a control (C, who is neither a partner nor an opponent). Motivated reasoning anticipates that DW will be judged as having a highest ability in the Partner condition, the lowest ability in the Opponent condition, and in-between when DW in the control condition. 
 
-Mirroring the conditons of Klein and Kunda (1992), we employed two evidence conditions. These conditions are called the high and the low evidence condition and they determine the amount of information provided about DW. As a cover story, we tell participants that we will show them the performance of
+Mirroring the conditions of Klein and Kunda (1992), we employed two evidence conditions. These conditions are called the high and the low evidence condition and they determine the amount of information provided about DW. As a cover story, we tell participants that we will show them the performance of
 
-Since the effect is set to happen before the actual game is played, the study does not require putting particpants in touch with each other.
+Since the effect is set to happen before the actual game is played, the study does not require putting participants in touch with each other.
 
 \subsection{Materials}
 
-We hosted the website at http://langcog.stanford.edu/expts/index-clean.html, and linked to it from Amazong Mechanical Turk (AMT) so that participant could navigate an embeded verion of our experiment in the very webpage they accepted to participate in the study. We recruited 145 AMT participants. Each participant was compensated with 25 cents for their participation, and one fourth of the participants were selected randomly and were awarded with a \$1 bonus (which will be explained below).
+We hosted the website at http://langcog.stanford.edu/expts/index-clean.html, and linked to it from Amazon Mechanical Turk (AMT) so that participant could navigate an embedded version of our experiment in the very webpage they accepted to participate in the study. We recruited 145 AMT participants. Each participant was compensated with 25 cents for their participation, and one fourth of the participants were selected randomly and were awarded with a \$1 bonus (which will be explained below).
 
 Of the 145 subjects, we excluded 20 from the analysis due to failing the competition condition manipulation check. These are participants that failed to recognize their relationship with DW (e.g. someone stating that DW is his opponent when DW had been assigned as a partner).
 
 
 \subsection{Procedure}
 
-Each participant is assigned to a competition condition and to an evidence condition at random (with equal probabily for each of the permutations). Before they accept to participate, participants are told that the task will take less than 10 minutes (which is the maximum time allocated to complete the task), that they will be compensated with 25 cents for participating (and that they can leave the study anytime if they so desire). Once they accept to particpate, we ask them to write down their initials (e.g. AGE) and we explain to them that they are about to play two rounds of a \"word game\" with a live partner. The game consists of two teams, each consisting of two persons: a word selector and a word unscrambler. The precise wording is:
+Each participant is assigned to a competition condition and to an evidence condition at random (with equal probability for each of the permutations). Before they accept to participate, participants are told that the task will take less than 10 minutes (which is the maximum time allocated to complete the task), that they will be compensated with 25 cents for participating (and that they can leave the study anytime if they so desire). Once they accept to participate, we ask them to write down their initials (e.g. AGE) and we explain to them that they are about to play two rounds of a \"word game\" with a live partner. The game consists of two teams, each consisting of two persons: a word selector and a word unscrambler. The precise wording is:
 
 ``Each team will have a word selector and a word unscrambler. The word selector will select a word from a list of 6-letter words. The word will appear scrambled, and the word unscrambler will have 10 seconds to figure out the original word. Each team will repeat this process for ten words, and the team with the greater number of correct answers could earn up to 1 dollar, depending on the margin of difference between the two teams."
 
@@ -202,9 +219,9 @@ As it can be seen in (DW\_strength\_pilot.png), the mode of DW's strength as est
 \subsection{Methods}
 
 
-Since we did not find evidence of motivated reasoning in this study, we proceeded to make some changess for Experiment 2 to increase the likelihood of a non-null result. This experiment is an improvement upon Experiment 1 in various ways. First, a sense of \"team affiliation\" was cultivated throughout the experiment by making who is on which team much more salient. To do that large banners that represent each team were displayed when teams were assigned. The teams were called \"Red Team\" and \"Blue Team\" and it was made very explicity that the participant was in the red team with another person. 
+Since we did not find evidence of motivated reasoning in this study, we proceeded to make some changes for Experiment 2 to increase the likelihood of a non-null result. This experiment is an improvement upon Experiment 1 in various ways. First, a sense of \"team affiliation\" was cultivated throughout the experiment by making who is on which team much more salient. To do that large banners that represent each team were displayed when teams were assigned. The teams were called \"Red Team\" and \"Blue Team\" and it was made very explicity that the participant was in the red team with another person. 
 
-In addition the visual guide, a small \"chat box\" was designed to appear to be a comunication channel between the participant and their partner. Automatically the box would first display: \"SK: ... (typing)\" quickly followed by \"SK: We can do this!\" to create the illusion that the participant's partner is a real person involved in the task and motivated to win. See team\_picture.pmg.
+In addition the visual guide, a small \"chat box\" was designed to appear to be a communication channel between the participant and their partner. Automatically the box would first display: \"SK: ... (typing)\" quickly followed by \"SK: We can do this!\" to create the illusion that the participant's partner is a real person involved in the task and motivated to win. See team\_picture.pmg.
 
 Additionally, the difficulty of unscrambling words was conveyed more realistically: By making participants engage in three practice unscrambling questions right before they were presented with DW's past performance. This in turn was also displayed in a more compelling way than in Experiment 1, showing additional information like the number of seconds that DW took to answer the question.
 

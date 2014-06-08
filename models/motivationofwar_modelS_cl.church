@@ -14,11 +14,11 @@
 
 (define conditions 
 (list
-  ; (list 2 'partner '(you dw) '(yy zz) 'optimism)
-  ; (list 2 'opponent '(you yy) '(dw zz) 'optimism)
-  (list 8 'neither '(you yy) '(xx zz) 'optimism)
-  ; (list 2 'partner '(you dw) '(yy zz) 'strength)
-  ; (list 2 'opponent '(you yy) '(dw zz) 'strength)
+  ; (list 8 'partner '(you dw) '(yy zz) 'optimism)
+  ; (list 8 'opponent '(you yy) '(dw zz) 'optimism)
+  ;(list 8 'neither '(you yy) '(xx zz) 'optimism)
+   (list 8 'partner '(you dw) '(yy zz) 'strength)
+   (list 8 'opponent '(you yy) '(dw zz) 'strength)
    (list 8 'neither '(you yy) '(xx zz) 'strength)
 ;  (list 8 'partner)
 ;  (list 8 'opponent)
@@ -38,16 +38,18 @@
  ;  (define alpha (mem (lambda (g) (uniform 0 2.5))))
  ;  (define alpha (mem (lambda (g) (uniform-draw (list 1 1.25 1.5 1.75 2 2.25 2.5 2.75 3)))))
  ;  (define strength-prior (lambda (g) (beta (alpha g) 1)))   
-   (define strength-prior (lambda () (beta 5 5)))   
+
+    (define alpha (uniform-draw (list 2 3 4 5 6 7)))
+   (define strength-prior (lambda () (beta alpha 1)))   
  ;  (define (mean-strength g) (/ (alpha g) (+ (alpha g) 1)))
    
-   (define mean-strength (/ 5 (+ 5 5)))
+   (define mean-strength (/ alpha (+ alpha 1)))
 
       ; strength is normally distributed with mean 0 and stdev 1
   ; (define strength-prior (lambda () (uniform 0 1)))
    ; luck can vary from 0 to 1, with 2 intermediate values
    ;(define luck-prior (lambda () (uniform-draw '(0 0.33 0.66 1))))
-   (define luck-prior (lambda () (beta 5 5)))
+   (define luck-prior (lambda () (beta 3 3)))
 
    
    ; luck is a persistent property of a type-of-game
@@ -57,13 +59,14 @@
    (define strength (mem (lambda (person) (strength-prior))))
    
    (define (team-ability team)
-      (strength (first team)))
-   ;  (prod (map (lambda (person) (strength person)) team)))
+      ;(strength (first team)))
+     (prod (map (lambda (person) (strength person)) team)))
 
    (define (single-hit team type-of-game)
     (if (flip (luck type-of-game)) 
-      (flip) 
+      (flip 0.5) 
       (flip (team-ability team))))
+
 
    (define (total-hits team type-of-game num-rounds)
     (repeat num-rounds (lambda () (single-hit team type-of-game))))
@@ -108,9 +111,10 @@
 
    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
    ; joint inference for bob's strength and luck of the game
-    (list (strength 'dw) 
+    (list 
+     (+ (- (strength 'dw) mean-strength) 0.75)
      (luck 'game) 
-     (strength 'someotherguy) 
+     (+ (- (strength 'someotherguy) mean-strength) 0.75)
      (boolean_to_number (eq? 'team1 (match-winner my-team their-team 'game 10)))
      )
    ; (list 
@@ -126,19 +130,19 @@
 
 
    (and
-   (if (equal? model 'optimism)
+   ;(if (equal? model 'optimism)
     (equal? (num-correct '(dw aa) 'game (first cndtn)) 8)
-    true)
+   ; true)
  ; (eq? 'team1 (match-winner '(dw ab) '(cd ef) 'game 8))
     ;  (eq? 'team1 (match-winner '(bob) '(drew) 'game))
     ;;; NEXT-MATCH (optimism) CONDITION
-    ; (if (equal? model 'optimism)
-    ;    (next-match my-team their-team opt-param 'game 10)
-    ;     (> (strength 'you) mean-strength))
+     (if (equal? model 'optimism)
+        (next-match my-team their-team opt-param 'game 10)
+         (> (strength 'you) mean-strength))
     ; )
    )))
 
-(define n 200)
+(define n 600)
 (define (samples cnd) (repeat n (lambda () (sample cnd))))
 
 (define predictions (map samples conditions))
@@ -148,7 +152,7 @@
   (list 
     (map first (first predictions))
     (map first (second predictions))
-    ; (map first (third predictions))
+    (map first (third predictions))
     ; (map first (fourth predictions))
     ; (map first (fifth predictions))
     ; (map first (sixth predictions))
@@ -156,7 +160,7 @@
   (list 
     (map second (first predictions))
     (map second (second predictions))
-    ; (map second (third predictions))
+    (map second (third predictions))
     ; (map second (fourth predictions))
     ; (map second (fifth predictions))
     ; (map second (sixth predictions))
@@ -164,7 +168,7 @@
   (list 
     (map third (first predictions))
     (map third (second predictions))
-    ; (map third (third predictions))
+    (map third (third predictions))
     ; (map third (fourth predictions))
     ; (map third (fifth predictions))
     ; (map third (sixth predictions))
@@ -172,7 +176,7 @@
   (list 
     (map fourth (first predictions))
     (map fourth (second predictions))
-    ; (map fourth (third predictions))
+    (map fourth (third predictions))
     ; (map fourth (fourth predictions))
     ; (map fourth (fifth predictions))
     ; (map fourth (sixth predictions))
