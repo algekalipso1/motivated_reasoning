@@ -14,12 +14,12 @@
 
 (define conditions 
 (list
-  (list 2 'partner '(you dw) '(yy zz) 'optimism)
-  (list 2 'opponent '(you yy) '(dw zz) 'optimism)
-  (list 2 'neither '(you yy) '(xx zz) 'optimism)
-  (list 2 'partner '(you dw) '(yy zz) 'strength)
-  (list 2 'opponent '(you yy) '(dw zz) 'strength)
-  (list 2 'neither '(you yy) '(xx zz) 'strength)
+  ; (list 2 'partner '(you dw) '(yy zz) 'optimism)
+  ; (list 2 'opponent '(you yy) '(dw zz) 'optimism)
+  (list 8 'neither '(you yy) '(xx zz) 'optimism)
+  ; (list 2 'partner '(you dw) '(yy zz) 'strength)
+  ; (list 2 'opponent '(you yy) '(dw zz) 'strength)
+   (list 8 'neither '(you yy) '(xx zz) 'strength)
 ;  (list 8 'partner)
 ;  (list 8 'opponent)
 ;  (list 8 'neither)
@@ -38,9 +38,9 @@
  ;  (define alpha (mem (lambda (g) (uniform 0 2.5))))
  ;  (define alpha (mem (lambda (g) (uniform-draw (list 1 1.25 1.5 1.75 2 2.25 2.5 2.75 3)))))
  ;  (define strength-prior (lambda (g) (beta (alpha g) 1)))   
+   (define strength-prior (lambda () (beta 5 5)))   
  ;  (define (mean-strength g) (/ (alpha g) (+ (alpha g) 1)))
    
-   (define strength-prior (lambda () (beta 5 5)))   
    (define mean-strength (/ 5 (+ 5 5)))
 
       ; strength is normally distributed with mean 0 and stdev 1
@@ -57,11 +57,12 @@
    (define strength (mem (lambda (person) (strength-prior))))
    
    (define (team-ability team)
-     (prod (map (lambda (person) (strength person)) team)))
+      (strength (first team)))
+   ;  (prod (map (lambda (person) (strength person)) team)))
 
    (define (single-hit team type-of-game)
-    (or 
-      (and (flip (luck type-of-game)) (flip)) 
+    (if (flip (luck type-of-game)) 
+      (flip) 
       (flip (team-ability team))))
 
    (define (total-hits team type-of-game num-rounds)
@@ -125,17 +126,19 @@
 
 
    (and
-    (equal? (num-correct '(dw aa) 'game (first cndtn)) 1)
+   (if (equal? model 'optimism)
+    (equal? (num-correct '(dw aa) 'game (first cndtn)) 8)
+    true)
  ; (eq? 'team1 (match-winner '(dw ab) '(cd ef) 'game 8))
     ;  (eq? 'team1 (match-winner '(bob) '(drew) 'game))
     ;;; NEXT-MATCH (optimism) CONDITION
-    (if (equal? model 'optimism)
-       (next-match my-team their-team opt-param 'game 10)
-        (> (strength 'you) mean-strength))
-    )
-   ))
+    ; (if (equal? model 'optimism)
+    ;    (next-match my-team their-team opt-param 'game 10)
+    ;     (> (strength 'you) mean-strength))
+    ; )
+   )))
 
-(define n 2000)
+(define n 200)
 (define (samples cnd) (repeat n (lambda () (sample cnd))))
 
 (define predictions (map samples conditions))
@@ -145,33 +148,33 @@
   (list 
     (map first (first predictions))
     (map first (second predictions))
-    (map first (third predictions))
-    (map first (fourth predictions))
-    (map first (fifth predictions))
-    (map first (sixth predictions))
+    ; (map first (third predictions))
+    ; (map first (fourth predictions))
+    ; (map first (fifth predictions))
+    ; (map first (sixth predictions))
     )
   (list 
     (map second (first predictions))
     (map second (second predictions))
-    (map second (third predictions))
-    (map second (fourth predictions))
-    (map second (fifth predictions))
-    (map second (sixth predictions))
+    ; (map second (third predictions))
+    ; (map second (fourth predictions))
+    ; (map second (fifth predictions))
+    ; (map second (sixth predictions))
     )
   (list 
     (map third (first predictions))
     (map third (second predictions))
-    (map third (third predictions))
-    (map third (fourth predictions))
-    (map third (fifth predictions))
-    (map third (sixth predictions))
+    ; (map third (third predictions))
+    ; (map third (fourth predictions))
+    ; (map third (fifth predictions))
+    ; (map third (sixth predictions))
     )
   (list 
     (map fourth (first predictions))
     (map fourth (second predictions))
-    (map fourth (third predictions))
-    (map fourth (fourth predictions))
-    (map fourth (fifth predictions))
-    (map fourth (sixth predictions))
+    ; (map fourth (third predictions))
+    ; (map fourth (fourth predictions))
+    ; (map fourth (fifth predictions))
+    ; (map fourth (sixth predictions))
     )  )
  ; (mean (map second samples)))

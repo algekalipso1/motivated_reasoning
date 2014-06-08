@@ -66,6 +66,10 @@
 						<span id="gender">Gender: 
 							<input type="radio" name="gender" value="female" id="female_button">Female</input>
 							<input type="radio" name="gender" value="male" id="male_button">Male</input>
+							<!-- There is a bug above. The id should not change, only the value. Now the buttons
+							do not belong to a group. Alternative:
+							<input type="radio" name="gender" value="male" id="female_button">Male</input>
+							 -->
 						</span><br><br>
 						<p><span id="language">Native Language: <input type="text" name="language" id = "language_id"></input><br>(the language that
 	  was spoken at home when you were a child)</p><br></span>
