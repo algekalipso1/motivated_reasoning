@@ -46,11 +46,14 @@ cbind(first_batch$Answer.strength_of_average_player,
 
 first_batch$Answer.strength_of_average_player
 first_batch$Answer.participant_native_lang
+hist(first_batch_c$Answer.DW_strength, breaks = 10)
+first_batch$age = as.integer(first_batch$Answer.participant_age)
 
-mean(first_batch_c$Answer.motivation_to_win)
-sd(first_batch_c$Answer.motivation_to_win) / length(first_batch_c$Answer.motivation_to_win)^.5
-ci.low(first_batch_c$Answer.motivation_to_win)
-ci.high(first_batch_c$Answer.motivation_to_win)
+
+mean(first_batch_c$Answer.DW_strength)
+sd(first_batch_c$Answer.DW_strength) / length(first_batch_c$Answer.DW_strength)^.5
+ci.low(first_batch_c$Answer.DW_strength)
+ci.high(first_batch_c$Answer.DW_strength)
 
 
 
@@ -132,11 +135,20 @@ table_by_both <- aggregate(cbind(Answer.DW_strength,
                                  Answer.evidence_condition + Answer.competition_condition, data=first_batch_c, mean)
 
 
-summary(aov(Answer.DW_strength ~ Answer.evidence_condition + Answer.expectation_of_winning + as.factor(Answer.competition_condition) + Answer.strength_of_average_player + Answer.role_of_luck_in_game, data = first_batch_c))
+summary(aov(Answer.DW_strength ~  Answer.evidence_condition + Answer.expectation_of_winning + as.factor(Answer.competition_condition) * Answer.strength_of_average_player + Answer.role_of_luck_in_game, data = first_batch_c))
+summary(aov(Answer.DW_strength ~  Answer.evidence_condition * as.factor(Answer.competition_condition), data = first_batch_c))
+
+
 summary(aov(Answer.strength_of_average_player ~ Answer.evidence_condition + as.factor(Answer.competition_condition), data = first_batch_c))
-summary(aov(Answer.role_of_luck_in_game ~ Answer.evidence_condition + as.factor(Answer.competition_condition), data = first_batch_c))
+summary(aov(Answer.role_of_luck_in_game ~ Answer.DW_strength + Answer.evidence_condition + as.factor(Answer.competition_condition), data = first_batch_c))
+
+
 summary(aov(Answer.expectation_of_winning ~ Answer.evidence_condition + as.factor(Answer.competition_condition), data = first_batch_c))
 
+
+partner = subset(first_batch_c$Answer.DW_strength, first_batch_c$Answer.competition_condition == 1)
+opponent = subset(first_batch_c$Answer.DW_strength, first_batch_c$Answer.competition_condition == 2)
+t.test(partner, opponent)
 
 # Multiple regression of DW strength from everything else
 summary(glm(Answer.expectation_of_winning ~ Answer.DW_strength + Answer.evidence_condition + as.factor(Answer.competition_condition) + Answer.strength_of_average_player + Answer.role_of_luck_in_game, data = first_batch_c))
