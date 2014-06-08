@@ -28,7 +28,7 @@ agrci <- function(x){
 
 #first_batch = read.csv("csv/motivation_results_one_point_five.csv",header=TRUE, sep="\t")
 #first_batch = read.csv("csv/motivation_results_study_2.csv",header=TRUE, sep="\t")
-#first_batch = read.csv("csv/motivation_results_study_2_n_88.csv",header=TRUE, sep="\t")
+first_batch = read.csv("csv/motivation_results_study_2_n_88.csv",header=TRUE, sep="\t")
 first_batch = read.csv("csv/motivation_results_first_study_n_145.csv",header=TRUE, sep="\t")
 
 
@@ -43,7 +43,15 @@ cbind(first_batch$Answer.strength_of_average_player,
       first_batch$Answer.competition_condition)
 
 
+
 first_batch$Answer.strength_of_average_player
+first_batch$Answer.participant_native_lang
+
+mean(first_batch_c$Answer.motivation_to_win)
+sd(first_batch_c$Answer.motivation_to_win) / length(first_batch_c$Answer.motivation_to_win)^.5
+ci.low(first_batch_c$Answer.motivation_to_win)
+ci.high(first_batch_c$Answer.motivation_to_win)
+
 
 
 
@@ -241,8 +249,8 @@ ggplot(ms, aes(x= conditions_combined, y=c, fill=object)) +
 
 write.csv(ms, file = "breakdown_by_condition_study1_n125_compliant.csv")
 
-lucky_winners = sample(first_batch$workerid, 35, replace = FALSE)
-write.csv(lucky_winners, file = "csv/lucky_winners.csv")
+lucky_winners = sample(first_batch$workerid, 22, replace = FALSE)
+write.csv(lucky_winners, file = "csv/lucky_winners_study_2.csv")
 
 
 
