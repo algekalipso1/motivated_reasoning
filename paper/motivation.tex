@@ -57,7 +57,7 @@
 \setlength{\oddsidemargin}{.125in} \setlength{\textwidth}{6in}
 
 \begin{document} \title{Motivated reasoning in minimal groups}
-\author{Erik Brockbank, Andres Gomez Emilsson, and M. H. Tessler} \renewcommand{\today}{Psych 241\\June 8,
+\author{Erik Brockbank, Andres Gomez Emilsson, and Michael Henry Tessler} \renewcommand{\today}{Psych 241\\June 8,
 2014} \maketitle
 
 \section{Introduction}
@@ -74,18 +74,24 @@ We compose a generative model that considers an team game analogous to that used
 
 \begin{lstlisting}
    (define (single-hit team type-of-game)
-    (or 
-      (and (flip (luck type-of-game)) (flip)) 
+    (if (flip (luck type-of-game)) 
+      (flip) 
       (flip (team-ability team))))
 \end{lstlisting}
 
-A team gets lucky according to probability 0.5 in situations where the point is determined by luck, this latter component is determined by \lstinline{(flip (luck type-of-game))}. This captures the intuition that some games have a lot of luck involved, whereas others are determined largely by chance.
+A team gets lucky according to probability 0.5 in situations where the point is determined by luck, this latter component is determined by \lstinline{(flip (luck type-of-game))}. This captures the intuition that some games have a lot of luck involved, whereas others are determined largely by chance. If the round is not determined by luck, then the team gets a hit in proportion to their teams abilities. 
 
-Our game involves teams with distinct roles and as such, the \lstinline{team-ability} is determined by the product of the individual players' abilities. 
+Our game involves teams with distinct roles and as such, the \lstinline{team-ability} could be determined by the product of the individual players' abilities, as in:
 
 \begin{lstlisting}
    (define (team-ability team)
      (prod (map (lambda (person) (player-ability person)) team)))
+\end{lstlisting}
+
+However, in the \citet{Klein1992} setup, as well as in ours below, there is reason to believe the roles are asymmetric. As well, using the product of the two players abilities to determine the probability of a correct answer makes the task more difficult than we would expect. This is important when we consider inferences about \lstinline{luck} later. For these reasons, our models consider the team's ability to be determined by only one player, as in:
+
+\begin{lstlisting}
+(define (team-ability team) (strength (first team)))
 \end{lstlisting}
 
 We consider a player's ability to a persistent, but random, property of the individual. We consider the luck in a game to be defined similarly. 
@@ -97,7 +103,7 @@ We consider a player's ability to a persistent, but random, property of the indi
 
 As a first pass, we define \lstinline{ability-prior} and \lstinline{luck-prior} to be drawn from a \lstinline{(beta 5 5)} distribution. 
 
-In \citet{Klein1992}, participants were given evidence about the past performance of a target individual. The evidence they received was in the form of \lstinline{total-hits}, which is defined as \lstinline{(repeat num-rounds (lambda () (single-hit team type-of-game)))}. Thus, the form of the evidence the participants received was 
+In \citet{Klein1992}, participants were given evidence about the past performance of a target individual. The evidence they received was in the form of \lstinline{total-hits}, which is defined as \lstinline{(repeat num-rounds (lambda ()   (single-hit team type-of-game)))}. Thus, the form of the evidence the participants received was 
 
 \begin{lstlisting}
 (condition (equal? (total-hits '(target other) 'history 8) 8))
@@ -105,10 +111,34 @@ In \citet{Klein1992}, participants were given evidence about the past performanc
 
 This says that the total-hits of the target person in an game which had eight rounds was equal to 8. The reason \lstinline{'other} is included is because the game is a two-person game, and so even though the other player is not referred to explicitly in the evidence, she needs to be included to make sense of the \lstinline{total-hits} function. Notice also that the string \lstinline{'history} is used to signify that we are referring to a particular type of game (e.g. the history game). This is important in determining the value of \lstinline{(luck type-of-game)}, which we defined as a persistent property of a game.
 
-The predictions of the base model are shown below. Throughout this modeling section, we will show plots with bootstrapped 95\% confidence intervals for the following four quantities: (1) perceived ability of target (2) perceived ability of the average player (or, a randomly selected new player) (3) perceived luck in the game and (4) the probability of winning a game against a team that includes the target individual. 
+The predictions of the base model in Figure \ref{fig:base}. Throughout this modeling section, we will show plots with bootstrapped 95\% confidence intervals for the following four quantities: (1) perceived ability of target (2) perceived ability of the average player (or, a randomly selected new player) (3) perceived luck in the game and (4) the probability of winning a game against a team that includes the target individual. 
+
+\begin{figure}
+\centering
+    \includegraphics[width=\columnwidth]{basePredictions2}
+    \caption{Base model predictions. The forward predictions are simply the results of the generative model conditioned on no evidence. The conditional predictions are those conditioned on the target getting 8 out of 8 questions correct on the previous round.}
+      \label{fig:base}
+\end{figure}
 
 
+Below, we consider two possible sources of motivated reasoning: optimism and perceived excellence. 
+\subsection{Optimism model}
 
+In the Optimism model (henceforth, Model O), the participant is optimistic about his expected performance in the upcoming match. This is operationalized in the model by introducing a new conditioning statement: 
+
+\begin{lstlisting}
+      (if (flip optimism) 
+        (eq? 'team1 (match-winner my-team their-team game num-rounds)) 
+        (eq? 'team2 (match-winner my-team their-team game num-rounds)))
+\end{lstlisting}
+
+This states with with a certain degree of optimism \lstinline{(flip optimism)}, the participant expects her team will win the next match. If \lstinline{optimism} is equal to 1, the state of the world is updated as if the participant has already won. If  \lstinline{optimism} is equal to 0, the participant believes with absolute certainty that she will lose. To account for the effects of \citet{Klein1992}, \lstinline{optimism} would fall between 0.5 and 1. 
+
+
+\subsection{Excellence model}
+In the Excellence model (model E), the participant does not have optimistic (or pessimistic) expectations about the future but rather believes she is an above average player. This would also lead to a ``better than expected" performance at the game (meaning that the probability that her team will win is better than the evidence would suggest). For this we need to assume that the participant is uncertain about what the average ability is (or, equivalently, how difficult the game is), but knows that whatever the average is, she is better than it.
+
+The influence on the experimental queries is a little more subtle in this model. 
 
 \section{Experiment 1}
 
