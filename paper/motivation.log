@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  8 JUN 2014 16:00
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  8 JUN 2014 16:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -293,66 +293,37 @@ e
 ))
 \c@lstlisting=\count119
 
-
-Package natbib Warning: Citation `Yaryan1961' on page 1 undefined on input line
- 68.
-
-
-Package natbib Warning: Citation `Arrowood1966' on page 1 undefined on input li
-ne 68.
-
-
-Package natbib Warning: Citation `Klein2002' on page 1 undefined on input line 
-70.
-
-
-Package natbib Warning: Citation `Taylor1988' on page 1 undefined on input line
- 70.
-
 [1
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-Package natbib Warning: Citation `Kunda1990' on page 2 undefined on input line 
-73.
-
-
-Package natbib Warning: Citation `Bastardi2011' on page 2 undefined on input li
-ne 77.
-
-[2] [3] <basePredictions2.png, id=17, 799.98875pt x 324.21124pt>
+[2] [3] <basePredictions2.png, id=16, 799.98875pt x 324.21124pt>
 File: basePredictions2.png Graphic file (type png)
 
 <use basePredictions2.png>
 Package pdftex.def Info: basePredictions2.png used on input line 131.
 (pdftex.def)             Requested size: 433.62pt x 175.73436pt.
  [4] [5 <./basePredictions2.png>] [6] [7] [8]
-(./motivation.bbl)
-
-Package natbib Warning: There were undefined citations.
-
-[9] (./motivation.aux) ) 
+(./motivation.bbl) [9] (./motivation.aux) ) 
 Here is how much of TeX's memory you used:
- 5088 strings out of 493315
- 67930 string characters out of 6137904
- 171897 words of memory out of 5000000
- 8473 multiletter control sequences out of 15000+600000
- 9251 words of font info for 34 fonts, out of 8000000 for 9000
+ 5104 strings out of 493315
+ 68281 string characters out of 6137904
+ 172265 words of memory out of 5000000
+ 8490 multiletter control sequences out of 15000+600000
+ 8943 words of font info for 33 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,6n,40p,2343b,984s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmbx10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr17.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmti10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmtt10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmtt8.pfb>
-Output written on motivation.pdf (9 pages, 161239 bytes).
+ 38i,6n,40p,2339b,984s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2013/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2013/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2013/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2013/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmtt8.pfb>
+Output written on motivation.pdf (9 pages, 156998 bytes).
 PDF statistics:
- 69 PDF objects out of 1000 (max. 8388607)
- 47 compressed objects within 1 object stream
+ 65 PDF objects out of 1000 (max. 8388607)
+ 44 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

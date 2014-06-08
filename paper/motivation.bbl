@@ -1,10 +1,93 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
-Klein%
+Arrowood%
+\ \BBA {} Ross%
+}{%
+Arrowood%
+\ \BBA {} Ross%
+}{%
+{\protect \APACyear {1966}}%
+}]{%
+Arrowood1966}
+\APACinsertmetastar {%
+Arrowood1966}%
+\begin{APACrefauthors}%
+Arrowood, A\BPBI J.%
+\BCBT {}\ \BBA {} Ross, L\BPBI E\BPBI E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1966}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Anticipated effort and subjective probability}}
+  {{Anticipated effort and subjective probability}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of p}{4}{1}{57--64}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Bastardi%
+, Uhlmann%
+\BCBL {}\ \BBA {} Ross%
+}{%
+Bastardi%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2011}}%
+}]{%
+Bastardi2011}
+\APACinsertmetastar {%
+Bastardi2011}%
+\begin{APACrefauthors}%
+Bastardi, A.%
+, Uhlmann, E\BPBI L.%
+\BCBL {}\ \BBA {} Ross, L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Wishful Thinking: Belief, Desire, and the Motivated
+  Evaluation of Scientific Evidence}} {{Wishful Thinking: Belief, Desire, and
+  the Motivated Evaluation of Scientific Evidence}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Psychological Science}{22}{6}{731--732}.
+\newblock
+\begin{APACrefDOI} \doi{10.1177/0956797611406447} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+C\BPBI T.~Klein%
+\ \BBA {} Helweg-Larsen%
+}{%
+C\BPBI T.~Klein%
+\ \BBA {} Helweg-Larsen%
+}{%
+{\protect \APACyear {2002}}%
+}]{%
+Klein2002}
+\APACinsertmetastar {%
+Klein2002}%
+\begin{APACrefauthors}%
+Klein, C\BPBI T.%
+\BCBT {}\ \BBA {} Helweg-Larsen, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2002}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Perceived Control and the Optimisic Bias: A
+  meta-analytic review}} {{Perceived Control and the Optimisic Bias: A
+  meta-analytic review}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Psychology and Health}{17}{4}{437--446}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+W\BPBI M.~Klein%
 \ \BBA {} Kunda%
 }{%
-Klein%
+W\BPBI M.~Klein%
 \ \BBA {} Kunda%
 }{%
 {\protect \APACyear {1992}}%
@@ -32,6 +115,87 @@ Klein, W\BPBI M.%
   \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1016/0022-1031(92)90036-J} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kunda%
+}{%
+Kunda%
+}{%
+{\protect \APACyear {1990}}%
+}]{%
+Kunda1990}
+\APACinsertmetastar {%
+Kunda1990}%
+\begin{APACrefauthors}%
+Kunda, Z.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1990}{{\APACmonth{11}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{The case for motivated reasoning.}} {{The case for
+  motivated reasoning.}}{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Psychological bulletin}{108}{3}{480--98}.
+\newblock
+\begin{APACrefURL} \url{http://www.ncbi.nlm.nih.gov/pubmed/2270237}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Taylor%
+\ \BBA {} Brown%
+}{%
+Taylor%
+\ \BBA {} Brown%
+}{%
+{\protect \APACyear {1988}}%
+}]{%
+Taylor1988}
+\APACinsertmetastar {%
+Taylor1988}%
+\begin{APACrefauthors}%
+Taylor, S\BPBI E.%
+\BCBT {}\ \BBA {} Brown, J\BPBI D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1988}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Illusion and Well-Being : A Social Psychological
+  Perspective on Mental Health}} {{Illusion and Well-Being : A Social
+  Psychological Perspective on Mental Health}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Psychological Bulletin}{102}{2}{193--210}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Yaryan%
+\ \BBA {} Festinger%
+}{%
+Yaryan%
+\ \BBA {} Festinger%
+}{%
+{\protect \APACyear {1961}}%
+}]{%
+Yaryan1961}
+\APACinsertmetastar {%
+Yaryan1961}%
+\begin{APACrefauthors}%
+Yaryan, R\BPBI B.%
+\BCBT {}\ \BBA {} Festinger, L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1961}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Preparatory action and belief in the probable occur-
+  rence of future events 1}} {{Preparatory action and belief in the probable
+  occur- rence of future events 1}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Journal of Abnormal and Social
+  Psychology}{63}{3}{1--4}.
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}
