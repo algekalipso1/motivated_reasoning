@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  9 JUN 2014 00:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  9 JUN 2014 00:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -336,17 +336,18 @@ Package pdftex.def Info: DW_strength_pilot.png used on input line 229.
 File: team_picture.png Graphic file (type png)
  <use team_picture.png>
 Package pdftex.def Info: team_picture.png used on input line 245.
-(pdftex.def)             Requested size: 433.62pt x 583.44441pt.
+(pdftex.def)             Requested size: 211.48746pt x 284.53131pt.
 
-[9 <./DW_strength_pilot.png>] [10 <./team_picture.png (PNG copy)>]
-<motiv2_facet-Question_n48.png, id=51, 798.985pt x 502.87875pt>
+[9 <./DW_strength_pilot.png>]
+<motiv2_facet-Question_n48.png, id=48, 798.985pt x 502.87875pt>
 File: motiv2_facet-Question_n48.png Graphic file (type png)
 
 <use motiv2_facet-Question_n48.png>
 Package pdftex.def Info: motiv2_facet-Question_n48.png used on input line 267.
 (pdftex.def)             Requested size: 433.62pt x 272.91632pt.
- [11 <./motiv2_facet-Question_n48.png>]
-(./motivation.bbl) [12] (./motivation.aux) ) 
+ [10 <./team_picture.png (PNG copy)>]
+[11 <./motiv2_facet-Question_n48.png>] (./motivation.bbl) [12]
+(./motivation.aux) ) 
 Here is how much of TeX's memory you used:
  5138 strings out of 493315
  69183 string characters out of 6137904
@@ -355,15 +356,15 @@ Here is how much of TeX's memory you used:
  8943 words of font info for 33 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  38i,6n,40p,2285b,984s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2013/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2013/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2013/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2013/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmtt8.pfb>
-Output written on motivation.pdf (12 pages, 284162 bytes).
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr17.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmti10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmtt10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mtt8.pfb>
+Output written on motivation.pdf (12 pages, 284284 bytes).
 PDF statistics:
  85 PDF objects out of 1000 (max. 8388607)
  50 compressed objects within 1 object stream
