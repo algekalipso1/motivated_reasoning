@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  8 JUN 2014 23:46
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  9 JUN 2014 00:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -316,28 +316,57 @@ File: modelE-predictions.png Graphic file (type png)
 <use modelE-predictions.png>
 Package pdftex.def Info: modelE-predictions.png used on input line 173.
 (pdftex.def)             Requested size: 433.62pt x 135.60222pt.
- [6 <./modelO-predictions.png> <./modelE-predictions.png>] [7] [8] [9] (./motiv
-ation.bbl) [10] (./motivation.aux) ) 
+ [6 <./modelO-predictions.png> <./modelE-predictions.png>] [7]
+<motiv-facetQuestion_mht0_n140-lines.png, id=37, 846.16125pt x 524.96124pt>
+File: motiv-facetQuestion_mht0_n140-lines.png Graphic file (type png)
+
+<use motiv-facetQuestion_mht0_n140-lines.png>
+Package pdftex.def Info: motiv-facetQuestion_mht0_n140-lines.png used on input 
+line 220.
+(pdftex.def)             Requested size: 433.62pt x 269.01634pt.
+
+<DW_strength_pilot.png, id=38, 511.9125pt x 335.2525pt>
+File: DW_strength_pilot.png Graphic file (type png)
+
+<use DW_strength_pilot.png>
+Package pdftex.def Info: DW_strength_pilot.png used on input line 229.
+(pdftex.def)             Requested size: 433.62pt x 283.97867pt.
+ [8 <./motiv-facetQuestion_mht0_n140-lines.png>]
+<team_picture.png, id=43, 249.93375pt x 336.25626pt>
+File: team_picture.png Graphic file (type png)
+ <use team_picture.png>
+Package pdftex.def Info: team_picture.png used on input line 245.
+(pdftex.def)             Requested size: 433.62pt x 583.44441pt.
+
+[9 <./DW_strength_pilot.png>] [10 <./team_picture.png (PNG copy)>]
+<motiv2_facet-Question_n48.png, id=51, 798.985pt x 502.87875pt>
+File: motiv2_facet-Question_n48.png Graphic file (type png)
+
+<use motiv2_facet-Question_n48.png>
+Package pdftex.def Info: motiv2_facet-Question_n48.png used on input line 267.
+(pdftex.def)             Requested size: 433.62pt x 272.91632pt.
+ [11 <./motiv2_facet-Question_n48.png>]
+(./motivation.bbl) [12] (./motivation.aux) ) 
 Here is how much of TeX's memory you used:
- 5119 strings out of 493315
- 68604 string characters out of 6137904
- 173281 words of memory out of 5000000
- 8503 multiletter control sequences out of 15000+600000
+ 5138 strings out of 493315
+ 69183 string characters out of 6137904
+ 174241 words of memory out of 5000000
+ 8518 multiletter control sequences out of 15000+600000
  8943 words of font info for 33 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  38i,6n,40p,2285b,984s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2013/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmti10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmtt8.pfb>
-Output written on motivation.pdf (10 pages, 198818 bytes).
+</usr/local/texlive/2013/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2013/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2013/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2013/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmtt8.pfb>
+Output written on motivation.pdf (12 pages, 284162 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
+ 85 PDF objects out of 1000 (max. 8388607)
+ 50 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

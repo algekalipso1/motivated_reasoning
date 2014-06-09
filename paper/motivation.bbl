@@ -57,10 +57,10 @@ Bastardi, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-C\BPBI T.~Klein%
+Klein%
 \ \BBA {} Helweg-Larsen%
 }{%
-C\BPBI T.~Klein%
+Klein%
 \ \BBA {} Helweg-Larsen%
 }{%
 {\protect \APACyear {2002}}%
@@ -81,40 +81,6 @@ Klein, C\BPBI T.%
   meta-analytic review}}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{Psychology and Health}{17}{4}{437--446}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-W\BPBI M.~Klein%
-\ \BBA {} Kunda%
-}{%
-W\BPBI M.~Klein%
-\ \BBA {} Kunda%
-}{%
-{\protect \APACyear {1992}}%
-}]{%
-Klein1992}
-\APACinsertmetastar {%
-Klein1992}%
-\begin{APACrefauthors}%
-Klein, W\BPBI M.%
-\BCBT {}\ \BBA {} Kunda, Z.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1992}{{\APACmonth{03}}}{}.
-\newblock
-{\BBOQ}\APACrefatitle {{Motivated person perception: Constructing
-  justifications for desired beliefs}} {{Motivated person perception:
-  Constructing justifications for desired beliefs}}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Journal of Experimental Social
-  Psychology}{28}{2}{145--168}.
-\newblock
-\begin{APACrefURL}
-  \url{http://linkinghub.elsevier.com/retrieve/pii/002210319290036J}
-  \end{APACrefURL}
-\newblock
-\begin{APACrefDOI} \doi{10.1016/0022-1031(92)90036-J} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
