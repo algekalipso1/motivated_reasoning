@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  8 JUN 2014 17:15
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  8 JUN 2014 17:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -334,7 +334,7 @@ public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmti10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmtt8.pfb>
-Output written on motivation.pdf (10 pages, 199587 bytes).
+Output written on motivation.pdf (10 pages, 199570 bytes).
 PDF statistics:
  72 PDF objects out of 1000 (max. 8388607)
  46 compressed objects within 1 object stream
