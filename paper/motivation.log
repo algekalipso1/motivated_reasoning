@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  8 JUN 2014 16:06
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  8 JUN 2014 17:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -311,7 +311,7 @@ Here is how much of TeX's memory you used:
  8490 multiletter control sequences out of 15000+600000
  8943 words of font info for 33 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,6n,40p,2339b,984s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,6n,40p,2345b,984s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2013/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2013/texmf-dist/fon
@@ -320,7 +320,7 @@ ts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/texmf-dist/fonts
 ype1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2013/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmtt8.pfb>
-Output written on motivation.pdf (9 pages, 156998 bytes).
+Output written on motivation.pdf (9 pages, 156866 bytes).
 PDF statistics:
  65 PDF objects out of 1000 (max. 8388607)
  44 compressed objects within 1 object stream
